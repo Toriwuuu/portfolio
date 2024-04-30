@@ -177,11 +177,26 @@ a{
     --black:  #161616;
 }
 
-.chivo-regular{
+/* .chivo-regular{
     font-family: 'Chivo';
     font-weight: 400;
-}
-.chivo-black{
+} */
+/* .chivo-black{
     font-family: 'Chivo';
     font-weight: 900;
+} */
+
+
+.topbar{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+.menu{
+    display: flex;
+}
+.menu a{
+    font-family: 'Chivo';
+    font-weight: 900;
+    color: var(--pink);
 }
