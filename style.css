@@ -169,5 +169,19 @@ a{
 
 /* 變數區 */
 :root{
-    --pink:
+    --pink: #E931CC;
+    --blue: #50CBF2;
+    --lightg: #D9D9D9;
+    --deepg: #5E5E5E;
+    --white: #FFFFFF;
+    --black:  #161616;
+}
+
+.chivo-regular{
+    font-family: 'Chivo';
+    font-weight: 400;
+}
+.chivo-black{
+    font-family: 'Chivo';
+    font-weight: 900;
 }
