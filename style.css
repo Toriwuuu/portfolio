@@ -186,17 +186,38 @@ a{
     font-weight: 900;
 } */
 
+body{
+    background-size: cover;
+    background-image: linear-gradient(rgba(35,167,175,0), rgba(55,13,97,.44), rgba(169,4,93,.36), rgba(38,87,43,.37), rgba(44,14,74,.60), rgba(21,71,99,.47), rgba(115,20,63,.72), rgba(72,55,12,.44));
+    background-color: rgba(0,0,0,1);
+
+    
+}
 
 .topbar{
     width: 100%;
     justify-content: space-between;
     display: flex;
 }
+.nav-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
 .menu{
     display: flex;
+
 }
 .menu a{
-    font-family: 'Chivo';
+    display: block;
+    margin: 3rem;
+/*     border:1px solid #161616;
+ */    font-family: 'Chivo';
     font-weight: 900;
     color: var(--pink);
+}
+.photo img{
+    width: 300px;
+    height: 300px;
 }
