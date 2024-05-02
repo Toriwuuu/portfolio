@@ -8,6 +8,7 @@
     src: url(./font/Chivo-Italic-VariableFont_wght.ttf);
     /* 盡量不要有空格 會誤判 */
 }
+
 /* 如果連接googlefont notosans就不要放在body-fontfamily的第一個 */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -154,6 +155,7 @@ table {
     box-sizing: border-box;
     /* 全域不累加邊框與內距 */
 }
+
 body {
     font-family:
         -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
@@ -161,20 +163,20 @@ body {
     color: #555;
 }
 
-a{
+a {
     display: block;
     color: #555;
     text-decoration: none;
 }
 
 /* 變數區 */
-:root{
+:root {
     --pink: #E931CC;
     --blue: #50CBF2;
     --lightg: #D9D9D9;
     --deepg: #5E5E5E;
     --white: #FFFFFF;
-    --black:  #161616;
+    --black: #161616;
 }
 
 /* .chivo-regular{
@@ -186,38 +188,40 @@ a{
     font-weight: 900;
 } */
 
-body{
-    background-size: cover;
-    background-image: linear-gradient(rgba(35,167,175,0), rgba(55,13,97,.44), rgba(169,4,93,.36), rgba(38,87,43,.37), rgba(44,14,74,.60), rgba(21,71,99,.47), rgba(115,20,63,.72), rgba(72,55,12,.44));
-    background-color: rgba(0,0,0,1);
+body {
+    background: url(./img/noiseDot.png) center center / cover repeat,linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, .30), rgba(169, 4, 93, .25), rgba(38, 87, 43, .25), rgba(44, 14, 74, .42), rgba(21, 71, 99, .33), rgba(115, 20, 63, .50), rgba(72, 55, 12, .31)), conic-gradient(from 180deg, rgba(188, 0, 23, .24) 25deg, rgba(36, 9, 12, .3) 50deg, rgba(0, 0, 0, .3) 144deg, rgba(24, 108, 48, .3) 215deg, rgba(71, 13, 13, .3) 250deg, rgba(6, 60, 91, .3) 288deg, rgba(188, 0, 23, .24) 358deg), rgba(22, 22, 22, 1);
+    ;
 
-    
 }
 
-.topbar{
+.topbar {
     width: 100%;
     justify-content: space-between;
     display: flex;
 }
-.nav-box{
+
+.nav-box {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: end;
 }
-.menu{
-    display: flex;
 
+.menu {
+    display: flex;
+    margin-right: 50px;
 }
-.menu a{
+
+.menu a {
     display: block;
-    margin: 3rem;
-/*     border:1px solid #161616;
- */    font-family: 'Chivo';
+    margin: 40px;
+    /*     border:1px solid #161616; */
+    font-family: 'Chivo';
     font-weight: 900;
     color: var(--pink);
 }
-.photo img{
+
+.photo img {
     object-fit: cover;
     width: 300px;
     height: 300px;
