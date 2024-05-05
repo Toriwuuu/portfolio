@@ -118,10 +118,13 @@ menu,
 nav,
 section {
     display: flex;
+
 }
-img{
+
+img {
     display: block;
 }
+
 body {
     line-height: 1;
     overflow-x: hidden;
@@ -159,10 +162,12 @@ table {
 }
 
 body {
+    width: 100%;
     font-family:
         -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
         "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     color: #555;
+    background: url(./img/noise.png), linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, .30), rgba(169, 4, 93, .25), rgba(38, 87, 43, .25), rgba(44, 14, 74, .42), rgba(21, 71, 99, .33), rgba(115, 20, 63, .50), rgba(72, 55, 12, .31)), conic-gradient(from 180deg, rgba(188, 0, 23, .24) 25deg, rgba(36, 9, 12, .3) 50deg, rgba(0, 0, 0, .3) 144deg, rgba(24, 108, 48, .3) 215deg, rgba(71, 13, 13, .3) 250deg, rgba(6, 60, 91, .3) 288deg, rgba(188, 0, 23, .24) 358deg), rgb(0, 0, 0);
 }
 
 a {
@@ -171,10 +176,7 @@ a {
     text-decoration: none;
 }
 
-main{
-    display: flex;
-    flex-direction: row;
-}
+
 /* 變數區 */
 :root {
     --pink: #E931CC;
@@ -183,6 +185,7 @@ main{
     --deepg: #5E5E5E;
     --white: #FFFFFF;
     --black: #161616;
+    --purple: #9E1AAA;
 }
 
 /* .chivo-regular{
@@ -194,16 +197,14 @@ main{
     font-weight: 900;
 } */
 
-body{
-    background: url(./img/noise.png),linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, .30), rgba(169, 4, 93, .25), rgba(38, 87, 43, .25), rgba(44, 14, 74, .42), rgba(21, 71, 99, .33), rgba(115, 20, 63, .50), rgba(72, 55, 12, .31)), conic-gradient(from 180deg, rgba(188, 0, 23, .24) 25deg, rgba(36, 9, 12, .3) 50deg, rgba(0, 0, 0, .3) 144deg, rgba(24, 108, 48, .3) 215deg, rgba(71, 13, 13, .3) 250deg, rgba(6, 60, 91, .3) 288deg, rgba(188, 0, 23, .24) 358deg),rgb(0, 0, 0);
-
-}
-.topbar {
+#topbar {
+    position: fixed;
     width: 100%;
     height: 240px;
     justify-content: space-between;
     display: flex;
     font-size: 1.5rem;
+    z-index: 999;
 }
 
 
@@ -216,50 +217,378 @@ body{
 
 .menu {
     display: flex;
-    margin-right: 50px;
+    margin-right: 2vw;
 }
 
 .menu a {
-    display: block;
-    margin: 40px;
+    display: flex;
+    margin: 2vw;
     /*     border:1px solid #161616; */
     font-family: 'Chivo';
     font-weight: 900;
     color: var(--pink);
 }
-.digitalArt{
+
+/* digitalArt */
+
+#digitalArt {
     display: flex;
-    justify-content: end;
-}
-.circle img{
-    position: absolute;
-    top:600px;
-    left: -100px;
+    justify-content: space-between;
 }
 
-.pin img{
-    position: absolute;
-    top: 380px;
-    left: 350px;
+.cd {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
-.photo{
-    position: relative;
+
+.circle img {
+    width: 40vw;
+    position: absolute;
+    top: 60vh;
+    left: -8vw;
+}
+
+.pin img {
+    width: 30vw;
+    position: absolute;
+    top: 40vh;
+    left: 18vw;
+}
+
+.photo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15vh;
+    margin-top: 40vh;
+    /*     position: relative;
     top: 100px;
-    left:1250px;
+    left: 1650px; */
 }
-.imgframe{
 
-}
 .photo img {
+
     mask-image: url(./img/pink.svg);
     object-fit: cover;
-    width: 300px;
-    height: 300px;
-    transform: skew(-25deg,5deg);
-    margin: -50px;
-    border: 5px solid ; 
-    border-image: linear-gradient(rgb(93,93,93),rgb(200,200,200),rgb(232,232,232),rgb(113,113,113) 5);
+    width: 20vw;
+    height: 20vw;
+    transform: skew(-25deg, 5deg);
+    margin: -3vw;
+    border: 5px solid rgba(89, 89, 89, 3);
+    /*     border-image: linear-gradient(rgb(93,93,93),rgb(200,200,200),rgb(232,232,232),rgb(113,113,113) .5);
+ */
     border-radius: 30px;
 }
 
+/* footer */
 
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(119, 12, 255, .5), rgba(167, 21, 244, .6), rgba(206, 28, 235, .9), rgba(233, 49, 204, 1));
+}
+
+.marquee {
+    width: 100%;
+    height: 75px;
+    background-color: var(--purple);
+    border-top: 10px solid #FFFFFF;
+    border-bottom: 10px solid #FFFFFF;
+}
+
+.contactTable {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contactText {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Chivo';
+    color: #FFFFFF;
+    font-size: 6rem;
+    font-weight: 900;
+    padding: 2vh 0vw 1vh 6rem;
+}
+
+.icon {
+    display: flex;
+    align-self: center;
+    margin-right: 10vw;
+}
+
+.icon a {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.icon-ig {
+    background-image: url(./img/ig.svg);
+    background-repeat: no-repeat;
+
+}
+
+.icon-fb {
+    background-image: url(./img/fb.svg);
+    background-repeat: no-repeat;
+
+}
+
+.icon-twitter {
+    background-image: url(./img/twitter.svg);
+    background-repeat: no-repeat;
+}
+
+.contactIcon img {
+    padding: 16px;
+}
+
+#form-contact {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 25%;
+    font-family: 'Chivo';
+    color: var(--white);
+}
+
+#form-contact label {
+    margin: 1vh 0 1vh 0;
+    border: none;
+}
+
+.btn-form {
+
+    align-self: flex-end;
+    margin: 16px 0px;
+    width: 7vw;
+    height: 3.5vh;
+    border: none;
+    border-radius: 5px
+}
+
+label {
+    font-family: 'Chivo';
+    font-weight: 200;
+
+}
+
+input {
+    border: none;
+    border-radius: 5px;
+    height: 3vh;
+}
+
+textarea {
+    border: none;
+    border-radius: 5px;
+}
+
+footer span {
+    font-family: 'Chivo';
+    font-style: italic;
+    font-weight: 900;
+    color: var(--pink);
+
+}
+
+.topbtn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Chivo';
+    color: #FFFFFF;
+    font-size: 6rem;
+    font-weight: 900;
+    border-top: 10px solid white;
+    margin-top: 2vh;
+    padding: 2vh 10vw 5vh 22rem;
+
+}
+
+
+/* plastic */
+.cycle-slideshow img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.box {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#years {
+    flex-direction: column;
+}
+
+#years div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 25vh;
+    border-top: 10px solid white;
+}
+
+#years img {
+    margin-right: 20vw;
+}
+
+/* shop */
+#shopBanner {
+    justify-content: center;
+    margin-bottom: 8vh;
+}
+
+.bannerContainer{ /* JQ未加 */
+    display: inline-block;
+    position: relative;
+}
+.bannerImg {
+    height: 30vw;
+    width: 70vw;
+    margin-top: 30vh;
+}
+
+#shopBanner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+
+}
+.arrowL
+{    /* JQ未加 */
+    position: absolute;
+    bottom: -2vh;
+    right: 9vw;
+    width: 48px;
+    height: 48px;
+    border-radius: 90px;
+    border: none;
+    background-image: url(./img/ArrowL.svg);
+}
+.arrowR
+{    /* JQ未加 */
+    position: absolute;
+    bottom: -2vh;
+    right: 5vw;
+    width: 48px;
+    height: 48px;
+    border-radius: 90px;
+    border: none;
+    background-image: url(./img/ArrowR.svg);
+}
+
+/* 商品 */
+
+.cart{
+    background-image: url(./img/cart.svg);
+    border: none;
+    background-color: transparent;
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    right: 5vw;
+    top: 20vh;
+    background-repeat: no-repeat;
+
+}
+
+#items {
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    height: 20vw;
+    width: 60vw;
+    padding: 3vh 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .item {
+    width: 20%;
+}
+
+.imgContainer {
+    position: relative;
+    display: inline-block
+}
+
+.imgItem {
+    display: block;
+    border-radius: 20px;
+    width: 10vw;
+    height: 10vw;
+}
+
+.it01 {
+    background-image: url(./img/illus/Staircase.jpg);
+    background-size: cover;
+}
+.it02 {
+    background-image: url(./img/illus/Moai.jpg);
+    background-size: cover;
+}
+.it03 {
+    background-image: url(./img/illus/Chaos.jpg);
+    background-size: cover;
+}
+.it04 {
+    background-image: url(./img/illus/call\ me.jpg);
+    background-size: cover;
+}
+.it05 {
+    background-image: url(./img/plastic/2022/a03.jpg);
+    background-size: cover;
+}
+.it06 {
+    background-image: url(./img/plastic/2022/c01.jpg);
+    background-size: cover;
+}
+.it07 {
+    background-image: url(./img/plastic/2022/b01.jpg);
+    background-size: cover;
+}
+.it08 {
+    background-image: url(./img/plastic/2018/03.jpg);
+    background-size: cover;
+}
+.row div button {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    bottom: 10px;
+    right: 10px;
+    background-image: url(./img/plus.svg);
+    object-fit: cover;
+    border: none;
+    border-radius: 90px;
+}
+
+.product {
+    display: block;
+    font-family: Chivo;
+    color: var(--white);
+    font-weight: 800;
+    padding-top: 2vh;
+}
+
+.price {
+    display: block;
+    font-family: Chivo;
+    color: var(--blue);
+    font-weight: 800;
+    padding-top: 10px;
+}

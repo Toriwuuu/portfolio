@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header class="topbar">
+    <header id="topbar">
         <h1 class="logo">
             <a href="index.html"><img src="./img/title.svg" alt="Tori's Artwork"></a>
         </h1>
@@ -35,27 +35,56 @@
     <main>
         <section id="digitalArt">
             <div class="cd">
-                <div class="circle"><img src="./img/us.png" alt=""></div>
                 <div class="pin"><img src="./img/playeer.png" alt=""></div>
+                <div class="circle"><img src="./img/us.png" alt=""></div>
             </div>
             <div class="photo">
-                <div class="imgframe"><img src="./img/illus/Don’t wake up.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/always cow.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/call me.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/Calling.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/Chaos.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/escape.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/Face.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/missing call.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/Moai.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/rainy night.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/Staircase.jpg" alt=""></div>
-                <div class="imgframe"><img src="./img/illus/star tears.jpg" alt=""></div>
+                <img src="./img/illus/Don’t wake up.jpg" alt="">
+                <img src="./img/illus/always cow.jpg" alt="">
+                <img src="./img/illus/call me.jpg" alt="">
+                <img src="./img/illus/Calling.jpg" alt="">
+                <img src="./img/illus/Chaos.jpg" alt="">
+                <img src="./img/illus/escape.jpg" alt="">
+                <img src="./img/illus/Face.jpg" alt="">
+                <img src="./img/illus/missing call.jpg" alt="">
+                <img src="./img/illus/Moai.jpg" alt="">
+                <img src="./img/illus/rainy night.jpg" alt="">
+                <img src="./img/illus/Staircase.jpg" alt="">
+                <img src="./img/illus/star tears.jpg" alt="">
             </div>
         </section>
     </main>
     <footer id="contact">
+        <div class="marquee"></div>
+        <div class="contactTable">
+            <div class="contactText">CONTACT
+                <nav class="contactIcon">
+                    <ul class="icon">
+                        <li><a href="#" class="icon-ig"></a></li>
+                        <li><a href="#" class="icon-fb"></a></li>
+                        <li><a href="#" class="icon-twitter"></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <form action="" method="post" name="form-contact" id="form-contact" title="聯絡我們表單">
 
+                <label for="username">Name:</label>
+                <input type="text" name="username" id="username" title="請輸入姓名" placeholder="" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="" required>
+
+                <label for="massage">Message:</label>
+                <textarea name="massage" id="massage" rows="10"></textarea>
+
+                <button class="btn-form">
+                    <span>Send</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="topbtn">TOP<img src="./img/Vectorup.svg" alt=""></div>
+        
     </footer>
 
     <script src=""></script>
