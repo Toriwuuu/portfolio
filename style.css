@@ -158,6 +158,8 @@ table {
 /* 共用區 */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     /* 全域不累加邊框與內距 */
 }
 
@@ -197,6 +199,7 @@ a {
     font-weight: 900;
 } */
 
+/* 頁首 */
 #topbar {
     position: fixed;
     width: 100%;
@@ -448,10 +451,12 @@ footer span {
     margin-bottom: 8vh;
 }
 
-.bannerContainer{ /* JQ未加 */
+.bannerContainer {
+    /* JQ未加 */
     display: inline-block;
     position: relative;
 }
+
 .bannerImg {
     height: 30vw;
     width: 70vw;
@@ -465,130 +470,109 @@ footer span {
     border-radius: 30px;
 
 }
-.arrowL
-{    /* JQ未加 */
-    position: absolute;
-    bottom: -2vh;
-    right: 9vw;
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
-    border: none;
-    background-image: url(./img/ArrowL.svg);
-    background-repeat: no-repeat;
-}
-.arrowR
-{    /* JQ未加 */
-    position: absolute;
-    bottom: -2vh;
-    right: 5vw;
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
-    border: none;
-    background-image: url(./img/ArrowR.svg);
-    background-repeat: no-repeat;
-
-}
 
 /* 商品 */
 
-.cart{
-    background-image: url(./img/cart.svg);
+.cart {
     border: none;
     background-color: transparent;
-    width: 48px;
-    height: 48px;
     position: fixed;
     right: 5vw;
     top: 20vh;
-    background-repeat: no-repeat;
-
 }
-
+.cart svg{
+    width: 48px;
+    height: 48px;
+}
 #items {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20vh;
 }
 
 .row {
     height: 20vw;
     width: 60vw;
     padding: 3vh 0;
-
     display: flex;
     justify-content: space-between;
 }
 
-.row .item {
+.item {
     width: 20%;
 }
 
 .imgContainer {
     position: relative;
-    display: block;
-    width: 10vw;
-    height: 10vw;
+    display: inline-block;
+
 }
 
 .imgItem {
-    display: block;
     border-radius: 20px;
     width: 10vw;
     height: 10vw;
 }
+
 .plus {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
     background-color: transparent;
-    bottom: ;
-    right: ;
-    background-image: url(./img/plus.svg);
-    object-fit: cover;
+    bottom: 5%;
+    right: 5%;
     border: none;
+}
+.plus svg{
+    width: 2.5vw;
+    height: 2.5vw;
 }
 .it01 {
     background-image: url(./img/illus/Staircase.jpg);
     background-size: cover;
 }
+
 .it02 {
     background-image: url(./img/illus/Moai.jpg);
     background-size: cover;
 }
+
 .it03 {
     background-image: url(./img/illus/Chaos.jpg);
     background-size: cover;
 }
+
 .it04 {
     background-image: url(./img/illus/call\ me.jpg);
     background-size: cover;
 }
+
 .it05 {
     background-image: url(./img/plastic/2022/a03.jpg);
     background-size: cover;
 }
+
 .it06 {
     background-image: url(./img/plastic/2022/c01.jpg);
     background-size: cover;
 }
+
 .it07 {
     background-image: url(./img/plastic/2022/b01.jpg);
     background-size: cover;
 }
+
 .it08 {
     background-image: url(./img/plastic/2018/03.jpg);
     background-size: cover;
 }
 
 
-.product {
+.productName {
     display: block;
     font-family: Chivo;
     color: var(--white);
     font-weight: 800;
-    padding-top: 2vh;
+    padding-top: 3vh;
+    font-size: 1.5rem;
 }
 
 .price {
@@ -597,4 +581,32 @@ footer span {
     color: var(--blue);
     font-weight: 800;
     padding-top: 10px;
+    font-size: 1.5rem;
+    
+}
+
+/* product */
+
+.container{
+    display: flex;
+    justify-content: center;
+
+}
+.infoContainer{
+    width: 65vw;
+    height: 60vh;
+    margin: 25vh 0;
+    border: 1px solid black;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+}
+#productImg{
+    width: 45%;
+    border: 1px solid white;
+}
+#productInfo{
+    width: 45%;
+    border: 1px solid white;
+
 }
