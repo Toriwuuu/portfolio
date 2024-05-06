@@ -472,9 +472,10 @@ footer span {
     right: 9vw;
     width: 48px;
     height: 48px;
-    border-radius: 90px;
+    border-radius: 100%;
     border: none;
     background-image: url(./img/ArrowL.svg);
+    background-repeat: no-repeat;
 }
 .arrowR
 {    /* JQ未加 */
@@ -483,9 +484,11 @@ footer span {
     right: 5vw;
     width: 48px;
     height: 48px;
-    border-radius: 90px;
+    border-radius: 100%;
     border: none;
     background-image: url(./img/ArrowR.svg);
+    background-repeat: no-repeat;
+
 }
 
 /* 商品 */
@@ -523,7 +526,9 @@ footer span {
 
 .imgContainer {
     position: relative;
-    display: inline-block
+    display: block;
+    width: 10vw;
+    height: 10vw;
 }
 
 .imgItem {
@@ -532,7 +537,18 @@ footer span {
     width: 10vw;
     height: 10vw;
 }
-
+.plus {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    bottom: ;
+    right: ;
+    background-image: url(./img/plus.svg);
+    object-fit: cover;
+    border: none;
+}
 .it01 {
     background-image: url(./img/illus/Staircase.jpg);
     background-size: cover;
@@ -565,17 +581,7 @@ footer span {
     background-image: url(./img/plastic/2018/03.jpg);
     background-size: cover;
 }
-.row div button {
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    bottom: 10px;
-    right: 10px;
-    background-image: url(./img/plus.svg);
-    object-fit: cover;
-    border: none;
-    border-radius: 90px;
-}
+
 
 .product {
     display: block;
