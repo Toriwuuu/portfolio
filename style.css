@@ -593,20 +593,101 @@ footer span {
 
 }
 .infoContainer{
-    width: 65vw;
-    height: 60vh;
+    width: 70vw;
+    height: 58vh;
     margin: 25vh 0;
     border: 1px solid black;
-    padding: 0 5%;
+    padding: 0 8%;
     display: flex;
     justify-content: space-between;
 }
 #productImg{
-    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    align-items: center;
+    width: 25vw;
     border: 1px solid white;
 }
 #productInfo{
-    width: 45%;
+    width: 25vw;
     border: 1px solid white;
 
+}
+.bigImg{
+    width: 25vw;
+    height: 25vw;
+    margin-bottom: 3vh;
+}
+.bigImg img{
+    width: 25vw;
+    height: 25vw;
+    object-fit: cover;
+    border-radius: 1vw;
+
+}
+.smallImg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 25vw;
+    height: 5vw;
+
+}
+.smallImg img{
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1vw;
+
+}
+
+/* info */
+
+#productInfo{
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.infoTitle{
+    font-family: 'Chivo';
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--lightg);
+}
+.infoA{
+    font-family: 'Chivo';
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--g);
+}
+.infoPrice{
+    font-family: 'Chivo';
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--blue);
+
+}
+.infoQua{
+    font-family: 'Chivo';
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--white);
+
+}
+.quaBtn{
+    display: flex;
+
+}
+.buyBtn{
+    display: flex;
+    flex-direction: column;
+}
+.buyBtn button{
+    width: 100%;
+    height: 6vh;
+    margin-top: 1vh;
+    border-radius: 1vw;
 }
