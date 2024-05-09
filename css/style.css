@@ -272,7 +272,6 @@ a {
 }
 
 .photo img {
-
     mask-image: url(../img/pink.svg);
     object-fit: cover;
     width: 20vw;
@@ -305,7 +304,6 @@ footer {
 .contactTable {
     display: flex;
     flex-direction: column;
-
 }
 
 .contactText {
@@ -348,9 +346,9 @@ footer {
     background-repeat: no-repeat;
 }
 
-.contactIcon img {
+/* .contactIcon img {
     padding: 16px;
-}
+} */
 
 #form-contact {
     display: flex;
@@ -362,25 +360,25 @@ footer {
 }
 
 #form-contact label {
+    font-family: 'Chivo';
+    font-weight: 200;
     margin: 1vh 0 1vh 0;
     border: none;
 }
 
 .btn-form {
-
     align-self: flex-end;
     margin: 16px 0px;
     width: 7vw;
     height: 3.5vh;
     border: none;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
-label {
+/* label {
     font-family: 'Chivo';
     font-weight: 200;
-
-}
+} */
 
 input {
     border: none;
@@ -398,7 +396,6 @@ footer span {
     font-style: italic;
     font-weight: 900;
     color: var(--pink);
-
 }
 
 .topbtn {
@@ -412,7 +409,6 @@ footer span {
     border-top: 10px solid white;
     margin-top: 2vh;
     padding: 2vh 10vw 5vh 22rem;
-
 }
 
 

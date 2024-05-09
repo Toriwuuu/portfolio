@@ -41,7 +41,6 @@ a {
     display: flex;
     font-size: 1.5rem;
     z-index: 999;
-
     .nav-box {
         width: 100%;
         display: flex;
@@ -51,7 +50,7 @@ a {
     .menu {
         display: flex;
         margin-right: 2vw;
-        .menu a {
+        a {
             display: flex;
             margin: 2vw;
             /*     border:1px solid #161616; */
@@ -94,8 +93,7 @@ a {
         /*     position: relative;
         top: 100px;
         left: 1650px; */
-        .photo img {
-
+        img {
             mask-image: url(../img/pink.svg);
             object-fit: cover;
             width: 20vw;
@@ -113,3 +111,107 @@ a {
 }
 
 /* footer */
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(119, 12, 255, .5), rgba(167, 21, 244, .6), rgba(206, 28, 235, .9), rgba(233, 49, 204, 1));
+    .marquee {
+        width: 100%;
+        height: 75px;
+        background-color: $purple;
+        border-top: 10px solid #FFFFFF;
+        border-bottom: 10px solid #FFFFFF;
+    }
+    .contactTable {
+        display: flex;
+        flex-direction: column;
+        .contactText {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-family: 'Chivo';
+            color: #FFFFFF;
+            font-size: 6rem;
+            font-weight: 900;
+            padding: 2vh 0vw 1vh 6rem;
+            
+            .icon {
+                display: flex;
+                align-self: center;
+                margin-right: 10vw;
+                a {
+                    width: 40px;
+                    height: 40px;
+                    margin: 10px;
+                }
+                .icon-ig {
+                    background-image: url(../img/ig.svg);
+                    background-repeat: no-repeat;
+                
+                }
+                
+                .icon-fb {
+                    background-image: url(../img/fb.svg);
+                    background-repeat: no-repeat;
+                
+                }
+                
+                .icon-twitter {
+                    background-image: url(../img/twitter.svg);
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+    #form-contact {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 25%;
+        font-family: 'Chivo';
+        color: $white;
+        label {
+            font-weight: 200;        
+            margin: 1vh 0 1vh 0;
+            border: none;
+        }
+        .btn-form {
+            align-self: flex-end;
+            margin: 16px 0px;
+            width: 7vw;
+            height: 3.5vh;
+            border: none;
+            border-radius: 5px;
+            span {
+                font-family: 'Chivo';
+                font-style: italic;
+                font-weight: 900;
+                color: $pink;
+            }
+            
+        }
+        input {
+            border: none;
+            border-radius: 5px;
+            height: 3vh;
+        }
+        textarea {
+            border: none;
+            border-radius: 5px;
+        }
+    }
+    .topbtn {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-family: 'Chivo';
+        color: #FFFFFF;
+        font-size: 6rem;
+        font-weight: 900;
+        border-top: 10px solid white;
+        margin-top: 2vh;
+        padding: 2vh 10vw 5vh 22rem;
+    }
+}

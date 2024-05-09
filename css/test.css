@@ -183,7 +183,7 @@ a {
   display: flex;
   margin-right: 2vw;
 }
-#topbar .menu .menu a {
+#topbar .menu a {
   display: flex;
   margin: 2vw;
   /*     border:1px solid #161616; */
@@ -225,7 +225,7 @@ a {
   top: 100px;
   left: 1650px; */
 }
-#digitalArt .photo .photo img {
+#digitalArt .photo img {
   mask-image: url(../img/pink.svg);
   object-fit: cover;
   width: 20vw;
@@ -238,4 +238,101 @@ a {
   border-radius: 30px;
 }
 
-/* footer *//*# sourceMappingURL=test.css.map */
+/* footer */
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(119, 12, 255, 0.5), rgba(167, 21, 244, 0.6), rgba(206, 28, 235, 0.9), rgb(233, 49, 204));
+}
+footer .marquee {
+  width: 100%;
+  height: 75px;
+  background-color: #9E1AAA;
+  border-top: 10px solid #FFFFFF;
+  border-bottom: 10px solid #FFFFFF;
+}
+footer .contactTable {
+  display: flex;
+  flex-direction: column;
+}
+footer .contactTable .contactText {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Chivo";
+  color: #FFFFFF;
+  font-size: 6rem;
+  font-weight: 900;
+  padding: 2vh 0vw 1vh 6rem;
+}
+footer .contactTable .contactText .icon {
+  display: flex;
+  align-self: center;
+  margin-right: 10vw;
+}
+footer .contactTable .contactText .icon a {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+footer .contactTable .contactText .icon .icon-ig {
+  background-image: url(../img/ig.svg);
+  background-repeat: no-repeat;
+}
+footer .contactTable .contactText .icon .icon-fb {
+  background-image: url(../img/fb.svg);
+  background-repeat: no-repeat;
+}
+footer .contactTable .contactText .icon .icon-twitter {
+  background-image: url(../img/twitter.svg);
+  background-repeat: no-repeat;
+}
+footer #form-contact {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 25%;
+  font-family: "Chivo";
+  color: #FFFFFF;
+}
+footer #form-contact label {
+  font-weight: 200;
+  margin: 1vh 0 1vh 0;
+  border: none;
+}
+footer #form-contact .btn-form {
+  align-self: flex-end;
+  margin: 16px 0px;
+  width: 7vw;
+  height: 3.5vh;
+  border: none;
+  border-radius: 5px;
+}
+footer #form-contact .btn-form span {
+  font-family: "Chivo";
+  font-style: italic;
+  font-weight: 900;
+  color: #E931CC;
+}
+footer #form-contact input {
+  border: none;
+  border-radius: 5px;
+  height: 3vh;
+}
+footer #form-contact textarea {
+  border: none;
+  border-radius: 5px;
+}
+footer .topbtn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Chivo";
+  color: #FFFFFF;
+  font-size: 6rem;
+  font-weight: 900;
+  border-top: 10px solid white;
+  margin-top: 2vh;
+  padding: 2vh 10vw 5vh 22rem;
+}/*# sourceMappingURL=test.css.map */
