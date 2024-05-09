@@ -3,9 +3,9 @@
 
 @font-face {
     font-family: 'Chivo';
-    src: url(./font/Chivo-VariableFont_wght.ttf);
+    src: url(../font/Chivo-VariableFont_wght.ttf);
     font-family: 'ChivoItalia';
-    src: url(./font/Chivo-Italic-VariableFont_wght.ttf);
+    src: url(../font/Chivo-Italic-VariableFont_wght.ttf);
     /* 盡量不要有空格 會誤判 */
 }
 
@@ -169,7 +169,7 @@ body {
         -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
         "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     color: #555;
-    background: url(./img/noise.png), linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, .30), rgba(169, 4, 93, .25), rgba(38, 87, 43, .25), rgba(44, 14, 74, .42), rgba(21, 71, 99, .33), rgba(115, 20, 63, .50), rgba(72, 55, 12, .31)), conic-gradient(from 180deg, rgba(188, 0, 23, .24) 25deg, rgba(36, 9, 12, .3) 50deg, rgba(0, 0, 0, .3) 144deg, rgba(24, 108, 48, .3) 215deg, rgba(71, 13, 13, .3) 250deg, rgba(6, 60, 91, .3) 288deg, rgba(188, 0, 23, .24) 358deg), rgb(0, 0, 0);
+    background: url(../img/noise.png), linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, .30), rgba(169, 4, 93, .25), rgba(38, 87, 43, .25), rgba(44, 14, 74, .42), rgba(21, 71, 99, .33), rgba(115, 20, 63, .50), rgba(72, 55, 12, .31)), conic-gradient(from 180deg, rgba(188, 0, 23, .24) 25deg, rgba(36, 9, 12, .3) 50deg, rgba(0, 0, 0, .3) 144deg, rgba(24, 108, 48, .3) 215deg, rgba(71, 13, 13, .3) 250deg, rgba(6, 60, 91, .3) 288deg, rgba(188, 0, 23, .24) 358deg), rgb(0, 0, 0);
 }
 
 a {
@@ -273,7 +273,7 @@ a {
 
 .photo img {
 
-    mask-image: url(./img/pink.svg);
+    mask-image: url(../img/pink.svg);
     object-fit: cover;
     width: 20vw;
     height: 20vw;
@@ -332,19 +332,19 @@ footer {
 }
 
 .icon-ig {
-    background-image: url(./img/ig.svg);
+    background-image: url(../img/ig.svg);
     background-repeat: no-repeat;
 
 }
 
 .icon-fb {
-    background-image: url(./img/fb.svg);
+    background-image: url(../img/fb.svg);
     background-repeat: no-repeat;
 
 }
 
 .icon-twitter {
-    background-image: url(./img/twitter.svg);
+    background-image: url(../img/twitter.svg);
     background-repeat: no-repeat;
 }
 
@@ -526,42 +526,42 @@ footer span {
     height: 2.5vw;
 }
 .it01 {
-    background-image: url(./img/illus/Staircase.jpg);
+    background-image: url(../img/illus/Staircase.jpg);
     background-size: cover;
 }
 
 .it02 {
-    background-image: url(./img/illus/Moai.jpg);
+    background-image: url(../img/illus/Moai.jpg);
     background-size: cover;
 }
 
 .it03 {
-    background-image: url(./img/illus/Chaos.jpg);
+    background-image: url(../img/illus/Chaos.jpg);
     background-size: cover;
 }
 
 .it04 {
-    background-image: url(./img/illus/call\ me.jpg);
+    background-image: url(../img/illus/call\ me.jpg);
     background-size: cover;
 }
 
 .it05 {
-    background-image: url(./img/plastic/2022/a03.jpg);
+    background-image: url(../img/plastic/2022/a03.jpg);
     background-size: cover;
 }
 
 .it06 {
-    background-image: url(./img/plastic/2022/c01.jpg);
+    background-image: url(../img/plastic/2022/c01.jpg);
     background-size: cover;
 }
 
 .it07 {
-    background-image: url(./img/plastic/2022/b01.jpg);
+    background-image: url(../img/plastic/2022/b01.jpg);
     background-size: cover;
 }
 
 .it08 {
-    background-image: url(./img/plastic/2018/03.jpg);
+    background-image: url(../img/plastic/2018/03.jpg);
     background-size: cover;
 }
 
