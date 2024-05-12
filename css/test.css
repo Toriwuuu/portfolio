@@ -201,23 +201,44 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 }
-#digitalArt .cd .pin img {
-  width: 30vw;
+#digitalArt .cd .pinrotate {
+  width: 20vw;
   position: absolute;
-  top: 40vh;
-  left: 18vw;
+  top: 500px;
+  left: 20vw;
+  transform-origin: top left;
+  z-index: 2;
+  animation: pinrotate 3s forwards;
 }
-#digitalArt .cd .circle img {
+@keyframes pinrotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}
+#digitalArt .cd .rotate {
   width: 40vw;
   position: absolute;
-  top: 60vh;
+  top: 600px;
   left: -8vw;
+  animation: rotate 60s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 #digitalArt .photo {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   margin: 15vh;
   margin-top: 40vh;
@@ -225,16 +246,21 @@ a {
   top: 100px;
   left: 1650px; */
 }
-#digitalArt .photo img {
-  mask-image: url(../img/pink.svg);
+#digitalArt .photo .mask {
+  background-color: rgba(206, 21, 178, 0.521);
+  width: 20vw;
+  height: 20vw;
+  margin: -3vw;
+  transform: skew(-30deg, 9deg);
+  border: 5px solid rgba(255, 255, 255, 0.839);
+  border-radius: 30px;
+}
+#digitalArt .photo .mask img {
+  mix-blend-mode: multiply;
   object-fit: cover;
   width: 20vw;
   height: 20vw;
-  transform: skew(-25deg, 5deg);
-  margin: -3vw;
-  border: 5px solid rgb(89, 89, 89);
-  /*     border-image: linear-gradient(rgb(93,93,93),rgb(200,200,200),rgb(232,232,232),rgb(113,113,113) .5);
-  */
+  box-shadow: 2vw 3vh 30px rgba(231, 58, 145, 0.315);
   border-radius: 30px;
 }
 
@@ -335,4 +361,280 @@ footer .topbtn {
   border-top: 10px solid white;
   margin-top: 2vh;
   padding: 2vh 10vw 5vh 22rem;
+}
+
+/* plastic */
+.box {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.box img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#years {
+  flex-direction: column;
+}
+#years div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 25vh;
+  border-top: 10px solid white;
+}
+#years div img {
+  margin-right: 20vw;
+}
+
+/* cart */
+.cart {
+  border: none;
+  background-color: transparent;
+  position: fixed;
+  right: 5vw;
+  top: 20vh;
+}
+.cart svg {
+  width: 48px;
+  height: 48px;
+}
+
+/* shop */
+#shopBanner {
+  justify-content: center;
+  margin-bottom: 8vh;
+}
+#shopBanner .bannerContainer {
+  /* JQ未加 */
+  display: inline-block;
+  position: e;
+}
+#shopBanner .bannerContainer .bannerImg {
+  height: 30vw;
+  width: 70vw;
+  margin-top: 30vh;
+}
+#shopBanner .bannerContainer .bannerImg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+#items {
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20vh;
+}
+#items .row {
+  height: 20vw;
+  width: 60vw;
+  padding: 3vh 0;
+  display: flex;
+  justify-content: space-between;
+}
+#items .row .item {
+  width: 20%;
+}
+#items .row .item .imgContainer {
+  position: relative;
+  display: inline-block;
+}
+#items .row .item .imgContainer .plus {
+  position: absolute;
+  background-color: transparent;
+  bottom: 5%;
+  right: 5%;
+  border: none;
+}
+#items .row .item .imgContainer .plus svg {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+#items .row .item .imgContainer .imgItem {
+  border-radius: 20px;
+  width: 10vw;
+  height: 10vw;
+}
+#items .row .item .imgContainer .it01 {
+  background-image: url(../img/illus/Staircase.jpg);
+  background-size: cover;
+}
+#items .row .item .imgContainer .it02 {
+  background-image: url(../img/illus/Moai.jpg);
+  background-size: cover;
+}
+#items .row .item .imgContainer .it03 {
+  background-image: url(../img/illus/Chaos.jpg);
+  background-size: cover;
+}
+#items .row .item .imgContainer .it04 {
+  background-image: url(../img/illus/call\ me.jpg);
+  background-size: cover;
+}
+#items .row .item .imgContainer .it05 {
+  background-image: url(../img/plastic/2022/a03.jpg);
+  background-size: cover;
+}
+#items .row .item .imgContainer .it06 {
+  background-image: url(../img/plastic/2022/c01.jpg);
+  background-size: cover;
+}
+#items .row .item .imgContainer .it07 {
+  background-image: url(../img/plastic/2022/b01.jpg);
+  background-size: cover;
+}
+#items .row .item .imgContainer .it08 {
+  background-image: url(../img/plastic/2018/03.jpg);
+  background-size: cover;
+}
+#items .row .item .productName {
+  display: block;
+  font-family: Chivo;
+  color: #FFFFFF;
+  font-weight: 800;
+  padding-top: 3vh;
+  font-size: 1.5rem;
+}
+#items .row .item .price {
+  display: block;
+  font-family: Chivo;
+  color: #50CBF2;
+  font-weight: 800;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
+
+/* product */
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container .infoContainer {
+  width: 70vw;
+  height: 58vh;
+  margin: 25vh 0;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+}
+.container .infoContainer #productImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 25vw;
+}
+.container .infoContainer #productImg .bigImg {
+  width: 25vw;
+  height: 25vw;
+  margin-bottom: 3vh;
+}
+.container .infoContainer #productImg .bigImg img {
+  width: 25vw;
+  height: 25vw;
+  object-fit: cover;
+  border-radius: 1vw;
+}
+.container .infoContainer #productImg .smallImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 25vw;
+  height: 5vw;
+}
+.container .infoContainer #productImg .smallImg img {
+  width: 20%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1vw;
+}
+.container .infoContainer #productInfo {
+  width: 25vw;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .infoContainer #productInfo .infoTitle {
+  font-family: "Chivo";
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  padding-bottom: 20px;
+}
+.container .infoContainer #productInfo .infoA {
+  font-family: "Chivo";
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #D9D9D9;
+}
+.container .infoContainer #productInfo .infoPrice {
+  font-family: "Chivo";
+  font-size: 2rem;
+  font-weight: 900;
+  color: #50CBF2;
+}
+.container .infoContainer #productInfo .infoQua {
+  font-family: "Chivo";
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+.container .infoContainer #productInfo .quaBtn {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.container .infoContainer #productInfo .quaBtn .quaMinus {
+  background-color: transparent;
+  border: none;
+}
+.container .infoContainer #productInfo .quaBtn svg {
+  width: 40px;
+  height: 40px;
+}
+.container .infoContainer #productInfo .quaBtn .quaNum {
+  margin: 0 1vw;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-align: center;
+}
+.container .infoContainer #productInfo .quaBtn .quaPlus {
+  background-color: transparent;
+  border: none;
+}
+.container .infoContainer #productInfo .buyBtn {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.container .infoContainer #productInfo .buyBtn button {
+  width: 100%;
+  height: 6vh;
+  margin-top: 1vh;
+  border-radius: 1vw;
+}
+.container .infoContainer #productInfo .buyBtn .atc {
+  font-family: "Chivo";
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.container .infoContainer #productInfo .buyBtn .bn {
+  font-family: "Chivo";
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 900;
+  background-color: #E931CC;
+  color: #FFFFFF;
+}
+.container .infoContainer #productInfo .buyBtn .paypal {
+  background-color: #E8DF0B;
+}
+.container .infoContainer #productInfo .buyBtn .paypal img {
+  width: 100%;
+  object-fit: cover;
 }/*# sourceMappingURL=test.css.map */

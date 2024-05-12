@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/test.css">
 
 </head>
+
 <body>
+    <button class="cart">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M34 36C31.78 36 30 37.78 30 40C30 41.0609 30.4214 42.0783 31.1716 42.8284C31.9217 43.5786 32.9391 44 34 44C35.0609 44 36.0783 43.5786 36.8284 42.8284C37.5786 42.0783 38 41.0609 38 40C38 38.9391 37.5786 37.9217 36.8284 37.1716C36.0783 36.4214 35.0609 36 34 36ZM2 4V8H6L13.2 23.18L10.48 28.08C10.18 28.64 10 29.3 10 30C10 31.0609 10.4214 32.0783 11.1716 32.8284C11.9217 33.5786 12.9391 34 14 34H38V30H14.84C14.7074 30 14.5802 29.9473 14.4864 29.8536C14.3927 29.7598 14.34 29.6326 14.34 29.5C14.34 29.4 14.36 29.32 14.4 29.26L16.2 26H31.1C32.6 26 33.92 25.16 34.6 23.94L41.76 11C41.9 10.68 42 10.34 42 10C42 9.46957 41.7893 8.96086 41.4142 8.58579C41.0391 8.21071 40.5304 8 40 8H10.42L8.54 4M14 36C11.78 36 10 37.78 10 40C10 41.0609 10.4214 42.0783 11.1716 42.8284C11.9217 43.5786 12.9391 44 14 44C15.0609 44 16.0783 43.5786 16.8284 42.8284C17.5786 42.0783 18 41.0609 18 40C18 38.9391 17.5786 37.9217 16.8284 37.1716C16.0783 36.4214 15.0609 36 14 36Z"
+                fill="#E931CC" />
+        </svg>
+
+    </button>
     <header id="topbar">
         <h1 class="logo">
             <a href="index.html"><img src="./img/title.svg" alt="Tori's Artwork"></a>
@@ -22,10 +32,9 @@
             -->
             <nav>
                 <ul class="menu">
-                    <li><a href="#digitalArt">DIGITAL ART</a></li>
-                    <li><a href="#plasticArt">PLASTIC ART</a></li>
-                    <li><a href="#shop">SHOP</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="index.html">DIGITAL ART</a></li>
+                    <li><a href="plastic.html">PLASTIC ART</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,35 +43,65 @@
 
     <main class="container">
         <div class="infoContainer">
-        <section id="productImg">
-            <div class="bigImg">
-                <img src="./img/plastic/2023/05.jpg" alt="">
-            </div>
-            <div class="smallImg">
-                <img src="./img/plastic/2023/01.jpg" alt="">
-                <img src="./img/plastic/2023/07.jpg" alt="">
-                <img src="./img/plastic/2023/03.jpg" alt="">
-                <img src="./img/plastic/2023/08.jpg" alt="">
-            </div>
-        </section>
-        <section id="productInfo">
-            <h2 class="infoTitle">I Sea the Sunset</h2>
-            <p class="infoA">by Tori</p>
-            <h3 class="infoPrice">$10000</h3>
-            <p class="infoQua">Quality</p>
-            <div class="quaBtn">
-                <button class="quaMinus"></button>
-                <p class="quaNum">1</p>
-                <button class="quaPlus"></button>
-            </div>
-            <div class="buyBtn">
-                <button class="atc"><span>Add to Cart - $10000</span></button>
-                <button class="bn"><span>BUY NOW</span></button>
-                <button class="paypal"></button>
-            </div>
+            <section id="productImg">
+                <div class="bigImg">
+                    <img src="./img/plastic/2023/05.jpg" alt="">
+                </div>
+                <div class="smallImg">
+                    <img src="./img/plastic/2023/01.jpg" alt="">
+                    <img src="./img/plastic/2023/07.jpg" alt="">
+                    <img src="./img/plastic/2023/03.jpg" alt="">
+                    <img src="./img/plastic/2023/08.jpg" alt="">
+                </div>
+            </section>
+            <section id="productInfo">
+                <div class="titleA">
+                    <h2 class="infoTitle">I Sea the Sunset</h2>
+                    <p class="infoA">by Tori</p>
+                </div>
+                <h3 class="infoPrice">$10000</h3>
 
-        </section>
-    </div>
+                <div class="quaB">
+                    <p class="infoQua">Quality</p>
+                    <div class="quaBtn">
+
+                        <button class="quaMinus">
+<svg width="40" height="40" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 26H34H18ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z" fill="white"/>
+<path d="M18 26H34M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z" stroke="#E931CC" stroke-width="4" stroke-linecap="round"/>
+</svg>
+                        
+                        </button>
+
+                        <p class="quaNum">1</p>
+
+                        <button class="quaPlus">
+                            <svg width="40" height="40" viewBox="0 0 52 52" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_238_3188)">
+                                    <path
+                                        d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_238_3188">
+                                        <rect width="52" height="52" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="buyBtn">
+                        <button class="atc"><span>Add to Cart - $10000</span></button>
+                        <button class="bn"><span>BUY NOW</span></button>
+                        <button class="paypal"><img src="./img/paypal.png" alt=""></button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
 
@@ -96,9 +135,10 @@
         </div>
 
         <div class="topbtn">TOP<img src="./img/Vectorup.svg" alt=""></div>
-        
+
     </footer>
 
 
 </body>
+
 </html>
