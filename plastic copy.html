@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastic Art</title>
+    <link rel="stylesheet" href="./css/test.css">
+
+</head>
+
+<body>
+    <header id="topbar">
+        <h1 class="logo">
+            <a href="index.html"><img src="./img/title.svg" alt="Tori's Artwork"></a>
+        </h1>
+        <div class="nav-box">
+            <!--             
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">DIGITAL ART</a></li>
+                    <li><a href="plastic.html">PLASTIC ART</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="box">
+            <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="4000" data-cycle-prev="#prev"
+                data-cycle-next="#next">
+
+                <img src="./img/plastic/2018/02.jpg" alt="">
+                <img src="./img/plastic/2021/02.jpg" alt="">
+                <img src="./img/plastic/2022/d01.jpg" alt="">
+                <img src="./img/plastic/2022/a06.jpg" alt="">
+                <img src="./img/plastic/2020/01.jpg" alt="">
+                <img src="./img/plastic/2023/05.jpg" alt="">
+                <img src="./img/plastic/2019/02.jpg" alt="">
+                <img src="./img/plastic/2022/c02.jpg" alt="">
+                <img src="./img/plastic/2022/b01.jpg" alt="">
+                <img src="./img/plastic/2022/15.jpg" alt="">
+            </div>
+            <div id="prev">&lt;</div>
+            <div id="next">&gt;</div>
+
+            <!-- 導覽列 -->
+            <!--             
+                <div class="navMask">
+                <div id="nav"></div>
+                </div>
+            -->
+        </div>
+
+        <section id="years">
+            <div class="year 2017">
+                <button class="btn1"><img src="./img/2017.svg" alt=""></button>
+                <div class="expanded-images1">
+                    <!-- Additional images for 2017 -->
+                    <img src="./img/plastic/2017/01.jpg" alt="">
+                    <img src="./img/plastic/2017/02.jpg" alt="">
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+            <div class="year 2017">
+                <button class="btn1">2017</button>
+                <div class="expanded-images">
+                    <!-- Additional images for 2017 -->
+                    <img src="./img/plastic/2017/01.jpg" alt="">
+                    <img src="./img/plastic/2017/02.jpg" alt="">
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <footer id="contact">
+        <div class="marquee"></div>
+        <div class="contactTable">
+            <div class="contactText">CONTACT
+                <nav class="contactIcon">
+                    <ul class="icon">
+                        <li><a href="#" class="icon-ig"></a></li>
+                        <li><a href="#" class="icon-fb"></a></li>
+                        <li><a href="#" class="icon-twitter"></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--             <form action="" method="post" name="form-contact" id="form-contact" title="聯絡我們表單">
+
+                <label for="username">Name:</label>
+                <input type="text" name="username" id="username" title="請輸入姓名" placeholder="" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="" required>
+
+                <label for="massage">Message:</label>
+                <textarea name="massage" id="massage" rows="10"></textarea>
+
+                <button class="btn-form">
+                    <span>Send</span>
+                </button>
+            </form>
+ -->
+        </div>
+
+        <div class="topbtn">TOP<svg width="85" height="43" viewBox="0 0 85 43" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M83.129 40.4644C81.9307 41.4945 80.3056 42.0732 78.6111 42.0732C76.9166 42.0732 75.2915 41.4945 74.0932 40.4644L42.4614 13.2638L10.8296 40.4644C9.62443 41.4653 8.01023 42.0192 6.33473 42.0067C4.65923 41.9942 3.05647 41.4163 1.87166 40.3974C0.686852 39.3786 0.0148087 38.0004 0.000244141 36.5596C-0.0143127 35.1188 0.629791 33.7307 1.79382 32.6943L37.9435 1.60873C39.1419 0.578568 40.767 -0.000148773 42.4614 -0.000148773C44.1559 -0.000148773 45.781 0.578568 46.9793 1.60873L83.129 32.6943C84.327 33.7248 85 35.1223 85 36.5793C85 38.0364 84.327 39.4339 83.129 40.4644Z"
+                    fill="white" />
+            </svg>
+        </div>
+
+    </footer>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/jquery.cycle2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            // 頁首滾動效果
+            let lastScrollTop = 0;
+            let headerHeight = $('#topbar').outerHeight();
+
+            $(window).scroll(function () {
+                let currentScroll = $(this).scrollTop();
+
+                if (currentScroll > lastScrollTop) {
+                    // 往下滾動，隱藏 header
+                    $('#topbar').css({
+                        'top': -headerHeight + 'vh',
+                        'transition': 'top 1s' // 添加過渡效果
+                    });
+                } else {
+                    // 往上滾動，顯示 header
+                    $('#topbar').css({
+                        'top': '0',
+                        'transition': 'top 1s' // 添加過渡效果
+                    });
+                }
+
+                lastScrollTop = currentScroll;
+            });
+
+            $(".btn1").click(function () {
+                $(".expanded-images1").slideToggle(500);
+            });
+
+
+
+            // 确定是否已经滚动到底部
+            function isScrolledToBottom($element) {
+                return $element[0].scrollWidth - $element.scrollLeft() === $element.outerWidth();
+            }
+
+            // 处理鼠标悬停事件
+            $(document).mousemove(function (e) {
+                const windowWidth = $(window).width();
+                const cursorBuffer = 50; // 设置缓冲区，以更早地显示箭头
+                const $expandedImages = $('.expanded .expanded-images');
+
+                if ($expandedImages.length === 0) {
+                    return;
+                }
+
+                if (e.pageX < cursorBuffer) {
+                    $('body').css('cursor', 'w-resize');
+                } else if (e.pageX > windowWidth - cursorBuffer) {
+                    $('body').css('cursor', 'e-resize');
+                } else if (isScrolledToBottom($expandedImages)) {
+                    $('body').css('cursor', 'not-allowed');
+                } else {
+                    $('body').css('cursor', 'default');
+                }
+            });
+
+            // 处理点击事件
+            $(document).click(function (e) {
+                const windowWidth = $(window).width();
+                const cursorBuffer = 50; // 设置缓冲区，以更早地显示箭头
+                const $expandedImages = $('.expanded .expanded-images');
+
+                if ($expandedImages.length === 0) {
+                    return;
+                }
+
+                if (e.pageX < cursorBuffer) {
+                    $expandedImages.animate({ scrollLeft: '-=600px' }, 600);
+                } else if (e.pageX > windowWidth - cursorBuffer) {
+                    $expandedImages.animate({ scrollLeft: '+=600px' }, 600);
+                } else if (isScrolledToBottom($expandedImages)) {
+                    // 收合当前展开的年份
+                    $('.year.expanded').removeClass('expanded').next().css('margin-top', '0');
+                }
+            });
+
+            // 初始检查
+            const $elements = $('#years .year');
+            const checkVisibility = () => {
+                const windowHeight = $(window).height();
+                const scrollTop = $(window).scrollTop();
+
+                $elements.each(function () {
+                    const $el = $(this);
+                    const offsetTop = $el.offset().top;
+
+                    if (offsetTop < scrollTop + windowHeight - 100) { // 提前 100px 显示
+                        $el.addClass('show');
+                    }
+                });
+            };
+
+            $(window).on('scroll', checkVisibility);
+            checkVisibility(); // 初始检查
+
+            // 返回顶部按钮
+            $('.topbtn svg').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+
+            // 初始化轮播
+            $(function () {
+                $(".cycle-slideshow").cycle();
+            });
+
+
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
