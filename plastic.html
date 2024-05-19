@@ -257,6 +257,89 @@ $(document).ready(function () {
         lastScrollTop = currentScroll;
     });
 
+    
+    $('#years .year img').click(function (event) {
+        // 如果点击的是展开区域中的图片，则忽略点击事件
+        if ($(this).closest('.expanded-images').length > 0) {
+            return;
+        }
+
+        // 切換點擊的年份的展開狀態
+        $(this).closest('.year').toggleClass('expanded');
+        $(this).closest('.year').css('z-index', function(index, value) {
+            return value === '1' ? '2' : '1';
+        });
+
+
+
+        // 如果點擊的年份展開，則計算展開區域的高度
+        if ($(this).closest('.year').hasClass('expanded')) {
+            const expandedHeight = $(this).closest('.year').find('.expanded-images').outerHeight();
+            // 調整下方區域的 margin-top 來擠開
+            $(this).closest('.year').next().css('margin-top', expandedHeight);
+        } else {
+            // 如果點擊的年份收合，則重置下方區域的 margin-top
+            $(this).closest('.year').next().css('margin-top', '0');
+        }
+
+
+        
+        // 收合其他年份的展開區域
+        $(this).closest('.year').siblings().removeClass('expanded').next().css('margin-top', '0');
+
+        event.stopPropagation(); // 阻止事件冒泡
+    });
+
+
+
+
+    // 确定是否已经滚动到底部
+    function isScrolledToBottom($element) {
+        return $element[0].scrollWidth - $element.scrollLeft() === $element.outerWidth();
+    }
+
+    // 处理鼠标悬停事件
+    $(document).mousemove(function (e) {
+        const windowWidth = $(window).width();
+        const cursorBuffer = 50; // 设置缓冲区，以更早地显示箭头
+        const $expandedImages = $('.expanded .expanded-images');
+        
+        if ($expandedImages.length === 0) {
+            return;
+        }
+
+        if (e.pageX < cursorBuffer) {
+            $('body').css('cursor', 'w-resize');
+        } else if (e.pageX > windowWidth - cursorBuffer) {
+            $('body').css('cursor', 'e-resize');
+        } else if (isScrolledToBottom($expandedImages)) {
+            $('body').css('cursor', 'not-allowed');
+        } else {
+            $('body').css('cursor', 'default');
+        }
+    });
+
+    // 处理点击事件
+    $(document).click(function (e) {
+        const windowWidth = $(window).width();
+        const cursorBuffer = 50; // 设置缓冲区，以更早地显示箭头
+        const $expandedImages = $('.expanded .expanded-images');
+        
+        if ($expandedImages.length === 0) {
+            return;
+        }
+
+        if (e.pageX < cursorBuffer) {
+            $expandedImages.animate({ scrollLeft: '-=600px' }, 600);
+        } else if (e.pageX > windowWidth - cursorBuffer) {
+            $expandedImages.animate({ scrollLeft: '+=600px' }, 600);
+        } else if (isScrolledToBottom($expandedImages)) {
+            // 收合当前展开的年份
+            $('.year.expanded').removeClass('expanded').next().css('margin-top', '0');
+        }
+    });
+
+    // 初始检查
     const $elements = $('#years .year');
     const checkVisibility = () => {
         const windowHeight = $(window).height();
@@ -275,38 +358,16 @@ $(document).ready(function () {
     $(window).on('scroll', checkVisibility);
     checkVisibility(); // 初始检查
 
+    // 返回顶部按钮
     $('.topbtn svg').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
+    // 初始化轮播
     $(function () {
         $(".cycle-slideshow").cycle();
     });
 
-    $('#years .year img').click(function (event) {
-        // 如果点击的是展开区域中的图片，则忽略点击事件
-        if ($(this).closest('.expanded-images').length > 0) {
-            return;
-        }
-        // 切換點擊的年份的展開狀態
-        $(this).closest('.year').toggleClass('expanded');
-        $(this).closest('.year').css('z-index', function(index, value) {
-            return value === '1' ? '2' : '1';
-        });
-
-        // 如果點擊的年份展開，則計算展開區域的高度
-        if ($(this).closest('.year').hasClass('expanded')) {
-            const expandedHeight = $(this).closest('.year').find('.expanded-images').outerHeight();
-            // 調整下方區域的 margin-top 來擠開
-            $(this).closest('.year').next().css('margin-top', expandedHeight);
-        } else {
-            // 如果點擊的年份收合，則重置下方區域的 margin-top
-            $(this).closest('.year').next().css('margin-top', '0');
-        }
-
-        // 收合其他年份的展開區域
-        $(this).closest('.year').siblings().removeClass('expanded').next().css('margin-top', '0');
-    });
     
     
 });

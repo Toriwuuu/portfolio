@@ -42,9 +42,11 @@ a {
     display: flex;
     font-size: 1.5rem;
     z-index: 999;
-    img{
+
+    img {
         width: 20vw;
     }
+
     .nav-box {
         width: 100%;
         display: flex;
@@ -63,7 +65,8 @@ a {
             font-family: 'Chivo';
             font-weight: 900;
             color: $pink;
-            &:hover{
+
+            &:hover {
                 color: #FFFFFF;
             }
         }
@@ -109,6 +112,7 @@ a {
             top: 400px;
             left: -8vw;
             z-index: -2;
+
             @keyframes rotate {
                 from {
                     transform: rotate(0deg);
@@ -122,7 +126,8 @@ a {
             animation: rotate 60s linear infinite;
         }
 
-    }        
+    }
+
     .photo {
         width: 100%;
         display: flex;
@@ -134,15 +139,15 @@ a {
         position: relative;
         height: calc(20vw * 3); // Display area for 3 images    
         mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
-    
+
         .carousel {
             display: flex;
             flex-direction: column-reverse;
             animation: scroll 40s linear infinite;
-            animation-play-state: running; // Ensure the animation runs by default
-            transition: animation-play-state 2s ease; // 添加過渡效果
+            transition: animation-play-state 2s ease; // 添加过渡效果
+            transition: transform 2s ease;
         }
-    
+
         .mask {
             background-color: rgba(206, 21, 178, 0.521);
             width: 20vw;
@@ -151,7 +156,7 @@ a {
             transform: skew(-30deg, 9deg);
             border: 5px solid rgba(255, 255, 255, 0.839);
             border-radius: 30px;
-    
+
             img {
                 mix-blend-mode: multiply;
                 object-fit: cover;
@@ -161,25 +166,29 @@ a {
                 border-radius: 30px;
             }
         }
-    
+
         &:hover {
             .carousel {
+                img{
                 animation-play-state: paused;
-                transition: animation-play-state 2s ease; // 添加過渡效果
+                will-change: transform;
+                transition: transform 2s ease;
             }
+
         }
     }
-    
+
     @keyframes scroll {
         0% {
             transform: translateY(100%);
         }
+
         100% {
             transform: translateY(calc(-20vw * 4));
         }
     }
-
 }
+
 
 /* footer */
 
@@ -230,7 +239,7 @@ footer {
                 .icon-ig {
                     background-image: url(../img/ig.svg);
                     background-repeat: no-repeat;
-                    
+
                 }
 
                 .icon-fb {
@@ -301,12 +310,12 @@ footer {
         border-top: 10px solid white;
         margin-top: 2vh;
         padding: 2vh 10vw 5vh 22rem;
-    
+
         svg {
             align-self: center;
             transition: transform 0.3s ease; // 添加過渡效果
         }
-    
+
         &:hover {
             svg {
                 transform: scale(1.2); // hover 時放大 10%
@@ -336,6 +345,7 @@ footer {
     flex-direction: column;
     position: relative;
     margin-bottom: 50vh;
+
     .year {
         display: flex;
         justify-content: center;
@@ -345,10 +355,10 @@ footer {
         opacity: 0;
         transform: translateY(5vh);
         position: relative;
-
         &.show {
             opacity: 1;
             transform: translateY(0);
+
         }
 
         img {
@@ -368,30 +378,37 @@ footer {
             position: absolute;
             top: 100%;
             left: 0;
-            z-index: 1;
             white-space: nowrap; // 保持圖片在一行
-            overflow-x: auto;
-            
+            overflow-x: hidden;
+            overflow-y: hidden;
+
             img {
-                height: 40vh;
+                height: 45vh;
                 margin: 2vw;
                 object-fit: cover;
                 display: inline-block; // 保持圖片在一行
+
             }
 
         }
     }
 
-    .year.expanded {
+    .expanded {
         .expanded-images {
             display: flex;
-            height: auto;
+            height: 50vh;
+            cursor: move;
+            img{
+                cursor: default;
+            }
+
         }
     }
 }
 
 /* CYCLE */
-#prev, #next {
+#prev,
+#next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -556,6 +573,53 @@ footer {
         }
     }
 }
+
+.overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 100px;
+    background-color: $pink;
+    /* 半透明黑色背景 */
+    z-index: 9999;
+    /* 确保覆盖在其他元素之上 */
+    display: none;
+    /* 默认隐藏 */
+    border-radius: 10px;
+
+
+
+    .overlay-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 15px;
+
+        .cancel {
+            display: flex;
+            justify-content: end;
+        }
+
+        .atcbtn {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+
+            .atc {
+                padding: 0 10px;
+                font-family: 'Chivo';
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 100;
+
+            }
+        }
+    }
+
+}
+
 
 /* product */
 .container {

@@ -258,7 +258,6 @@ a {
   display: flex;
   flex-direction: column-reverse;
   animation: scroll 40s linear infinite;
-  animation-play-state: running;
   transition: animation-play-state 2s ease;
 }
 #digitalArt .photo .mask {
@@ -280,7 +279,7 @@ a {
 }
 #digitalArt .photo:hover .carousel {
   animation-play-state: paused;
-  transition: animation-play-state 2s ease;
+  transition: transform 2s ease;
 }
 @keyframes scroll {
   0% {
@@ -450,23 +449,27 @@ footer .topbtn:hover svg {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1;
   white-space: nowrap;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: transform 0.3s ease;
 }
 #years .year .expanded-images img {
-  height: 40vh;
+  height: 45vh;
   margin: 2vw;
   object-fit: cover;
   display: inline-block;
 }
-#years .year.expanded .expanded-images {
+#years .expanded .expanded-images {
   display: flex;
-  height: auto;
+  height: 50vh;
+  cursor: move;
+  transition: transform 0.3s ease;
 }
 
 /* CYCLE */
-#prev, #next {
+#prev,
+#next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -602,6 +605,44 @@ footer .topbtn:hover svg {
   font-weight: 800;
   padding-top: 10px;
   font-size: 1.5rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 100px;
+  background-color: #E931CC;
+  /* 半透明黑色背景 */
+  z-index: 9999;
+  /* 确保覆盖在其他元素之上 */
+  display: none;
+  /* 默认隐藏 */
+  border-radius: 10px;
+}
+.overlay .overlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.overlay .overlay-content .cancel {
+  display: flex;
+  justify-content: end;
+}
+.overlay .overlay-content .atcbtn {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.overlay .overlay-content .atcbtn .atc {
+  padding: 0 10px;
+  font-family: "Chivo";
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 100;
 }
 
 /* product */
