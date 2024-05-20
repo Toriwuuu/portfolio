@@ -169,16 +169,16 @@ a {
 
         &:hover {
             .carousel {
-                img{
-                animation-play-state: paused;
-                will-change: transform;
-                transition: transform 2s ease;
-            }
+                img {
+                    animation-play-state: paused;
+                    will-change: transform;
+                    transition: transform 2s ease;
+                }
 
+            }
         }
     }
-    }
-    
+
     @keyframes scroll {
         0% {
             transform: translateY(100%);
@@ -344,68 +344,55 @@ footer {
 #years {
     display: flex;
     flex-direction: column;
-    position: relative;
-    margin-bottom: 50vh;
 
     .year {
+        border-top: 0.5vh solid white;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         width: 100%;
-        height: 25vh;
-        border-top: 0.5vh solid white;
-        opacity: 0;
-        transform: translateY(5vh);
-        position: relative;
-        &.show {
-            opacity: 1;
-            transform: translateY(0);
-
-        }
-
-        img {
-            margin-right: 10vw;
-            cursor: pointer;
-        }
-
-        .expanded-images {
-            display: none;
-            flex-wrap: nowrap;
-            justify-content: start;
-            align-items: center;
-            padding: 10px;
-            width: 100%;
-            height: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 100%;
-            left: 0;
-            white-space: nowrap; // 保持圖片在一行
-            overflow-x: hidden;
-            overflow-y: hidden;
-
-            img {
-                height: 45vh;
-                margin: 2vw;
-                object-fit: cover;
-                display: inline-block; // 保持圖片在一行
-
-            }
-
+        height: auto;
+        opacity: 0; // 初始设置为透明
+        transition: opacity 3s ease; // 添加过渡效果
+    
+        &.visible {
+            opacity: 1; // 当添加 visible 类时，透明度变为 1，即显示
         }
     }
 
-    .expanded {
-        .expanded-images {
-            display: flex;
-            height: 50vh;
-            cursor: move;
-            img{
-                cursor: default;
-            }
+    .yearimg {
+        display: block;
+        margin-right: 10vw;
+        width: auto;
+        height: 15vh;
+        margin:2vw 6vw 2vw 1vw;
+        cursor: pointer;
+        transition: transform 0.5s ease; // 添加过渡效果
+    }
 
+    .yearimg.move-left {
+        transform: translateX(-30vw); // 平滑移动效果
+    }
+
+    .expanded-images {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        height: 70vh;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        img {
+            height: 65vh;
+            margin: 0 1vw;
+            object-fit: cover;
+            display: inline-block; // 保持圖片在一行
         }
     }
 }
+
 
 /* CYCLE */
 #prev,

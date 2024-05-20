@@ -418,56 +418,47 @@ footer .topbtn:hover svg {
 #years {
   display: flex;
   flex-direction: column;
-  position: relative;
-  margin-bottom: 50vh;
 }
 #years .year {
+  border-top: 0.5vh solid white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 25vh;
-  border-top: 0.5vh solid white;
+  height: auto;
   opacity: 0;
-  transform: translateY(5vh);
-  position: relative;
+  transition: opacity 3s ease;
 }
-#years .year.show {
+#years .year.visible {
   opacity: 1;
-  transform: translateY(0);
 }
-#years .year img {
+#years .yearimg {
+  display: block;
   margin-right: 10vw;
+  width: auto;
+  height: 15vh;
+  margin: 2vw 6vw 2vw 1vw;
   cursor: pointer;
+  transition: transform 0.5s ease;
 }
-#years .year .expanded-images {
-  display: none;
+#years .yearimg.move-left {
+  transform: translateX(-30vw);
+}
+#years .expanded-images {
+  display: flex;
   flex-wrap: nowrap;
   justify-content: start;
   align-items: center;
   padding: 10px;
   width: 100%;
-  height: 0;
+  height: 70vh;
   background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  white-space: nowrap;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
-#years .year .expanded-images img {
-  height: 45vh;
-  margin: 2vw;
+#years .expanded-images img {
+  height: 65vh;
+  margin: 0 1vw;
   object-fit: cover;
   display: inline-block;
-}
-#years .expanded .expanded-images {
-  display: flex;
-  height: 50vh;
-  cursor: move;
-}
-#years .expanded .expanded-images img {
-  cursor: default;
 }
 
 /* CYCLE */

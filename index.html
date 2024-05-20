@@ -135,26 +135,28 @@
 
             // 頁首滾動效果
             let lastScrollTop = 0;
-            let headerHeight = $('#topbar').outerHeight();
+let headerHeight = $('#topbar').outerHeight();
 
-            $(window).scroll(function () {
-                let currentScroll = $(this).scrollTop();
+$(window).scroll(function () {
+    let currentScroll = $(this).scrollTop();
 
-                if (currentScroll > lastScrollTop) {
-                    // 往下滾動，隱藏 header
-                    $('#topbar').css({
-                        'top': -headerHeight + 'vh',
-                        'transition': 'top 1s' // 添加過渡效果
-                    });
-                } else {
-                    // 往上滾動，顯示 header
-                    $('#topbar').css({
-                        'top': '0',
-                        'transition': 'top 1s' // 添加過渡效果
-                    });
-                }
+    if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+        // 往下滾動且未滾動至頁首，隱藏 header
+        $('#topbar').css({
+            'top': -headerHeight + 'vh',
+            'transition': 'top 1s' // 添加過渡效果
+        });
+    } else if (currentScroll === 0) {
+        // 滾動至頁首，顯示 header
+        $('#topbar').css({
+            'top': '0',
+            'transition': 'top 0.5s' // 添加過渡效果
+        });
+    }
 
-                lastScrollTop = currentScroll;
+    lastScrollTop = currentScroll;
+
+                
             });
         });
         $('.topbtn svg').click(function () {
