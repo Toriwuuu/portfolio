@@ -110,58 +110,57 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <!-- 在你的 HTML 文件中引入 jQuery UI 库 -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
 
-        $(document).ready(function () {
-            // 無縫播放圖片
-            let $carousel = $('.carousel');
-            let carouselHeight = $carousel.height();
-            let imageHeight = $('.mask').outerHeight(true);
+$(document).ready(function() {
+/*     // 無縫播放圖片
+    let $carousel = $('.carousel');
+    let carouselHeight = $carousel.height();
+    let imageHeight = $('.mask').outerHeight(true);
 
-            function duplicateImages() {
-                let totalImages = $('.mask').length;
-                let imagesToShow = Math.ceil(carouselHeight / imageHeight) + 1;
+    function duplicateImages() {
+        let totalImages = $('.mask').length;
+        let imagesToShow = Math.ceil(carouselHeight / imageHeight) + 1;
 
-                if (totalImages < imagesToShow) {
-                    let htmlContent = $carousel.html();
-                    $carousel.append(htmlContent);
-                    duplicateImages();
-                }
-            }
-
+        if (totalImages < imagesToShow) {
+            let htmlContent = $carousel.html();
+            $carousel.append(htmlContent);
             duplicateImages();
-
-            // 頁首滾動效果
-            let lastScrollTop = 0;
-let headerHeight = $('#topbar').outerHeight();
-
-$(window).scroll(function () {
-    let currentScroll = $(this).scrollTop();
-
-    if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
-        // 往下滾動且未滾動至頁首，隱藏 header
-        $('#topbar').css({
-            'top': -headerHeight + 'vh',
-            'transition': 'top 1s' // 添加過渡效果
-        });
-    } else if (currentScroll === 0) {
-        // 滾動至頁首，顯示 header
-        $('#topbar').css({
-            'top': '0',
-            'transition': 'top 0.5s' // 添加過渡效果
-        });
+        }
     }
 
-    lastScrollTop = currentScroll;
+    duplicateImages();
+ */
+    // 頁首滾動效果
+    let lastScrollTop = 0;
+    let headerHeight = $('#topbar').outerHeight();
 
-                
+    $(window).scroll(function() {
+        let currentScroll = $(this).scrollTop();
+
+        if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+            // 往下滾動且未滾動至頁首，隱藏 header
+            $('#topbar').css({
+                'top': -headerHeight + 'vh',
+                'transition': 'top 1s' // 添加過渡效果
             });
-        });
-        $('.topbtn svg').click(function () {
-            $('html, body').animate({ scrollTop: 0 }, 'slow');
-        });
+        } else if (currentScroll === 0) {
+            // 滾動至頁首，顯示 header
+            $('#topbar').css({
+                'top': '0',
+                'transition': 'top 0.5s' // 添加過渡效果
+            });
+        }
+
+        lastScrollTop = currentScroll;
+    });
+
+    $('.topbtn svg').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+    });
+});
 
     </script>
 </body>

@@ -258,8 +258,7 @@ a {
   display: flex;
   flex-direction: column-reverse;
   animation: scroll 40s linear infinite;
-  transition: animation-play-state 2s ease;
-  transition: transform 2s ease;
+  transition: animation 2s ease;
 }
 #digitalArt .photo .mask {
   background-color: rgba(206, 21, 178, 0.521);
@@ -278,10 +277,8 @@ a {
   box-shadow: 2vw 3vh 30px rgba(231, 58, 145, 0.315);
   border-radius: 30px;
 }
-#digitalArt .photo:hover .carousel img {
+#digitalArt .photo:hover .carousel {
   animation-play-state: paused;
-  will-change: transform;
-  transition: transform 2s ease;
 }
 @keyframes scroll {
   0% {
@@ -453,6 +450,11 @@ footer .topbtn:hover svg {
   width: 100%;
   height: 70vh;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow-x: auto;
+}
+#years .expanded-images::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 #years .expanded-images img {
   height: 65vh;

@@ -63,17 +63,20 @@
         </div>
 
         <section id="years">
-            <div class="year 2017">
-                <img src="./img/2017.svg" alt="">
-                <div class="expanded-images">
+
+            <div class="year">
+                <img src="./img/2017.svg" alt="" class="yearimg 2017">
+                <div class="expanded-images 2017ei">
                     <!-- Additional images for 2017 -->
                     <img src="./img/plastic/2017/01.jpg" alt="">
                     <img src="./img/plastic/2017/02.jpg" alt="">
                     <!-- Add more images as needed -->
                 </div>
             </div>
-            <div class="year 2018"><img src="./img/2018.svg" alt="">
-                <div class="expanded-images">
+
+            <div class="year">
+                <img src="./img/2018.svg" alt="" class="yearimg 2018">
+                <div class="expanded-images 2018ei">
                     <!-- Additional images for 2017 -->
                     <img src="./img/plastic/2018/01.jpg" alt="">
                     <img src="./img/plastic/2018/02.jpg" alt="">
@@ -82,8 +85,10 @@
                     <!-- Add more images as needed -->
                 </div>
             </div>
-            <div class="year 2019"><img src="./img/2019.svg" alt="">
-                <div class="expanded-images">
+
+            <div class="year">
+                <img src="./img/2019.svg" alt="" class="yearimg 2019">
+                <div class="expanded-images 2019ei">
                     <!-- Additional images for 2017 -->
                     <img src="./img/plastic/2019/01.jpg" alt="">
                     <img src="./img/plastic/2019/02.jpg" alt="">
@@ -92,8 +97,10 @@
                     <!-- Add more images as needed -->
                 </div>
             </div>
-            <div class="year 2020"><img src="./img/2020.svg" alt="">
-                <div class="expanded-images">
+
+            <div class="year">
+                <img src="./img/2020.svg" alt="" class="yearimg 2020">
+                <div class="expanded-images 2020ei">
                     <!-- Additional images for 2017 -->
                     <img src="./img/plastic/2020/01.jpg" alt="">
                     <img src="./img/plastic/2020/02.jpg" alt="">
@@ -101,12 +108,12 @@
                     <img src="./img/plastic/2020/04.jpg" alt="">
                     <img src="./img/plastic/2020/05.jpg" alt="">
                     <img src="./img/plastic/2020/06.jpg" alt="">
-
-                    <!-- Add more images as needed -->
                 </div>
             </div>
-            <div class="year 2021"><img src="./img/2021.svg" alt="">
-                <div class="expanded-images">
+
+            <div class="year">
+                <img src="./img/2021.svg" alt="" class="yearimg 2021">
+                <div class="expanded-images 2021ei">
                     <!-- Additional images for 2017 -->
                     <img src="./img/plastic/2021/01.jpg" alt="">
                     <img src="./img/plastic/2021/02.jpg" alt="">
@@ -114,12 +121,12 @@
                     <img src="./img/plastic/2021/04.jpg" alt="">
                     <img src="./img/plastic/2021/05.jpg" alt="">
                     <img src="./img/plastic/2021/06.jpg" alt="">
-
-                    <!-- Add more images as needed -->
                 </div>
             </div>
-            <div class="year 2022"><img src="./img/2022.svg" alt="">
-                <div class="expanded-images">
+
+            <div class="year">
+                <img src="./img/2022.svg" alt="" class="yearimg 2022">
+                <div class="expanded-images 2022ei">
                     <!-- Additional images for 2017 -->
                     <img src="./img/plastic/2022/01.jpg" alt="">
                     <img src="./img/plastic/2022/02.jpg" alt="">
@@ -160,12 +167,12 @@
                     <img src="./img/plastic/2022/d09.jpg" alt="">
                     <img src="./img/plastic/2022/d10.jpg" alt="">
                     <img src="./img/plastic/2022/d11.jpg" alt="">
-
-                    <!-- Add more images as needed -->
                 </div>
             </div>
-            <div class="year 2023"><img src="./img/2023.svg" alt="">
-                <div class="expanded-images">
+
+            <div class="year">
+                <img src="./img/2023.svg" alt="" class="yearimg 2023">
+                <div class="expanded-images 2023ei">
                     <!-- Additional images for 2017 -->
                     <img src="./img/plastic/2023/01.jpg" alt="">
                     <img src="./img/plastic/2023/02.jpg" alt="">
@@ -233,130 +240,94 @@
 
     <script>
 $(document).ready(function () {
-    // 頁首滾動效果
-    let lastScrollTop = 0;
-    let headerHeight = $('#topbar').outerHeight();
+// 頁首滾動效果
+let lastScrollTop = 0;
+let headerHeight = $('#topbar').outerHeight();
 
-    $(window).scroll(function () {
-        let currentScroll = $(this).scrollTop();
+$(window).scroll(function () {
+    let currentScroll = $(this).scrollTop();
 
-        if (currentScroll > lastScrollTop) {
-            // 往下滾動，隱藏 header
-            $('#topbar').css({
-                'top': -headerHeight + 'vh',
-                'transition': 'top 1s' // 添加過渡效果
-            });
-        } else {
-            // 往上滾動，顯示 header
-            $('#topbar').css({
-                'top': '0',
-                'transition': 'top 1s' // 添加過渡效果
-            });
-        }
-
-        lastScrollTop = currentScroll;
-    });
-
-    
-    $('#years .year img').click(function (event) {
-        // 如果点击的是展开区域中的图片，则忽略点击事件
-        if ($(this).closest('.expanded-images').length > 0) {
-            return;
-        }
-
-        // 切換點擊的年份的展開狀態
-        $(this).closest('.year').toggleClass('expanded');
-        $(this).closest('.year').css('z-index', function(index, value) {
-            return value === '1' ? '2' : '1';
+    if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+        // 往下滾動且未滾動至頁首，隱藏 header
+        $('#topbar').css({
+            'top': -headerHeight + 'vh',
+            'transition': 'top 1s' // 添加過渡效果
         });
-
-
-
-        // 如果點擊的年份展開，則計算展開區域的高度
-        if ($(this).closest('.year').hasClass('expanded')) {
-            const expandedHeight = $(this).closest('.year').find('.expanded-images').outerHeight();
-            // 調整下方區域的 margin-top 來擠開
-            $(this).closest('.year').next().css('margin-top', expandedHeight);
-        } else {
-            // 如果點擊的年份收合，則重置下方區域的 margin-top
-            $(this).closest('.year').next().css('margin-top', '0');
-        }
-
-
-        
-        // 收合其他年份的展開區域
-        $(this).closest('.year').siblings().removeClass('expanded').next().css('margin-top', '0');
-
-        event.stopPropagation(); // 阻止事件冒泡
-    });
-
-
-
-
-    // 确定是否已经滚动到底部
-    function isScrolledToBottom($element) {
-        return $element[0].scrollWidth - $element.scrollLeft() === $element.outerWidth();
+    } else if (currentScroll === 0) {
+        // 滾動至頁首，顯示 header
+        $('#topbar').css({
+            'top': '0',
+            'transition': 'top 0.5s' // 添加過渡效果
+        });
     }
 
-    // 处理鼠标悬停事件
-    $(document).mousemove(function (e) {
-        const windowWidth = $(window).width();
-        const cursorBuffer = 50; // 设置缓冲区，以更早地显示箭头
-        const $expandedImages = $('.expanded .expanded-images');
-        
-        if ($expandedImages.length === 0) {
-            return;
-        }
+    lastScrollTop = currentScroll;
+});
 
-        if (e.pageX < cursorBuffer) {
-            $('body').css('cursor', 'w-resize');
-        } else if (e.pageX > windowWidth - cursorBuffer) {
-            $('body').css('cursor', 'e-resize');
-        } else if (isScrolledToBottom($expandedImages)) {
-            $('body').css('cursor', 'not-allowed');
-        } else {
-            $('body').css('cursor', 'default');
-        }
-    });
 
-    // 处理点击事件
-    $(document).click(function (e) {
-        const windowWidth = $(window).width();
-        const cursorBuffer = 50; // 设置缓冲区，以更早地显示箭头
-        const $expandedImages = $('.expanded .expanded-images');
-        
-        if ($expandedImages.length === 0) {
-            return;
-        }
+      // 函数用于检查年份图片是否可见
+      function checkVisible(elm) {
+        var rect = elm.getBoundingClientRect();
+        var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+    }
 
-        if (e.pageX < cursorBuffer) {
-            $expandedImages.animate({ scrollLeft: '-=600px' }, 600);
-        } else if (e.pageX > windowWidth - cursorBuffer) {
-            $expandedImages.animate({ scrollLeft: '+=600px' }, 600);
-        } else if (isScrolledToBottom($expandedImages)) {
-            // 收合当前展开的年份
-            $('.year.expanded').removeClass('expanded').next().css('margin-top', '0');
-        }
-    });
-
-    // 初始检查
-    const $elements = $('#years .year');
-    const checkVisibility = () => {
-        const windowHeight = $(window).height();
-        const scrollTop = $(window).scrollTop();
-
-        $elements.each(function() {
-            const $el = $(this);
-            const offsetTop = $el.offset().top;
-
-            if (offsetTop < scrollTop + windowHeight - 100) { // 提前 100px 显示
-                $el.addClass('show');
+    // 函数用于显示可见的年份图片
+    function showVisibleYears() {
+        $(".year").each(function () {
+            if (checkVisible(this)) {
+                $(this).addClass("visible");
             }
         });
-    };
+    }
 
-    $(window).on('scroll', checkVisibility);
-    checkVisibility(); // 初始检查
+    // 页面加载时先执行一次，确保初始位置的年份图片能够立即显示
+    showVisibleYears();
+
+    // 滚动时检查并显示可见的年份图片
+    $(window).scroll(function () {
+        showVisibleYears();
+    });
+
+
+
+
+     // 隱藏所有擴展圖片
+     $(".expanded-images").hide();
+
+// 優化的點擊事件，避免重複代碼
+$(".yearimg").click(function () {
+    // 获取点击的年份类别和对应的展开图片
+    let yearClass = $(this).attr('class').split(' ')[1];
+    let expandedImages = $("." + yearClass + "ei");
+
+    // 隐藏所有已展开的图片，然后展开被点击的年份
+    $(".expanded-images").not(expandedImages).slideUp(300);
+    expandedImages.slideToggle(500, function() {
+        // 在展开动画完成后滚动到年份图片的顶部
+        let offset = $(".yearimg." + yearClass).offset().top;
+        $('html, body').animate({ scrollTop: offset }, 300);
+    });
+
+    // 切换类，实现图片的平滑移动效果
+    $(this).toggleClass('move-left');
+    // 移除其他年份图片的移动效果
+    $(".yearimg").not($(this)).removeClass('move-left');
+});
+
+    // 展开区域的滚动事件
+    $(".expanded-images").click(function (e) {
+        let parentWidth = $(this).width();
+        let clickX = e.pageX - $(this).offset().left;
+
+        if (clickX > parentWidth / 2) {
+            // 点击右半边，向右滚动
+            $(this).animate({ scrollLeft: '+=500' }, 500);
+        } else {
+            // 点击左半边，向左滚动
+            $(this).animate({ scrollLeft: '-=500' }, 500);
+        }
+    });
 
     // 返回顶部按钮
     $('.topbtn svg').click(function () {
@@ -368,7 +339,6 @@ $(document).ready(function () {
         $(".cycle-slideshow").cycle();
     });
 
-    
     
 });
 
