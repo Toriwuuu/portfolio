@@ -157,6 +157,35 @@ $(document).ready(function() {
         lastScrollTop = currentScroll;
     });
 
+
+    // 无缝播放图片
+    let $carousel = $('.carousel');
+    let carouselHeight = $carousel.height();
+    let imageHeight = $('.mask').outerHeight(true);
+    let totalImages = $('.mask').length;
+    let imagesToShow = Math.ceil(carouselHeight / imageHeight) + 1;
+
+    function duplicateImages() {
+        let htmlContent = $carousel.html();
+        let imagesToDuplicate = Math.ceil(imagesToShow / totalImages) * totalImages;
+        for (let i = 0; i < imagesToDuplicate; i++) {
+            $carousel.append(htmlContent);
+        }
+    }
+
+    duplicateImages();
+
+    // 鼠标悬停在.carousel时，暂停动画
+    $('.carousel').hover(function() {
+        $(this).css('animation-play-state', 'paused');
+    }, function() {
+        $(this).css('animation-play-state', 'running');
+    });
+
+    
+    
+
+
     $('.topbtn svg').click(function() {
         $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
