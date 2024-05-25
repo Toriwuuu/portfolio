@@ -39,7 +39,6 @@
             data-cycle-timeout="4000"
             data-cycle-prev="#prev"
             data-cycle-next="#next">
-                
                 <img src="./img/plastic/2018/02.jpg" alt="">
                 <img src="./img/plastic/2021/02.jpg" alt="">
                 <img src="./img/plastic/2022/d01.jpg" alt="">
@@ -192,7 +191,18 @@
 
 
     <footer id="contact">
-        <div class="marquee"></div>
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>
+                    Hi, I'm Tori. Welcome to my website. Here you can see some illustrations and some plastic arts. You
+                    can also buy my works in the SHOP. Have a nice day!</span>
+                <span>
+                    Hi, I'm Tori. Welcome to my website. Here you can see some illustrations and some plastic arts. You
+                    can also buy my works in the SHOP. Have a nice day!</span>
+
+            </div>
+
+        </div>
         <div class="contactTable">
             <div class="contactText">CONTACT
                 <nav class="contactIcon">
@@ -321,7 +331,7 @@ $(document).ready(function () {
             let expandedImages = yearImg.siblings('.expanded-images'); // 获取展开的图片区域
             setTimeout(function() {
                 expandedImages.slideDown(500); // 展开图片区域
-            }, 300);
+            }, 500);
         });
     }
 
@@ -331,11 +341,26 @@ $(document).ready(function () {
 
         // 根据点击位置判断滚动方向并滚动图片区域
         if (clickX > parentWidth / 2) {
-            $(this).animate({ scrollLeft: '+=500' }, 500);
+            $(this).animate({ scrollLeft: '+=500' }, 350);
         } else {
-            $(this).animate({ scrollLeft: '-=500' }, 500);
+            $(this).animate({ scrollLeft: '-=500' }, 350);
         }
     });
+
+
+       $(".expanded-images").mousemove(function (e) {
+        let parentWidth = $(this).width(); // 获取父容器的宽度
+        let offset = $(this).offset(); // 获取父容器的偏移量
+        let relativeX = e.pageX - offset.left; // 获取鼠标位置相对于父容器左侧的偏移量
+
+        // 根据鼠标位置设置不同的光标样式
+        if (relativeX > parentWidth / 2) {
+            $(this).css('cursor', 'url("./img/right-arrow.png"), auto');
+        } else {
+            $(this).css('cursor', 'url("./img/left-arrow.png"), auto');
+        }
+    });
+
 
     // 返回顶部按钮点击事件
     $('.topbtn svg').click(function () {

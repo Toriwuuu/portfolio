@@ -1,7 +1,6 @@
 @use 'reset';
 @use 'variable' as *;
 @import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
-
 @font-face {
     font-family: 'Chivo';
     src: url(../font/Chivo-VariableFont_wght.ttf);
@@ -25,6 +24,7 @@ body {
         "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     color: #555;
     background: url(../img/noise.png), linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, .30), rgba(169, 4, 93, .25), rgba(38, 87, 43, .25), rgba(44, 14, 74, .42), rgba(21, 71, 99, .33), rgba(115, 20, 63, .50), rgba(72, 55, 12, .31)), conic-gradient(from 180deg, rgba(188, 0, 23, .24) 25deg, rgba(36, 9, 12, .3) 50deg, rgba(0, 0, 0, .3) 144deg, rgba(24, 108, 48, .3) 215deg, rgba(71, 13, 13, .3) 250deg, rgba(6, 60, 91, .3) 288deg, rgba(188, 0, 23, .24) 358deg), rgb(0, 0, 0);
+    background-repeat:round;
 }
 
 a {
@@ -156,6 +156,10 @@ a {
             border: 5px solid rgba(255, 255, 255, 0.839);
             border-radius: 30px;
 
+            &:hover {
+                animation: sway 0.5s infinite alternate-reverse;
+            }
+
             img {
                 mix-blend-mode: multiply;
                 object-fit: cover;
@@ -163,6 +167,7 @@ a {
                 height: 20vw;
                 box-shadow: 2vw 3vh 30px rgba(231, 58, 145, 0.315);
                 border-radius: 30px;
+
             }
         }
     }
@@ -177,119 +182,72 @@ a {
         }
     }
 
+    @keyframes sway {
+        0% {
+            transform: skew(-30deg, 12deg);
+        }
+
+        100% {
+            transform: skew(-30deg, 6deg);
+        }
+    }
+
 }
 
 
-    /* footer */
+/* footer */
 
-    footer {
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(119, 12, 255, .5), rgba(167, 21, 244, .6), rgba(206, 28, 235, .9), rgba(233, 49, 204, 1));
+
+    .marquee {
         width: 100%;
+        height: 75px;
+        background-color: $purple;
+        border-top: 10px solid #FFFFFF;
+        border-bottom: 10px solid #FFFFFF;
+        color: $white;
+        font-size: 2rem;
+        font-family: 'Chivo';
+        font-style:italic;
+        display: flex;
+        align-items: center;
+        overflow: hidden; /* 確保溢出的內容不會顯示 */
+        position: relative;
+        .marquee-content {
+            width: 300%;
+            position: absolute;
+            will-change: transform;
+            animation: marquee 20s linear infinite; /* 持續 10 秒的動畫，無限循環 */
+            white-space: nowrap;
+            span {
+                display: inline-block;
+                padding: 0 50px;
+                white-space: nowrap;
+                letter-spacing: 2px;
+                
+            
+            }
+        }
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .contactTable {
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(rgba(119, 12, 255, .5), rgba(167, 21, 244, .6), rgba(206, 28, 235, .9), rgba(233, 49, 204, 1));
 
-        .marquee {
-            width: 100%;
-            height: 75px;
-            background-color: $purple;
-            border-top: 10px solid #FFFFFF;
-            border-bottom: 10px solid #FFFFFF;
-        }
-
-        .contactTable {
-            display: flex;
-            flex-direction: column;
-
-            .contactText {
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-                font-family: 'Chivo';
-                color: #FFFFFF;
-                font-size: 6rem;
-                font-weight: 900;
-                padding: 2vh 0vw 1vh 6rem;
-
-                .icon {
-                    display: flex;
-                    align-self: center;
-                    margin-right: 10vw;
-
-                    a {
-                        width: 40px;
-                        height: 40px;
-                        margin: 10px;
-                        transition: transform 0.3s ease; // 添加過渡效果
-
-                        &:hover {
-                            transform: scale(1.2); // hover時放大 1.1 倍
-                        }
-                    }
-
-                    .icon-ig {
-                        background-image: url(../img/ig.svg);
-                        background-repeat: no-repeat;
-
-                    }
-
-                    .icon-fb {
-                        background-image: url(../img/fb.svg);
-                        background-repeat: no-repeat;
-
-                    }
-
-                    .icon-twitter {
-                        background-image: url(../img/twitter.svg);
-                        background-repeat: no-repeat;
-                    }
-                }
-            }
-        }
-
-        #form-contact {
-            display: flex;
-            flex-direction: column;
-            align-self: center;
-            width: 25%;
-            font-family: 'Chivo';
-            color: $white;
-
-            label {
-                font-weight: 200;
-                margin: 1vh 0 1vh 0;
-                border: none;
-            }
-
-            .btn-form {
-                align-self: flex-end;
-                margin: 16px 0px;
-                width: 7vw;
-                height: 3.5vh;
-                border: none;
-                border-radius: 5px;
-
-                span {
-                    font-family: 'Chivo';
-                    font-style: italic;
-                    font-weight: 900;
-                    color: $pink;
-                }
-
-            }
-
-            input {
-                border: none;
-                border-radius: 5px;
-                height: 3vh;
-            }
-
-            textarea {
-                border: none;
-                border-radius: 5px;
-            }
-        }
-
-        .topbtn {
+        .contactText {
             display: flex;
             justify-content: space-between;
             width: 100%;
@@ -297,66 +255,156 @@ a {
             color: #FFFFFF;
             font-size: 6rem;
             font-weight: 900;
-            border-top: 10px solid white;
-            margin-top: 2vh;
-            padding: 2vh 10vw 5vh 22rem;
+            padding: 2vh 0vw 1vh 6rem;
 
-            svg {
+            .icon {
+                display: flex;
                 align-self: center;
-                transition: transform 0.3s ease; // 添加過渡效果
-            }
+                margin-right: 10vw;
 
-            &:hover {
-                svg {
-                    transform: scale(1.2); // hover 時放大 10%
-                    cursor: pointer;
+                a {
+                    width: 40px;
+                    height: 40px;
+                    margin: 10px;
+                    transition: transform 0.3s ease; // 添加過渡效果
+
+                    &:hover {
+                        transform: scale(1.2); // hover時放大 1.1 倍
+                    }
+                }
+
+                .icon-ig {
+                    background-image: url(../img/ig.svg);
+                    background-repeat: no-repeat;
+
+                }
+
+                .icon-fb {
+                    background-image: url(../img/fb.svg);
+                    background-repeat: no-repeat;
+
+                }
+
+                .icon-twitter {
+                    background-image: url(../img/twitter.svg);
+                    background-repeat: no-repeat;
                 }
             }
         }
     }
-    
 
-    /* plastic */
+    #form-contact {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 25%;
+        font-family: 'Chivo';
+        color: $white;
 
+        label {
+            font-weight: 200;
+            margin: 1vh 0 1vh 0;
+            border: none;
+        }
 
-    .box {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
+        .btn-form {
+            align-self: flex-end;
+            margin: 16px 0px;
+            width: 7vw;
+            height: 3.5vh;
+            border: none;
+            border-radius: 5px;
 
-        img {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
+            span {
+                font-family: 'Chivo';
+                font-style: italic;
+                font-weight: 900;
+                color: $pink;
+            }
+
+        }
+
+        input {
+            border: none;
+            border-radius: 5px;
+            height: 3vh;
+        }
+
+        textarea {
+            border: none;
+            border-radius: 5px;
         }
     }
 
-    #years {
+    .topbtn {
         display: flex;
-        flex-direction: column;
-        margin-bottom: 35vh;
+        justify-content: space-between;
+        width: 100%;
+        font-family: 'Chivo';
+        color: #FFFFFF;
+        font-size: 6rem;
+        font-weight: 900;
+        border-top: 10px solid white;
+        margin-top: 2vh;
+        padding: 2vh 10vw 5vh 22rem;
 
-        .year {
-            border-top: 1vh solid white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            height: auto;
-            opacity: 0; // 初始设置为透明
-            transition: opacity 3s ease; // 添加过渡效果
+        svg {
+            align-self: center;
+            transition: transform 0.3s ease; // 添加過渡效果
+        }
 
-            &.visible {
-                opacity: 1; // 当添加 visible 类时，透明度变为 1，即显示
+        &:hover {
+            svg {
+                transform: scale(1.2); // hover 時放大 10%
+                cursor: pointer;
             }
         }
+    }
+}
+
+
+/* plastic */
+
+
+.box {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+}
+
+#years {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35vh;
+
+    .year {
+        border-top: 10px solid rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        opacity: 0; // 初始设置为透明
+        transition: opacity 3s ease; // 添加过渡效果
+
+        &.visible {
+            opacity: 1; // 当添加 visible 类时，透明度变为 1，即显示
+        }
+
+
 
         .yearimg {
             display: block;
             margin-right: 10vw;
             width: auto;
             height: 15vh;
-            margin: 2vw 6vw 2vw 1vw;
+            margin: 2vw 6vw 3vw 1vw;
             cursor: pointer;
             transition: transform 0.5s ease; // 添加过渡效果
         }
@@ -366,6 +414,7 @@ a {
         }
 
         .expanded-images {
+            position: relative; // 确保子元素相对于其定位
             display: flex;
             flex-wrap: nowrap;
             justify-content: start;
@@ -373,9 +422,11 @@ a {
             padding: 10px;
             width: 100%;
             height: 70vh;
-            background-color: rgba(0, 0, 0, 0.5);
+            /* background-color: rgba(0, 0, 0, 0.5); */
             overflow-x: auto; // 允许水平滚动
+            position: relative; // 确保子元素相对定位
 
+            
             &::-webkit-scrollbar {
                 width: 0;
                 height: 0; // 隐藏滚动条
@@ -385,380 +436,395 @@ a {
                 height: 65vh;
                 margin: 0 1vw;
                 object-fit: cover;
-                display: inline-block; // 保持圖片在一行
+                display: inline-block; // 保持图片在一行
+            }
+
+            &:hover {
+                // 默认光标为手形
+                cursor: pointer;
             }
         }
     }
+}
 
 
-    /* CYCLE */
-    #prev,
-    #next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 1000;
+/* CYCLE */
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+/* cart */
+.cart {
+    border: none;
+    background-color: transparent;
+    position: fixed;
+    right: 5vw;
+    top: 20vh;
+
+    svg {
+        width: 48px;
+        height: 48px;
     }
-
-    #prev {
-        left: 10px;
-    }
-
-    #next {
-        right: 10px;
-    }
-
-    /* cart */
-    .cart {
-        border: none;
-        background-color: transparent;
-        position: fixed;
-        right: 5vw;
-        top: 20vh;
-
-        svg {
-            width: 48px;
-            height: 48px;
-        }
-    }
+}
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    display: none; /* 初始隱藏 */
+}
 
 
 
 
-    /* shop */
+/* shop */
 
 
 
-    #shopBanner {
-        justify-content: center;
-        margin-bottom: 8vh;
+#shopBanner {
+    justify-content: center;
+    margin-bottom: 100px;
 
-        .bannerContainer {
-            /* JQ未加 */
-            display: inline-block;
-            position: e;
+    .bannerContainer {
+        display: inline-block;
 
-            .bannerImg {
-                height: 30vw;
-                width: 70vw;
-                margin-top: 30vh;
 
-                img {
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                    border-radius: 30px;
+        .bannerImg {
+            height: 500px;
+            width: 1200px;
+            margin-top: 300px;
 
-                }
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 30px;
             }
         }
-    }
-
-    #items {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 20vh;
-
-        .row {
-            height: 20vw;
-            width: 60vw;
-            padding: 3vh 0;
+        .cycle-pager {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            margin-top: 10px;
+        
+            a {
+                color: black;
+                text-decoration: none;
+                margin: 5px;
+                display: inline-block;
+                /* 水平堆疊 */
+                /*             border: 3px solid black;*/
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                color: transparent;
+                text-align: center;
+                line-height: 20px;
+                background-color: $white;
 
-            .item {
-                width: 20%;
+                &.activeSlide {
+                    background-color: $pink;
+                }
+            }
 
-                .imgContainer {
-                    position: relative;
-                    display: inline-block;
+        }
 
-                    .plus {
-                        position: absolute;
-                        background-color: transparent;
-                        bottom: 5%;
-                        right: 5%;
-                        border: none;
+    }
+}
 
-                        svg {
-                            width: 2.5vw;
-                            height: 2.5vw;
-                        }
+#items {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 200px;
+
+    .row {
+        height: 400px;
+        width: 1200px;
+        display: flex;
+        justify-content: space-around;
+
+        .item {
+            width: 20%;
+
+            .imgContainer {
+                position: relative;
+                display: inline-block;
+
+                .plus {
+                    position: absolute;
+                    background-color: transparent;
+                    bottom: 5%;
+                    right: 5%;
+                    border: none;
+                    cursor: pointer;
+                    z-index: 99;
+                    svg {
+                        width: 40px;
+                        height: 40px;
                     }
+                }
 
-                    .imgItem {
+                .imgItem {
+                    border-radius: 20px;
+                    width: 200px;
+                    height: 200px;
+                    img{
                         border-radius: 20px;
-                        width: 10vw;
-                        height: 10vw;
-                    }
-
-                    .it01 {
-                        background-image: url(../img/illus/Staircase.jpg);
-                        background-size: cover;
-                    }
-
-                    .it02 {
-                        background-image: url(../img/illus/Moai.jpg);
-                        background-size: cover;
-                    }
-
-                    .it03 {
-                        background-image: url(../img/illus/Chaos.jpg);
-                        background-size: cover;
-                    }
-
-                    .it04 {
-                        background-image: url(../img/illus/call\ me.jpg);
-                        background-size: cover;
-                    }
-
-                    .it05 {
-                        background-image: url(../img/plastic/2022/a03.jpg);
-                        background-size: cover;
-                    }
-
-                    .it06 {
-                        background-image: url(../img/plastic/2022/c01.jpg);
-                        background-size: cover;
-                    }
-
-                    .it07 {
-                        background-image: url(../img/plastic/2022/b01.jpg);
-                        background-size: cover;
-                    }
-
-                    .it08 {
-                        background-image: url(../img/plastic/2018/03.jpg);
-                        background-size: cover;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
                 }
+            }
 
-                .productName {
-                    display: block;
-                    font-family: Chivo;
-                    color: $white;
-                    font-weight: 800;
-                    padding-top: 3vh;
-                    font-size: 1.5rem;
-                }
+            .productName {
+                display: block;
+                font-family: Chivo;
+                color: $white;
+                font-weight: 800;
+                padding-top: 40px;
+                font-size: 1.5rem;
+            }
 
-                .price {
-                    display: block;
-                    font-family: Chivo;
-                    color: $blue;
-                    font-weight: 800;
-                    padding-top: 10px;
-                    font-size: 1.5rem;
+            .price {
+                display: block;
+                font-family: Chivo;
+                color: $blue;
+                font-weight: 800;
+                padding-top: 10px;
+                font-size: 1.5rem;
 
-                }
             }
         }
     }
+}
 
-    .overlay {
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 50% 不透明度的黑色背景 */
+    z-index: 999; /* 使 .overlay 位於其他元素之上 */
+    display: none; /* 初始時隱藏 .overlay */
+    .overlay-content {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 400px;
+        width: 300px;
         height: 100px;
-        background-color: $pink;
-        /* 半透明黑色背景 */
+        background-color: white;
         z-index: 9999;
         /* 确保覆盖在其他元素之上 */
         display: none;
         /* 默认隐藏 */
         border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 15px;
+
+        .cancel {
+            display: flex;
+            justify-content: end;
+            cursor: pointer;
+        }
+
+        .atcbtn {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+
+            .atc {
+                padding: 5px 20px;
+                font-family: 'Chivo';
+                font-style: italic;
+                font-size: 20px;
+                font-weight: 100;
+                border: none;
+                background-color: $pink;
+                border-radius: 5px;
+                color: white;
+                
+            }
+        }
+    }
+
+}
 
 
+/* product */
+.container {
+    display: flex;
+    justify-content: center;
 
-        .overlay-content {
+    .infoContainer {
+        width: 1200px;
+        height: 600px;
+        margin: 25vh 0;
+        display: flex;
+
+        #productImg {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 10px 15px;
-
-            .cancel {
-                display: flex;
-                justify-content: end;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            .bigImg {
+                width: 75%;
+                height: 75%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
             }
 
-            .atcbtn {
+            .smallImg {
                 display: flex;
-                justify-content: center;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 75%;
+                height: 15%;
+
+                img {
+                    width: 20%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+
+                }
+            }
+        }
+
+        #productInfo {
+            width: 50%;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .infoTitle {
+                font-family: 'Chivo';
+                font-size: 1.5rem;
+                font-weight: 900;
+                color: $white;
+                padding-bottom: 20px;
+            }
+
+            .infoA {
+                font-family: 'Chivo';
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: $lightg;
+            }
+
+            .infoPrice {
+                font-family: 'Chivo';
+                font-size: 2rem;
+                font-weight: 900;
+                color: $blue;
+            }
+
+            .infoQua {
+                font-family: 'Chivo';
+                font-size: 1.5rem;
+                font-weight: 900;
+                color: $white;
+            }
+
+            .quaBtn {
+                padding-top: 20px;
+                display: flex;
+                align-items: center;
+
+                .quaMinus {
+                    background-color: transparent;
+                    border: none;
+                }
+
+                svg {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .quaNum {
+                    margin: 0 20px;
+                    font-size: 1.5rem;
+                    font-weight: 900;
+                    color: $white;
+                    text-align: center;
+                }
+
+                .quaPlus {
+                    background-color: transparent;
+                    border: none;
+                }
+            }
+
+            .buyBtn {
+                display: flex;
+                flex-direction: column;
                 padding-top: 20px;
 
+                button {
+                    width: 80%;
+                    height: 60px;
+                    margin-top: 20px;
+                    border-radius: 10px;
+                }
+
                 .atc {
-                    padding: 0 10px;
                     font-family: 'Chivo';
                     font-style: italic;
                     font-size: 1.5rem;
                     font-weight: 100;
-
-                }
-            }
-        }
-
-    }
-
-
-    /* product */
-    .container {
-        display: flex;
-        justify-content: center;
-
-        .infoContainer {
-            width: 70vw;
-            height: 58vh;
-            margin: 25vh 0;
-
-            padding: 0 8%;
-            display: flex;
-            justify-content: space-between;
-
-            #productImg {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                width: 25vw;
-
-                .bigImg {
-                    width: 25vw;
-                    height: 25vw;
-                    margin-bottom: 3vh;
-
-                    img {
-                        width: 25vw;
-                        height: 25vw;
-                        object-fit: cover;
-                        border-radius: 1vw;
-
-                    }
                 }
 
-                .smallImg {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    width: 25vw;
-                    height: 5vw;
-
-                    img {
-                        width: 20%;
-                        height: 100%;
-                        object-fit: cover;
-                        border-radius: 1vw;
-
-                    }
-                }
-            }
-
-            #productInfo {
-                width: 25vw;
-                flex-direction: column;
-                justify-content: space-between;
-
-                .infoTitle {
+                .bn {
                     font-family: 'Chivo';
-                    font-size: 1.5rem;
-                    font-weight: 900;
-                    color: $white;
-                    padding-bottom: 20px;
-                }
-
-                .infoA {
-                    font-family: 'Chivo';
-                    font-size: 1.2rem;
-                    font-weight: 600;
-                    color: $lightg;
-                }
-
-                .infoPrice {
-                    font-family: 'Chivo';
+                    font-style: italic;
                     font-size: 2rem;
                     font-weight: 900;
-                    color: $blue;
-                }
-
-                .infoQua {
-                    font-family: 'Chivo';
-                    font-size: 1.5rem;
-                    font-weight: 900;
+                    background-color: $pink;
                     color: $white;
                 }
 
-                .quaBtn {
-                    padding-top: 20px;
-                    display: flex;
-                    align-items: center;
+                .paypal {
+                    background-color: $yellow;
 
-                    .quaMinus {
-                        background-color: transparent;
-                        border: none;
-                    }
-
-                    svg {
-                        width: 40px;
-                        height: 40px;
-                    }
-
-                    .quaNum {
-                        margin: 0 1vw;
-                        font-size: 1.5rem;
-                        font-weight: 900;
-                        color: $white;
-                        text-align: center;
-                    }
-
-                    .quaPlus {
-                        background-color: transparent;
-                        border: none;
-                    }
-                }
-
-                .buyBtn {
-                    display: flex;
-                    flex-direction: column;
-                    padding-top: 20px;
-
-                    button {
+                    img {
                         width: 100%;
-                        height: 6vh;
-                        margin-top: 1vh;
-                        border-radius: 1vw;
-                    }
-
-                    .atc {
-                        font-family: 'Chivo';
-                        font-style: italic;
-                        font-size: 1.5rem;
-                        font-weight: 100;
-                    }
-
-                    .bn {
-                        font-family: 'Chivo';
-                        font-style: italic;
-                        font-size: 2rem;
-                        font-weight: 900;
-                        background-color: $pink;
-                        color: $white;
-                    }
-
-                    .paypal {
-                        background-color: $yellow;
-
-                        img {
-                            width: 100%;
-                            object-fit: cover;
-                        }
+                        object-fit: cover;
                     }
                 }
             }
-
         }
+
     }
+}

@@ -32,27 +32,35 @@
     </header>
     <button class="cart">
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M34 36C31.78 36 30 37.78 30 40C30 41.0609 30.4214 42.0783 31.1716 42.8284C31.9217 43.5786 32.9391 44 34 44C35.0609 44 36.0783 43.5786 36.8284 42.8284C37.5786 42.0783 38 41.0609 38 40C38 38.9391 37.5786 37.9217 36.8284 37.1716C36.0783 36.4214 35.0609 36 34 36ZM2 4V8H6L13.2 23.18L10.48 28.08C10.18 28.64 10 29.3 10 30C10 31.0609 10.4214 32.0783 11.1716 32.8284C11.9217 33.5786 12.9391 34 14 34H38V30H14.84C14.7074 30 14.5802 29.9473 14.4864 29.8536C14.3927 29.7598 14.34 29.6326 14.34 29.5C14.34 29.4 14.36 29.32 14.4 29.26L16.2 26H31.1C32.6 26 33.92 25.16 34.6 23.94L41.76 11C41.9 10.68 42 10.34 42 10C42 9.46957 41.7893 8.96086 41.4142 8.58579C41.0391 8.21071 40.5304 8 40 8H10.42L8.54 4M14 36C11.78 36 10 37.78 10 40C10 41.0609 10.4214 42.0783 11.1716 42.8284C11.9217 43.5786 12.9391 44 14 44C15.0609 44 16.0783 43.5786 16.8284 42.8284C17.5786 42.0783 18 41.0609 18 40C18 38.9391 17.5786 37.9217 16.8284 37.1716C16.0783 36.4214 15.0609 36 14 36Z" fill="#E931CC"/>
-            </svg>
-            
+            <path
+                d="M34 36C31.78 36 30 37.78 30 40C30 41.0609 30.4214 42.0783 31.1716 42.8284C31.9217 43.5786 32.9391 44 34 44C35.0609 44 36.0783 43.5786 36.8284 42.8284C37.5786 42.0783 38 41.0609 38 40C38 38.9391 37.5786 37.9217 36.8284 37.1716C36.0783 36.4214 35.0609 36 34 36ZM2 4V8H6L13.2 23.18L10.48 28.08C10.18 28.64 10 29.3 10 30C10 31.0609 10.4214 32.0783 11.1716 32.8284C11.9217 33.5786 12.9391 34 14 34H38V30H14.84C14.7074 30 14.5802 29.9473 14.4864 29.8536C14.3927 29.7598 14.34 29.6326 14.34 29.5C14.34 29.4 14.36 29.32 14.4 29.26L16.2 26H31.1C32.6 26 33.92 25.16 34.6 23.94L41.76 11C41.9 10.68 42 10.34 42 10C42 9.46957 41.7893 8.96086 41.4142 8.58579C41.0391 8.21071 40.5304 8 40 8H10.42L8.54 4M14 36C11.78 36 10 37.78 10 40C10 41.0609 10.4214 42.0783 11.1716 42.8284C11.9217 43.5786 12.9391 44 14 44C15.0609 44 16.0783 43.5786 16.8284 42.8284C17.5786 42.0783 18 41.0609 18 40C18 38.9391 17.5786 37.9217 16.8284 37.1716C16.0783 36.4214 15.0609 36 14 36Z"
+                fill="#E931CC" />
+        </svg>
+        <span class="cart-count"></span>
     </button>
+    sc
+
     <main>
         <section id="shopBanner">
             <div class="bannerContainer">
-                <div class="bannerImg">
+                <div class="bannerImg cycle-slideshow" data-cycle-loader="wait" data-cycle-pager=".cycle-pager">
                     <img src="./img/illus/missing call.jpg" alt="">
-                    <!--             <img src="./img/illus/Don’t wake up.jpg" alt="">
-            <img src="./img/plastic/2017/01.jpg" alt="">
-            <img src="./img/plastic/2018/01.jpg" alt="">
-            <img src="./img/illus/escape.jpg" alt=""> -->
+                    <img src="./img/illus/Don’t wake up.jpg" alt="">
+                    <img src="./img/plastic/2017/01.jpg" alt="">
+                    <img src="./img/plastic/2018/01.jpg" alt="">
+                    <img src="./img/illus/escape.jpg" alt="">
                 </div>
+                <div class="cycle-pager"></div> <!-- 圓點容器 -->
             </div>
         </section>
         <section id="items">
             <div class="row">
                 <div class="item">
                     <div class="imgContainer">
-                        <a href="#" class="imgItem it01"></a>
+                        <!--                         <a href="#" class="imgItem it01"></a> -->
+                        <a href="./product.html" class="imgItem it01"> 
+                            <img src="./img/illus/Staircase.jpg" alt="">
+                        </a>
                         <button class="plus">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -72,200 +80,214 @@
                             </svg>
                         </button>
                     </div>
-                    <span class="productName">Staircase</span>
+                    <a href="./product.html" class="productName">Staircase</a>
                     <br>
-                    <span class="price">$1500</span>
+                    <a href="./product.html" class="price">$1500</a>
                 </div>
                 <div class="item">
                     <div class="imgContainer">
-                        <a href="#" class="imgItem it02"></a>
+                        <a href="./product.html" class="imgItem it02"> 
+                            <img src="./img/illus/Moai.jpg" alt="">
+                        </a>
                         <button class="plus">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_238_3188)">
-                                <path
-                                    d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    fill="white" />
-                                <path
-                                    d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_238_3188">
-                                    <rect width="52" height="52" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_238_3188)">
+                                    <path
+                                        d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_238_3188">
+                                        <rect width="52" height="52" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
                         </button>
                     </div>
-                    <span class="productName">Moai</span>
+                    <sa href="./product.html" class="productName">Moai</sa>
                     <br>
-                    <span class="price">$1500</span>
+                    <a href="./product.html" class="price">$1500</a>
                 </div>
                 <div class="item">
                     <div class="imgContainer">
-                        <a href="#" class="imgItem it03"></a>
+                        <a href="./product.html" href="./product.html" class="imgItem it01"> 
+                            <img src="./img/illus/Chaos.jpg" alt="">
+                        </a>
                         <button class="plus">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_238_3188)">
-                                <path
-                                    d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    fill="white" />
-                                <path
-                                    d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_238_3188">
-                                    <rect width="52" height="52" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_238_3188)">
+                                    <path
+                                        d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_238_3188">
+                                        <rect width="52" height="52" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
                         </button>
                     </div>
-                    <span class="productName">Chaos</span>
+                    <a href="./product.html" class="productName">Chaos</a>
                     <br>
-                    <span class="price">$1500</span>
+                    <a href="./product.html" class="price">$1500</a>
                 </div>
                 <div class="item">
                     <div class="imgContainer">
-                        <a href="#" class="imgItem it04"></a>
+                        <a href="./product.html" class="imgItem it01"> 
+                            <img src="./img/illus/call me.jpg" alt="">
+                        </a>
                         <button class="plus">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_238_3188)">
-                                <path
-                                    d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    fill="white" />
-                                <path
-                                    d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_238_3188">
-                                    <rect width="52" height="52" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_238_3188)">
+                                    <path
+                                        d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_238_3188">
+                                        <rect width="52" height="52" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
                         </button>
                     </div>
-                    <span class="productName">Callme</span>
+                    <a href="./product.html" class="productName">Callme</a>
                     <br>
-                    <span class="price">$1500</span>
+                    <a href="./product.html" class="price">$1500</a>
                 </div>
             </div>
             <div class="row">
                 <div class="item">
                     <div class="imgContainer">
-                        <a href="#" class="imgItem it05"></a>
+                        <a href="./product.html" class="imgItem it01"> 
+                            <img src="./img/plastic/2022/a01.jpg" alt="">
+                        </a>
                         <button class="plus">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_238_3188)">
-                                <path
-                                    d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    fill="white" />
-                                <path
-                                    d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_238_3188">
-                                    <rect width="52" height="52" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_238_3188)">
+                                    <path
+                                        d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_238_3188">
+                                        <rect width="52" height="52" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
                         </button>
                     </div>
-                    <span class="productName">See You Later</span>
+                    <a href="./product.html" class="productName">See You Later</a>
                     <br>
-                    <span class="price">$10000</span>
+                    <a href="./product.html" class="price">$10000</a>
                 </div>
                 <div class="item">
                     <div class="imgContainer">
-                        <a href="#" class="imgItem it06"></a>
+                        <a href="./product.html" class="imgItem it01"> 
+                            <img src="./img/plastic/2022/c01.jpg" alt="">
+                        </a>
                         <button class="plus">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_238_3188)">
-                                <path
-                                    d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    fill="white" />
-                                <path
-                                    d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_238_3188">
-                                    <rect width="52" height="52" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_238_3188)">
+                                    <path
+                                        d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_238_3188">
+                                        <rect width="52" height="52" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
                         </button>
                     </div>
-                    <span class="productName">Journey</span>
+                    <a href="./product.html" class="productName">Journey</a>
                     <br>
-                    <span class="price">$10000</span>
+                    <a href="./product.html" class="price">$10000</a>
                 </div>
                 <div class="item">
                     <div class="imgContainer">
-                        <a href="#" class="imgItem it07"></a>
+                        <a href="./product.html" class="imgItem it01"> 
+                            <img src="./img/plastic/2022/b01.jpg" alt="">
+                        </a>
                         <button class="plus">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_238_3188)">
-                                <path
-                                    d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    fill="white" />
-                                <path
-                                    d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_238_3188">
-                                    <rect width="52" height="52" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_238_3188)">
+                                    <path
+                                        d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_238_3188">
+                                        <rect width="52" height="52" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
                         </button>
                     </div>
-                    <span class="productName">Annoises</span>
+                    <a href="./product.html" class="productName">Annoises</a>
                     <br>
-                    <span class="price">$10000</span>
+                    <a href="./product.html" class="price">$10000</a>
                 </div>
                 <div class="item">
                     <div class="imgContainer">
-                        <a href="#" class="imgItem it08"></a>
+                        <a href="./product.html" class="imgItem it01"> 
+                            <img src="./img/plastic/2018/03.jpg" alt="">
+                        </a>
                         <button class="plus">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_238_3188)">
-                                <path
-                                    d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    fill="white" />
-                                <path
-                                    d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
-                                    stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_238_3188">
-                                    <rect width="52" height="52" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_238_3188)">
+                                    <path
+                                        d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                        stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_238_3188">
+                                        <rect width="52" height="52" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
                         </button>
                     </div>
-                    <span class="productName">Love To Death</span>
+                    <a href="./product.html" class="productName">Love To Death</a>
                     <br>
-                    <span class="price">$10000</span>
+                    <a href="./product.html" class="price">$10000</a>
                 </div>
             </div>
         </section>
@@ -275,25 +297,30 @@
     <div class="overlay" id="overlay">
         <div class="overlay-content">
             <div class="cancel">
-            <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 47.095 47.095" xml:space="preserve">
-<g>
-	<path d="M45.363,36.234l-13.158-13.16l12.21-12.21c2.31-2.307,2.31-6.049,0-8.358c-2.308-2.308-6.05-2.307-8.356,0l-12.212,12.21
-		L11.038,1.906c-2.309-2.308-6.051-2.308-8.358,0c-2.307,2.309-2.307,6.049,0,8.358l12.81,12.81L1.732,36.831
-		c-2.309,2.31-2.309,6.05,0,8.359c2.308,2.307,6.049,2.307,8.356,0l13.759-13.758l13.16,13.16c2.308,2.308,6.049,2.308,8.356,0
-		C47.673,42.282,47.672,38.54,45.363,36.234z"/>
-</g>
-</svg>
-</div>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0 22.1961C0 22.6745 0.187506 23.1334 0.521282 23.4717C0.85516 23.81 1.30793 24 1.78004 24C2.25214 24 2.70491 23.81 3.03879 23.4717L11.9893 14.4012L20.9612 23.4935C21.297 23.8222 21.7467 24.004 22.2136 23.9999C22.6804 23.9958 23.1269 23.8061 23.457 23.4715C23.7871 23.137 23.9744 22.6845 23.9784 22.2114C23.9825 21.7383 23.803 21.2825 23.4787 20.9422L14.6657 12.0109L23.4787 3.07957C23.8125 2.74121 24 2.28236 24 1.80392C24 1.32548 23.8125 0.866635 23.4787 0.528277C23.1448 0.190021 22.6921 0 22.22 0C21.7479 0 21.2951 0.190021 20.9612 0.528277L12.0107 9.59884L3.03879 0.50649C2.703 0.177821 2.25326 -0.0040429 1.78644 6.80742e-05C1.31962 0.00417904 0.873074 0.193934 0.54297 0.528467C0.212866 0.863001 0.0256212 1.31554 0.0215647 1.78863C0.0175081 2.26171 0.196965 2.71748 0.521282 3.05778L9.33435 11.9891L0.521282 20.9204C0.187506 21.2588 0 21.7176 0 22.1961Z"
+                        fill="#E931CC" />
+                </svg>
+            </div>
             <div class="atcbtn"><button class="atc"><span>Add to Cart - $10000</span></button></div>
         </div>
     </div>
 
 
     <footer id="contact">
-        <div class="marquee"></div>
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>
+                    Hi, I'm Tori. Welcome to my website. Here you can see some illustrations and some plastic arts. You
+                    can also buy my works in the SHOP. Have a nice day!</span>
+                <span>
+                    Hi, I'm Tori. Welcome to my website. Here you can see some illustrations and some plastic arts. You
+                    can also buy my works in the SHOP. Have a nice day!</span>
+
+            </div>
+
+        </div>
         <div class="contactTable">
             <div class="contactText">CONTACT
                 <nav class="contactIcon">
@@ -304,22 +331,6 @@
                     </ul>
                 </nav>
             </div>
-            <!--             <form action="" method="post" name="form-contact" id="form-contact" title="聯絡我們表單">
-
-                <label for="username">Name:</label>
-                <input type="text" name="username" id="username" title="請輸入姓名" placeholder="" required>
-
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="" required>
-
-                <label for="massage">Message:</label>
-                <textarea name="massage" id="massage" rows="10"></textarea>
-
-                <button class="btn-form">
-                    <span>Send</span>
-                </button>
-            </form>
- -->
         </div>
 
         <div class="topbtn">TOP<svg width="85" height="43" viewBox="0 0 85 43" fill="none"
@@ -333,30 +344,14 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery.cycle.all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <!-- 在你的 HTML 文件中引入 jQuery UI 库 -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
 
         $(document).ready(function () {
-            // 無縫播放圖片
-            let $carousel = $('.carousel');
-            let carouselHeight = $carousel.height();
-            let imageHeight = $('.mask').outerHeight(true);
 
-            function duplicateImages() {
-                let totalImages = $('.mask').length;
-                let imagesToShow = Math.ceil(carouselHeight / imageHeight) + 1;
-
-                if (totalImages < imagesToShow) {
-                    let htmlContent = $carousel.html();
-                    $carousel.append(htmlContent);
-                    duplicateImages();
-                }
-            }
-
-            duplicateImages();
 
             // 頁首滾動效果
             let lastScrollTop = 0;
@@ -365,32 +360,86 @@
             $(window).scroll(function () {
                 let currentScroll = $(this).scrollTop();
 
-                if (currentScroll > lastScrollTop) {
-                    // 往下滾動，隱藏 header
+                if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+                    // 往下滾動且未滾動至頁首，隱藏 header
                     $('#topbar').css({
                         'top': -headerHeight + 'vh',
                         'transition': 'top 1s' // 添加過渡效果
                     });
-                } else {
-                    // 往上滾動，顯示 header
+                } else if (currentScroll === 0) {
+                    // 滾動至頁首，顯示 header
                     $('#topbar').css({
                         'top': '0',
-                        'transition': 'top 1s' // 添加過渡效果
+                        'transition': 'top 0.5s' // 添加過渡效果
                     });
                 }
 
                 lastScrollTop = currentScroll;
             });
-        });
-        $('.topbtn svg').click(function () {
-            $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+            $(function () {
+                $(".cycle-slideshow").cycle({
+                    pager: '.cycle-pager' // 指定頁碼圓點的容器
+                }); // 初始化轮播
+
+            });
+            $('.topbtn svg').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+
+
+
+            var cartCount = 0; // 初始化購物車數量為 0
+
+            // 點擊 .plus 按鈕切換覆蓋層的顯示狀態
+            $(".plus").click(function () {
+                $("#overlay").toggle();
+
+                // 恢復 .atc 到原始狀態
+                $(".atc span").text("Add to Cart - $10000");
+                $(".atc").css({
+                    'color': 'white',
+                    'background-color': '#E931CC'
+                });
+            });
+
+            // 點擊 .cancel 關閉 .overlay 並恢復 .atc 到原始狀態
+            $(".cancel").click(function () {
+                closeOverlay();
+            });
+
+            // 點擊 .atc 顯示已加入購物車的狀態
+            $(".atc").click(function () {
+                $(".atc span").text("已加入購物車！");
+                $(".atc").css({
+                    'color': '#E931CC',
+                    'background-color': 'white'
+                });
+
+                // 更新購物車數量並顯示在 .cart 的右上角
+                cartCount++;
+                $(".cart-count").text(cartCount).show();
+            });
+
+            // 點擊 .overlay 背景時關閉 .overlay
+            $("#overlay").click(function (event) {
+                if (event.target === this) {
+                    closeOverlay();
+                }
+            });
+
+            // 關閉 .overlay 覆蓋層並恢復 .atc 到原始狀態的函數
+            function closeOverlay() {
+                $("#overlay").hide();
+                $(".atc span").text("Add to Cart - $10000");
+                $(".atc").css({
+                    'color': 'white',
+                    'background-color': '#E931CC'
+                });
+            }
+
         });
 
-        // 顯示覆蓋層
-        $(".plus").click(function() {
-        // 切换覆盖层的显示状态
-        $("#overlay").toggle();
-    });
     </script>
 
 

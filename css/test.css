@@ -155,6 +155,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
   color: #555;
   background: url(../img/noise.png), linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, 0.3), rgba(169, 4, 93, 0.25), rgba(38, 87, 43, 0.25), rgba(44, 14, 74, 0.42), rgba(21, 71, 99, 0.33), rgba(115, 20, 63, 0.5), rgba(72, 55, 12, 0.31)), conic-gradient(from 180deg, rgba(188, 0, 23, 0.24) 25deg, rgba(36, 9, 12, 0.3) 50deg, rgba(0, 0, 0, 0.3) 144deg, rgba(24, 108, 48, 0.3) 215deg, rgba(71, 13, 13, 0.3) 250deg, rgba(6, 60, 91, 0.3) 288deg, rgba(188, 0, 23, 0.24) 358deg), rgb(0, 0, 0);
+  background-repeat: round;
 }
 
 a {
@@ -269,6 +270,9 @@ a {
   border: 5px solid rgba(255, 255, 255, 0.839);
   border-radius: 30px;
 }
+#digitalArt .photo .mask:hover {
+  animation: sway 0.5s infinite alternate-reverse;
+}
 #digitalArt .photo .mask img {
   mix-blend-mode: multiply;
   object-fit: cover;
@@ -285,6 +289,14 @@ a {
     transform: translateY(-80vw);
   }
 }
+@keyframes sway {
+  0% {
+    transform: skew(-30deg, 12deg);
+  }
+  100% {
+    transform: skew(-30deg, 6deg);
+  }
+}
 
 /* footer */
 footer {
@@ -299,6 +311,35 @@ footer .marquee {
   background-color: #9E1AAA;
   border-top: 10px solid #FFFFFF;
   border-bottom: 10px solid #FFFFFF;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-family: "Chivo";
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* 確保溢出的內容不會顯示 */
+  position: relative;
+}
+footer .marquee .marquee-content {
+  width: 300%;
+  position: absolute;
+  will-change: transform;
+  animation: marquee 20s linear infinite; /* 持續 10 秒的動畫，無限循環 */
+  white-space: nowrap;
+}
+footer .marquee .marquee-content span {
+  display: inline-block;
+  padding: 0 50px;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 footer .contactTable {
   display: flex;
@@ -415,7 +456,7 @@ footer .topbtn:hover svg {
   margin-bottom: 35vh;
 }
 #years .year {
-  border-top: 1vh solid white;
+  border-top: 10px solid rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -427,19 +468,20 @@ footer .topbtn:hover svg {
 #years .year.visible {
   opacity: 1;
 }
-#years .yearimg {
+#years .year .yearimg {
   display: block;
   margin-right: 10vw;
   width: auto;
   height: 15vh;
-  margin: 2vw 6vw 2vw 1vw;
+  margin: 2vw 6vw 3vw 1vw;
   cursor: pointer;
   transition: transform 0.5s ease;
 }
-#years .yearimg.move-left {
+#years .year .yearimg.move-left {
   transform: translateX(-30vw);
 }
-#years .expanded-images {
+#years .year .expanded-images {
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
   justify-content: start;
@@ -447,18 +489,22 @@ footer .topbtn:hover svg {
   padding: 10px;
   width: 100%;
   height: 70vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   overflow-x: auto;
+  position: relative;
 }
-#years .expanded-images::-webkit-scrollbar {
+#years .year .expanded-images::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-#years .expanded-images img {
+#years .year .expanded-images img {
   height: 65vh;
   margin: 0 1vw;
   object-fit: cover;
   display: inline-block;
+}
+#years .year .expanded-images:hover {
+  cursor: pointer;
 }
 
 /* CYCLE */
@@ -495,20 +541,33 @@ footer .topbtn:hover svg {
   height: 48px;
 }
 
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  display: none; /* 初始隱藏 */
+}
+
 /* shop */
 #shopBanner {
   justify-content: center;
-  margin-bottom: 8vh;
+  margin-bottom: 100px;
 }
 #shopBanner .bannerContainer {
-  /* JQ未加 */
   display: inline-block;
-  position: e;
 }
 #shopBanner .bannerContainer .bannerImg {
-  height: 30vw;
-  width: 70vw;
-  margin-top: 30vh;
+  height: 500px;
+  width: 1200px;
+  margin-top: 300px;
 }
 #shopBanner .bannerContainer .bannerImg img {
   height: 100%;
@@ -516,18 +575,40 @@ footer .topbtn:hover svg {
   object-fit: cover;
   border-radius: 30px;
 }
+#shopBanner .bannerContainer .cycle-pager {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+#shopBanner .bannerContainer .cycle-pager a {
+  color: black;
+  text-decoration: none;
+  margin: 5px;
+  display: inline-block;
+  /* 水平堆疊 */
+  /*             border: 3px solid black;*/
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  color: transparent;
+  text-align: center;
+  line-height: 20px;
+  background-color: #FFFFFF;
+}
+#shopBanner .bannerContainer .cycle-pager a.activeSlide {
+  background-color: #E931CC;
+}
 
 #items {
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20vh;
+  margin-bottom: 200px;
 }
 #items .row {
-  height: 20vw;
-  width: 60vw;
-  padding: 3vh 0;
+  height: 400px;
+  width: 1200px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #items .row .item {
   width: 20%;
@@ -542,54 +623,30 @@ footer .topbtn:hover svg {
   bottom: 5%;
   right: 5%;
   border: none;
+  cursor: pointer;
+  z-index: 99;
 }
 #items .row .item .imgContainer .plus svg {
-  width: 2.5vw;
-  height: 2.5vw;
+  width: 40px;
+  height: 40px;
 }
 #items .row .item .imgContainer .imgItem {
   border-radius: 20px;
-  width: 10vw;
-  height: 10vw;
+  width: 200px;
+  height: 200px;
 }
-#items .row .item .imgContainer .it01 {
-  background-image: url(../img/illus/Staircase.jpg);
-  background-size: cover;
-}
-#items .row .item .imgContainer .it02 {
-  background-image: url(../img/illus/Moai.jpg);
-  background-size: cover;
-}
-#items .row .item .imgContainer .it03 {
-  background-image: url(../img/illus/Chaos.jpg);
-  background-size: cover;
-}
-#items .row .item .imgContainer .it04 {
-  background-image: url(../img/illus/call\ me.jpg);
-  background-size: cover;
-}
-#items .row .item .imgContainer .it05 {
-  background-image: url(../img/plastic/2022/a03.jpg);
-  background-size: cover;
-}
-#items .row .item .imgContainer .it06 {
-  background-image: url(../img/plastic/2022/c01.jpg);
-  background-size: cover;
-}
-#items .row .item .imgContainer .it07 {
-  background-image: url(../img/plastic/2022/b01.jpg);
-  background-size: cover;
-}
-#items .row .item .imgContainer .it08 {
-  background-image: url(../img/plastic/2018/03.jpg);
-  background-size: cover;
+#items .row .item .imgContainer .imgItem img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #items .row .item .productName {
   display: block;
   font-family: Chivo;
   color: #FFFFFF;
   font-weight: 800;
-  padding-top: 3vh;
+  padding-top: 40px;
   font-size: 1.5rem;
 }
 #items .row .item .price {
@@ -602,21 +659,29 @@ footer .topbtn:hover svg {
 }
 
 .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 50% 不透明度的黑色背景 */
+  z-index: 999; /* 使 .overlay 位於其他元素之上 */
+  display: none; /* 初始時隱藏 .overlay */
+}
+.overlay .overlay-content {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 300px;
   height: 100px;
-  background-color: #E931CC;
-  /* 半透明黑色背景 */
+  background-color: white;
   z-index: 9999;
   /* 确保覆盖在其他元素之上 */
   display: none;
   /* 默认隐藏 */
   border-radius: 10px;
-}
-.overlay .overlay-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -625,6 +690,7 @@ footer .topbtn:hover svg {
 .overlay .overlay-content .cancel {
   display: flex;
   justify-content: end;
+  cursor: pointer;
 }
 .overlay .overlay-content .atcbtn {
   display: flex;
@@ -632,11 +698,15 @@ footer .topbtn:hover svg {
   padding-top: 20px;
 }
 .overlay .overlay-content .atcbtn .atc {
-  padding: 0 10px;
+  padding: 5px 20px;
   font-family: "Chivo";
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: 100;
+  border: none;
+  background-color: #E931CC;
+  border-radius: 5px;
+  color: white;
 }
 
 /* product */
@@ -645,46 +715,44 @@ footer .topbtn:hover svg {
   justify-content: center;
 }
 .container .infoContainer {
-  width: 70vw;
-  height: 58vh;
+  width: 1200px;
+  height: 600px;
   margin: 25vh 0;
-  padding: 0 8%;
   display: flex;
-  justify-content: space-between;
 }
 .container .infoContainer #productImg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 25vw;
+  width: 50%;
+  height: 100%;
 }
 .container .infoContainer #productImg .bigImg {
-  width: 25vw;
-  height: 25vw;
-  margin-bottom: 3vh;
+  width: 75%;
+  height: 75%;
 }
 .container .infoContainer #productImg .bigImg img {
-  width: 25vw;
-  height: 25vw;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 1vw;
+  border-radius: 10px;
 }
 .container .infoContainer #productImg .smallImg {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 25vw;
-  height: 5vw;
+  width: 75%;
+  height: 15%;
 }
 .container .infoContainer #productImg .smallImg img {
   width: 20%;
   height: 100%;
   object-fit: cover;
-  border-radius: 1vw;
+  border-radius: 10px;
 }
 .container .infoContainer #productInfo {
-  width: 25vw;
+  width: 50%;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -727,7 +795,7 @@ footer .topbtn:hover svg {
   height: 40px;
 }
 .container .infoContainer #productInfo .quaBtn .quaNum {
-  margin: 0 1vw;
+  margin: 0 20px;
   font-size: 1.5rem;
   font-weight: 900;
   color: #FFFFFF;
@@ -743,10 +811,10 @@ footer .topbtn:hover svg {
   padding-top: 20px;
 }
 .container .infoContainer #productInfo .buyBtn button {
-  width: 100%;
-  height: 6vh;
-  margin-top: 1vh;
-  border-radius: 1vw;
+  width: 80%;
+  height: 60px;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 .container .infoContainer #productInfo .buyBtn .atc {
   font-family: "Chivo";
