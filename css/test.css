@@ -456,7 +456,9 @@ footer .topbtn:hover svg {
   margin-bottom: 35vh;
 }
 #years .year {
-  border-top: 10px solid rgb(255, 255, 255);
+  border-top: 10px solid transparent;
+  border-image: linear-gradient(to right, rgba(189, 34, 173, 0.368627451), rgba(90, 25, 72, 0.8274509804), rgba(133, 66, 200, 0.5411764706), rgba(177, 72, 40, 0.5764705882), rgba(40, 70, 219, 0.4941176471), rgba(229, 231, 85, 0.4196078431));
+  border-image-slice: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;

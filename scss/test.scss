@@ -384,7 +384,9 @@ footer {
     margin-bottom: 35vh;
 
     .year {
-        border-top: 10px solid rgb(255, 255, 255);
+        border-top: 10px solid transparent;
+        border-image: linear-gradient( to right, #bd22ad5e, #5a1948d3, #8542c88a, #b1482893, #2846db7e, #e5e7556b);
+        border-image-slice: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
