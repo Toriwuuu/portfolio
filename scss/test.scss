@@ -207,8 +207,8 @@ footer {
         width: 100%;
         height: 75px;
         background-color: $purple;
-        border-top: 10px solid #FFFFFF;
-        border-bottom: 10px solid #FFFFFF;
+        border-top: 5px solid #FFFFFF;
+        border-bottom: 5px solid #FFFFFF;
         color: $white;
         font-size: 2rem;
         font-family: 'Chivo';
@@ -218,10 +218,12 @@ footer {
         overflow: hidden; /* 確保溢出的內容不會顯示 */
         position: relative;
         .marquee-content {
+            display: flex;
+            align-items: center;
             width: 300%;
             position: absolute;
             will-change: transform;
-            animation: marquee 20s linear infinite; /* 持續 10 秒的動畫，無限循環 */
+            animation: marquee 40s linear infinite; /* 持續 10 秒的動畫，無限循環 */
             white-space: nowrap;
             span {
                 display: inline-block;
@@ -239,7 +241,7 @@ footer {
             transform: translateX(0%);
         }
         100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
 
@@ -453,21 +455,27 @@ footer {
 /* CYCLE */
 #prev,
 #next {
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: transparent;
+    color: transparent;
     padding: 10px;
     cursor: pointer;
     z-index: 1000;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
 }
 
 #prev {
+    background-image: url(../img/ArrowL.svg);
     left: 10px;
 }
 
 #next {
+    background-image: url(../img/ArrowR.svg);
     right: 10px;
 }
 
