@@ -42,8 +42,8 @@
             <div class="carousel">
                 <div class="mask"><a href="./img/illus/dont-wake-up.jpg" data-lightbox="image-1"><img
                             src="./img/illus/dont-wake-up.jpg" alt=""></a></div>
-                <div class="mask"><a href="./img/illus/two.jpg" data-lightbox="image-1"><img
-                            src="./img/illus/two.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/two.jpg" data-lightbox="image-1"><img src="./img/illus/two.jpg"
+                            alt=""></a></div>
                 <div class="mask"><a href="./img/illus/always-cow.jpg" data-lightbox="image-1"><img
                             src="./img/illus/always-cow.jpg" alt=""></a></div>
                 <div class="mask"><a href="./img/illus/calling.jpg" data-lightbox="image-1"><img
@@ -64,6 +64,32 @@
                             src="./img/illus/staircase.jpg" alt=""></a></div>
                 <div class="mask"><a href="./img/illus/star-tears.jpg" data-lightbox="image-1"><img
                             src="./img/illus/star-tears.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/dont-wake-up.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/dont-wake-up.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/two.jpg" data-lightbox="image-1"><img src="./img/illus/two.jpg"
+                            alt=""></a></div>
+                <div class="mask"><a href="./img/illus/always-cow.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/always-cow.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/calling.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/calling.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/chaos.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/chaos.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/escape.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/escape.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/face.jpg" data-lightbox="image-1"><img src="./img/illus/face.jpg"
+                            alt=""></a></div>
+                <div class="mask"><a href="./img/illus/missing-call.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/missing-call.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/moai.jpg" data-lightbox="image-1"><img src="./img/illus/moai.jpg"
+                            alt=""></a></div>
+                <div class="mask"><a href="./img/illus/rainy-night.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/rainy-night.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/staircase.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/staircase.jpg" alt=""></a></div>
+                <div class="mask"><a href="./img/illus/star-tears.jpg" data-lightbox="image-1"><img
+                            src="./img/illus/star-tears.jpg" alt=""></a></div>
+                
+
             </div>
         </div>
     </section>
@@ -74,11 +100,11 @@
                 <span>
                     Hi, I'm Tori. Welcome to my website. Here you can see some illustrations and some plastic arts. You
                     can also buy my works in the SHOP. Have a nice day!</span>
-                    <img src="./img/logo.png" alt="">
+                <img src="./img/logo.png" alt="">
                 <span>
                     Hi, I'm Tori. Welcome to my website. Here you can see some illustrations and some plastic arts. You
                     can also buy my works in the SHOP. Have a nice day!</span>
-                    <img src="./img/logo.png" alt="">
+                <img src="./img/logo.png" alt="">
             </div>
         </div>
         <div class="contactTable">
@@ -130,7 +156,7 @@
                     // 滾動至頁首，顯示 header
                     $('#topbar').css({
                         'top': '0',
-                        'transition': 'top 0.5s' // 添加過渡效果
+                        'transition': 'top 0.3s' // 添加過渡效果
                     });
                 }
 
@@ -138,22 +164,22 @@
             });
 
 
-            // 无缝播放图片
-            let $carousel = $('.carousel');
-            let carouselHeight = $carousel.height();
-            let imageHeight = $('.mask').outerHeight(true);
-            let totalImages = $('.mask').length;
-            let imagesToShow = Math.ceil(carouselHeight / imageHeight) + 1;
-
-            function duplicateImages() {
-                let htmlContent = $carousel.html();
-                let imagesToDuplicate = Math.ceil(imagesToShow / totalImages) * totalImages;
-                for (let i = 0; i < imagesToDuplicate; i++) {
-                    $carousel.append(htmlContent);
-                }
-            }
-
-            duplicateImages();
+            /*             // 无缝播放图片
+                        let $carousel = $('.carousel');
+                        let carouselHeight = $carousel.height();
+                        let imageHeight = $('.mask').outerHeight(true);
+                        let totalImages = $('.mask').length;
+                        let imagesToShow = Math.ceil(carouselHeight / imageHeight) + 1;
+            
+                        function duplicateImages() {
+                            let htmlContent = $carousel.html();
+                            let imagesToDuplicate = Math.ceil(imagesToShow / totalImages) * totalImages;
+                            for (let i = 0; i < imagesToDuplicate; i++) {
+                                $carousel.append(htmlContent);
+                            }
+                        }
+            
+                        duplicateImages(); */
 
 
             $('.topbtn svg').click(function () {

@@ -258,7 +258,7 @@ a {
 #digitalArt .photo .carousel {
   display: flex;
   flex-direction: column-reverse;
-  animation: scroll 400s linear infinite;
+  animation: scroll 40s linear infinite;
   transition: animation 2s ease;
 }
 #digitalArt .photo .mask {
@@ -545,6 +545,7 @@ footer .topbtn:hover svg {
   position: fixed;
   right: 5vw;
   top: 20vh;
+  cursor: pointer;
 }
 .cart svg {
   width: 48px;
@@ -644,6 +645,10 @@ footer .topbtn:hover svg {
   border-radius: 20px;
   width: 200px;
   height: 200px;
+  transition: transform 0.3s ease;
+}
+#items .row .item .imgContainer .imgItem:hover {
+  transform: scale(1.1);
 }
 #items .row .item .imgContainer .imgItem img {
   border-radius: 20px;
@@ -658,6 +663,9 @@ footer .topbtn:hover svg {
   font-weight: 800;
   padding-top: 40px;
   font-size: 1.5rem;
+}
+#items .row .item .productName:hover {
+  text-decoration: underline;
 }
 #items .row .item .price {
   display: block;
@@ -762,6 +770,10 @@ footer .topbtn:hover svg {
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+.container .infoContainer #productImg .smallImg img:hover {
+  transform: scale(1.1);
 }
 .container .infoContainer #lightbox {
   display: none;
@@ -853,6 +865,9 @@ footer .topbtn:hover svg {
   display: flex;
   align-items: center;
 }
+.container .infoContainer #productInfo .quaBtn button {
+  cursor: pointer;
+}
 .container .infoContainer #productInfo .quaBtn .quaMinus {
   background-color: transparent;
   border: none;
@@ -882,6 +897,7 @@ footer .topbtn:hover svg {
   height: 60px;
   margin-top: 20px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .container .infoContainer #productInfo .buyBtn .atc {
   font-family: "Chivo";
@@ -906,12 +922,17 @@ footer .topbtn:hover svg {
 }
 
 #incart {
+  position: fixed;
+  right: -500px;
+  top: 0;
   width: 500px;
   height: 100vh;
   box-sizing: border-box;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
+  transition: right 0.5s;
+  z-index: 1001;
 }
 #incart .incartTitle {
   width: 100%;
@@ -925,6 +946,9 @@ footer .topbtn:hover svg {
   font-weight: 900;
   color: #E931CC;
   border-bottom: 1px solid #161616;
+}
+#incart .incartTitle .cancel {
+  cursor: pointer;
 }
 #incart .incartContent {
   display: flex;
@@ -951,6 +975,7 @@ footer .topbtn:hover svg {
 #incart .incartContent .incartInfo .quaBtn button {
   border: 0;
   background: transparent;
+  cursor: pointer;
 }
 #incart .incartContent .incartInfo .quaBtn p {
   font-family: "Chivo";
@@ -989,4 +1014,15 @@ footer .topbtn:hover svg {
   color: #FFFFFF;
   font-size: 20px;
   font-style: italic;
+}
+
+.overlay2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }/*# sourceMappingURL=test.css.map */

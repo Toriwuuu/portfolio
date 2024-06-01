@@ -45,7 +45,7 @@
         <section id="shopBanner">
             <div class="bannerContainer">
                 <div class="bannerImg cycle-slideshow" data-cycle-loader="wait" data-cycle-pager=".cycle-pager">
-                    <img src="./img/illus/missing call.jpg" alt="">
+                    <img src="./img/illus/missing-call.jpg" alt="">
                     <img src="./img/illus/dont-wake-up.jpg" alt="">
                     <img src="./img/plastic/2017/01.jpg" alt="">
                     <img src="./img/plastic/2018/01.jpg" alt="">
@@ -308,6 +308,75 @@
         </div>
     </div>
 
+    <section id="incart">
+        <div class="incartTitle">
+            <h3>Cart</h3>
+            <div class="cancel">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0 22.1961C0 22.6745 0.187506 23.1334 0.521282 23.4717C0.85516 23.81 1.30793 24 1.78004 24C2.25214 24 2.70491 23.81 3.03879 23.4717L11.9893 14.4012L20.9612 23.4935C21.297 23.8222 21.7467 24.004 22.2136 23.9999C22.6804 23.9958 23.1269 23.8061 23.457 23.4715C23.7871 23.137 23.9744 22.6845 23.9784 22.2114C23.9825 21.7383 23.803 21.2825 23.4787 20.9422L14.6657 12.0109L23.4787 3.07957C23.8125 2.74121 24 2.28236 24 1.80392C24 1.32548 23.8125 0.866635 23.4787 0.528277C23.1448 0.190021 22.6921 0 22.22 0C21.7479 0 21.2951 0.190021 20.9612 0.528277L12.0107 9.59884L3.03879 0.50649C2.703 0.177821 2.25326 -0.0040429 1.78644 6.80742e-05C1.31962 0.00417904 0.873074 0.193934 0.54297 0.528467C0.212866 0.863001 0.0256212 1.31554 0.0215647 1.78863C0.0175081 2.26171 0.196965 2.71748 0.521282 3.05778L9.33435 11.9891L0.521282 20.9204C0.187506 21.2588 0 21.7176 0 22.1961Z"
+                        fill="#E931CC" />
+                </svg>
+            </div>
+        </div>
+        <div class="incartContent">
+            <div class="incartImg">
+                <img src="./img/plastic/2023/05.jpg" alt="">
+            </div>
+            <div class="incartInfo">
+                <h2 class="infoTitle">I Sea the Sunset</h2>
+                <div class="quaBtn">
+
+                    <button class="quaMinus">
+                        <svg width="40" height="40" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18 26H34H18ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                fill="white" />
+                            <path
+                                d="M18 26H34M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                        </svg>
+
+                    </button>
+
+                    <p class="quaNum"></p>
+
+                    <button class="quaPlus">
+                        <svg width="40" height="40" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_238_3188)">
+                                <path
+                                    d="M16 26H36ZM26 36V16ZM50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                    fill="white" />
+                                <path
+                                    d="M16 26H36M26 36V16M50 26C50 39.2548 39.2548 50 26 50C12.7452 50 2 39.2548 2 26C2 12.7452 12.7452 2 26 2C39.2548 2 50 12.7452 50 26Z"
+                                    stroke="#E931CC" stroke-width="4" stroke-linecap="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_238_3188">
+                                    <rect width="52" height="52" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </div>
+                <h3 class="infoPrice">$10000</h3>
+            </div>
+        </div>
+        <div class="incartTotal">
+            <div class="incartTotalContent">
+                <p>Total:</p>
+                <div class="incartPrice">$10000</div>
+            </div>
+            <button>
+                <p>Check Out</p>
+            </button>
+        </div>
+    </section>
+
+    
+    <div class="overlay2"></div>
+
+
 
     <footer id="contact">
         <div class="marquee">
@@ -371,7 +440,7 @@
                     // 滾動至頁首，顯示 header
                     $('#topbar').css({
                         'top': '0',
-                        'transition': 'top 0.5s' // 添加過渡效果
+                        'transition': 'top 0.3s' // 添加過渡效果
                     });
                 }
 
@@ -440,6 +509,29 @@
             }
 
         });
+
+                    // 顯示購物車和覆蓋層
+                    $('.atc').click(function () {
+                $('.overlay2').fadeIn(); // 顯示覆蓋層
+                $('#incart').css('right', '0'); // 顯示購物車
+            });
+            $('.cart').click(function () {
+                $('.overlay2').fadeIn(); // 顯示覆蓋層
+                $('#incart').css('right', '0'); // 顯示購物車
+            });
+    
+    
+            // 隱藏購物車和覆蓋層
+            $('.cancel').click(function () {
+                $('.overlay2').fadeOut(); // 隱藏覆蓋層
+                $('#incart').css('right', '-500px'); // 隱藏購物車
+            });
+            $('.overlay2').click(function () {
+                $(this).fadeOut(); // 隱藏覆蓋層
+                $('#incart').css('right', '-500px'); // 隱藏購物車
+            });
+    
+
 
     </script>
 

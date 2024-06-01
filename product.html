@@ -116,7 +116,7 @@
                         </button>
                     </div>
                     <div class="buyBtn">
-                        <button class="atc"><span>Add to Cart - $10000</span></button>
+                        <button class="atc">Add to Cart - $ <span class="price">10000</span></button>
                         <button class="bn"><span>BUY NOW</span></button>
                         <!--                         <button class="paypal"><img src="./img/paypal.png" alt=""></button> -->
                     </div>
@@ -156,7 +156,7 @@
 
                     </button>
 
-                    <p class="quaNum">1</p>
+                    <p class="quaNum"></p>
 
                     <button class="quaPlus">
                         <svg width="40" height="40" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -188,9 +188,10 @@
                 <p>Check Out</p>
             </button>
         </div>
-
     </section>
 
+
+    <div class="overlay2"></div>
     <footer id="contact">
         <div class="marquee">
             <div class="marquee-content">
@@ -214,22 +215,6 @@
                     </ul>
                 </nav>
             </div>
-            <!--             <form action="" method="post" name="form-contact" id="form-contact" title="聯絡我們表單">
-
-                <label for="username">Name:</label>
-                <input type="text" name="username" id="username" title="請輸入姓名" placeholder="" required>
-
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="" required>
-
-                <label for="massage">Message:</label>
-                <textarea name="massage" id="massage" rows="10"></textarea>
-
-                <button class="btn-form">
-                    <span>Send</span>
-                </button>
-            </form>
- -->
         </div>
 
         <div class="topbtn">TOP<svg width="85" height="43" viewBox="0 0 85 43" fill="none"
@@ -247,16 +232,14 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
-
         $(document).ready(function () {
-
             // 頁首滾動效果
             let lastScrollTop = 0;
             let headerHeight = $('#topbar').outerHeight();
-
+    
             $(window).scroll(function () {
                 let currentScroll = $(this).scrollTop();
-
+    
                 if (currentScroll > lastScrollTop) {
                     // 往下滾動，隱藏 header
                     $('#topbar').css({
@@ -267,61 +250,107 @@
                     // 往上滾動，顯示 header
                     $('#topbar').css({
                         'top': '0',
-                        'transition': 'top 1s' // 添加過渡效果
+                        'transition': 'top 3s' // 添加過渡效果
                     });
                 }
                 lastScrollTop = currentScroll;
             });
-
+    
             // 圖像交換
             $('.smallImg img').click(function () {
                 let bigImg = $('.bigImg img');
                 bigImg.attr('src', $(this).attr('src'));
             });
-
+    
             $('.bigImg img').click(function () {
                 let lightbox = $('#lightbox');
                 let lightboxImg = $('#lightbox-img');
                 let smallImages = $('.smallImg img');
-
+    
                 // 設置燈箱中的大圖像為當前的大圖像
                 lightboxImg.attr('src', $(this).attr('src'));
-
+    
                 // 清空燈箱中的縮略圖
                 $('.lightbox-thumbnails').empty();
-
+    
                 // 動態生成縮略圖並添加到燈箱
                 smallImages.each(function () {
                     let thumbnail = $('<img>').attr('src', $(this).attr('src'));
                     $('.lightbox-thumbnails').append(thumbnail);
                 });
-
+    
                 // 顯示燈箱
                 lightbox.show();
-
+    
                 // 點擊縮略圖切換大圖像
                 $('.lightbox-thumbnails img').click(function () {
                     lightboxImg.attr('src', $(this).attr('src'));
                 });
-
+    
                 // 點擊關閉燈箱
                 $('.close').click(function () {
                     lightbox.hide();
                 });
             });
-
-
+    
+            // 顯示購物車和覆蓋層
+            $('.atc').click(function () {
+                $('.overlay2').fadeIn(); // 顯示覆蓋層
+                $('#incart').css('right', '0'); // 顯示購物車
+            });
+            $('.cart').click(function () {
+                $('.overlay2').fadeIn(); // 顯示覆蓋層
+                $('#incart').css('right', '0'); // 顯示購物車
+            });
+    
+    
+            // 隱藏購物車和覆蓋層
+            $('.cancel').click(function () {
+                $('.overlay2').fadeOut(); // 隱藏覆蓋層
+                $('#incart').css('right', '-500px'); // 隱藏購物車
+            });
+            $('.overlay2').click(function () {
+                $(this).fadeOut(); // 隱藏覆蓋層
+                $('#incart').css('right', '-500px'); // 隱藏購物車
+            });
+    
+            // 假設每個商品的基礎價格
+            var basePrice = 10000; // 根據你的需求設置基礎價格
+    
+            // 函數用於更新 atc 和 incart 中的價格
+            function updatePriceAndQuantity(num) {
+                var totalPrice = basePrice * num;
+                $('.atc .price').text(totalPrice.toFixed(0)); // 更新 atc 中的價格
+                $('.incartPrice').text('$' + totalPrice.toFixed(0)); // 更新 incart 中的價格
+                $('.quaNum').text(num); // 同步更新 quaNum
+            }
+    
+            // 點擊 quaMinus 減少 quaNum 值
+            $('.quaMinus').click(function () {
+                var num = parseInt($(this).siblings('.quaNum').text()); // 獲取當前 quaNum 的值
+                if (num > 1) { // 確保不低於 1
+                    num--; // 減少 quaNum 值
+                    updatePriceAndQuantity(num); // 更新價格和數量
+                }
+            });
+    
+            // 點擊 quaPlus 增加 quaNum 值
+            $('.quaPlus').click(function () {
+                var num = parseInt($(this).siblings('.quaNum').text()); // 獲取當前 quaNum 的值
+                num++; // 增加 quaNum 值
+                updatePriceAndQuantity(num); // 更新價格和數量
+            });
+    
+            // 初始化時更新價格
+            var initialNum = parseInt($('.quaNum').text());
+            updatePriceAndQuantity(initialNum);
+    
             $('.topbtn svg').click(function () {
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
             });
         });
-
-
-
-
-
     </script>
-
+    
 
 </body>
 
