@@ -786,6 +786,15 @@ footer .topbtn:hover svg {
   margin: 25vh 0;
   display: flex;
 }
+@media (max-width: 992px) {
+  .container .infoContainer {
+    flex-direction: column;
+    align-items: center;
+    margin: 15vh 0;
+    width: 100%;
+    height: auto;
+  }
+}
 .container .infoContainer #productImg {
   display: flex;
   flex-direction: column;
@@ -793,6 +802,11 @@ footer .topbtn:hover svg {
   align-items: center;
   width: 50%;
   height: 100%;
+}
+@media (max-width: 992px) {
+  .container .infoContainer #productImg {
+    width: 100%;
+  }
 }
 .container .infoContainer #productImg .bigImg {
   width: 75%;
@@ -881,6 +895,11 @@ footer .topbtn:hover svg {
   width: 50%;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (max-width: 992px) {
+  .container .infoContainer #productInfo {
+    align-items: center;
+  }
 }
 .container .infoContainer #productInfo .infoTitle {
   font-family: "Chivo";

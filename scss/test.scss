@@ -768,7 +768,13 @@ footer {
         height: 600px;
         margin: 25vh 0;
         display: flex;
-
+        @media (max-width:992px){
+            flex-direction: column;
+            align-items: center;
+            margin: 15vh 0;
+            width: 100%;
+            height: auto;
+        }
         #productImg {
             display: flex;
             flex-direction: column;
@@ -776,7 +782,9 @@ footer {
             align-items: center;
             width: 50%;
             height: 100%;
-
+            @media (max-width:992px){
+                width: 100%;
+            }
             .bigImg {
                 width: 75%;
                 height: 75%;
@@ -880,7 +888,9 @@ footer {
             width: 50%;
             flex-direction: column;
             justify-content: space-between;
-
+            @media (max-width:992px){
+                align-items: center;
+            }
             .infoTitle {
                 font-family: 'Chivo';
                 font-size: 1.5rem;
