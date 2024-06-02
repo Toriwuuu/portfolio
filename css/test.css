@@ -154,8 +154,9 @@ body {
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
   color: #555;
-  background: url(../img/noise.png), linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, 0.3), rgba(169, 4, 93, 0.25), rgba(38, 87, 43, 0.25), rgba(44, 14, 74, 0.42), rgba(21, 71, 99, 0.33), rgba(115, 20, 63, 0.5), rgba(72, 55, 12, 0.31)), conic-gradient(from 180deg, rgba(188, 0, 23, 0.24) 25deg, rgba(36, 9, 12, 0.3) 50deg, rgba(0, 0, 0, 0.3) 144deg, rgba(24, 108, 48, 0.3) 215deg, rgba(71, 13, 13, 0.3) 250deg, rgba(6, 60, 91, 0.3) 288deg, rgba(188, 0, 23, 0.24) 358deg), rgb(0, 0, 0);
-  background-repeat: round;
+  background: url(../img/noise.png), linear-gradient(rgba(39, 167, 175, 0), rgba(55, 13, 97, 0.3), rgba(169, 4, 93, 0.25), rgba(38, 87, 43, 0.25), rgba(44, 14, 74, 0.42), rgba(21, 71, 99, 0.33), rgba(115, 20, 63, 0.5), rgba(72, 55, 12, 0.31)), black;
+  background-repeat: repeat, repeat, no-repeat;
+  overflow-x: visible;
 }
 
 a {
@@ -174,6 +175,11 @@ a {
   font-size: 1.5rem;
   z-index: 999;
 }
+@media (max-width: 640px) {
+  #topbar {
+    font-size: 1rem;
+  }
+}
 #topbar img {
   width: 20vw;
 }
@@ -185,11 +191,11 @@ a {
 }
 #topbar .menu {
   display: flex;
-  margin-right: 2vw;
+  padding: 2vw;
 }
 #topbar .menu a {
   display: flex;
-  margin: 2vw;
+  padding: 2vw;
   /*     border:1px solid #161616; */
   font-family: "Chivo";
   font-weight: 900;
@@ -248,8 +254,9 @@ a {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  margin: 15vh;
+  padding: 15vh;
   margin-top: 20vh;
+  margin-bottom: 15vh;
   overflow: hidden;
   position: relative;
   height: 60vw;
@@ -303,10 +310,12 @@ footer {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(rgba(119, 12, 255, 0.5), rgba(167, 21, 244, 0.6), rgba(206, 28, 235, 0.9), rgb(233, 49, 204));
+  background: linear-gradient(rgba(119, 12, 255, 0.5), rgba(167, 21, 244, 0.6), rgba(206, 28, 235, 0.9), rgb(233, 49, 204));
 }
 footer .marquee {
   width: 100%;
+  display: flex;
+  align-items: center;
   height: 75px;
   background-color: #9E1AAA;
   border-top: 5px solid #FFFFFF;
@@ -315,9 +324,8 @@ footer .marquee {
   font-size: 2rem;
   font-family: "Chivo";
   font-style: italic;
-  display: flex;
-  align-items: center;
-  overflow: hidden; /* 確保溢出的內容不會顯示 */
+  overflow: hidden;
+  /* 確保溢出的內容不會顯示 */
   position: relative;
 }
 footer .marquee .marquee-content {
@@ -326,7 +334,8 @@ footer .marquee .marquee-content {
   width: 300%;
   position: absolute;
   will-change: transform;
-  animation: marquee 40s linear infinite; /* 持續 10 秒的動畫，無限循環 */
+  animation: marquee 40s linear infinite;
+  /* 持續 10 秒的動畫，無限循環 */
   white-space: nowrap;
 }
 footer .marquee .marquee-content span {
@@ -346,21 +355,29 @@ footer .marquee .marquee-content span {
 footer .contactTable {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  border-bottom: 10px solid white;
 }
 footer .contactTable .contactText {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-self: center;
+  width: 90%;
   font-family: "Chivo";
   color: #FFFFFF;
   font-size: 6rem;
   font-weight: 900;
-  padding: 2vh 0vw 1vh 6rem;
+  padding: 0 0 0 0;
+}
+@media (max-width: 995px) {
+  footer .contactTable .contactText {
+    font-size: 3rem;
+  }
 }
 footer .contactTable .contactText .icon {
   display: flex;
   align-self: center;
-  margin-right: 10vw;
 }
 footer .contactTable .contactText .icon a {
   width: 40px;
@@ -383,53 +400,21 @@ footer .contactTable .contactText .icon .icon-twitter {
   background-image: url(../img/twitter.svg);
   background-repeat: no-repeat;
 }
-footer #form-contact {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  width: 25%;
-  font-family: "Chivo";
-  color: #FFFFFF;
-}
-footer #form-contact label {
-  font-weight: 200;
-  margin: 1vh 0 1vh 0;
-  border: none;
-}
-footer #form-contact .btn-form {
-  align-self: flex-end;
-  margin: 16px 0px;
-  width: 7vw;
-  height: 3.5vh;
-  border: none;
-  border-radius: 5px;
-}
-footer #form-contact .btn-form span {
-  font-family: "Chivo";
-  font-style: italic;
-  font-weight: 900;
-  color: #E931CC;
-}
-footer #form-contact input {
-  border: none;
-  border-radius: 5px;
-  height: 3vh;
-}
-footer #form-contact textarea {
-  border: none;
-  border-radius: 5px;
-}
 footer .topbtn {
   display: flex;
+  padding: 10px 0;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
+  align-self: center;
   font-family: "Chivo";
   color: #FFFFFF;
   font-size: 6rem;
   font-weight: 900;
-  border-top: 10px solid white;
-  margin-top: 2vh;
-  padding: 2vh 10vw 5vh 22rem;
+}
+@media (max-width: 995px) {
+  footer .topbtn {
+    font-size: 3rem;
+  }
 }
 footer .topbtn svg {
   align-self: center;
@@ -438,6 +423,43 @@ footer .topbtn svg {
 footer .topbtn:hover svg {
   transform: scale(1.2);
   cursor: pointer;
+}
+
+#form-contact {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 25%;
+  font-family: "Chivo";
+  color: #FFFFFF;
+}
+#form-contact label {
+  font-weight: 200;
+  margin: 1vh 0 1vh 0;
+  border: none;
+}
+#form-contact .btn-form {
+  align-self: flex-end;
+  margin: 16px 0px;
+  width: 7vw;
+  height: 3.5vh;
+  border: none;
+  border-radius: 5px;
+}
+#form-contact .btn-form span {
+  font-family: "Chivo";
+  font-style: italic;
+  font-weight: 900;
+  color: #E931CC;
+}
+#form-contact input {
+  border: none;
+  border-radius: 5px;
+  height: 3vh;
+}
+#form-contact textarea {
+  border: none;
+  border-radius: 5px;
 }
 
 /* plastic */
@@ -455,7 +477,7 @@ footer .topbtn:hover svg {
 #years {
   display: flex;
   flex-direction: column;
-  margin-bottom: 35vh;
+  margin-bottom: 40vh;
 }
 #years .year {
   border-top: 10px solid transparent;
@@ -466,6 +488,7 @@ footer .topbtn:hover svg {
   justify-content: center;
   width: 100%;
   height: auto;
+  padding: 0 0 30px 0;
   opacity: 0;
   transition: opacity 3s ease;
 }
@@ -474,15 +497,13 @@ footer .topbtn:hover svg {
 }
 #years .year .yearimg {
   display: block;
-  margin-right: 10vw;
   width: auto;
   height: 15vh;
-  margin: 2vw 6vw 3vw 1vw;
   cursor: pointer;
   transition: transform 0.5s ease;
 }
 #years .year .yearimg.move-left {
-  transform: translateX(-30vw);
+  transform: translateX(-35vw);
 }
 #years .year .expanded-images {
   position: relative;
@@ -503,7 +524,7 @@ footer .topbtn:hover svg {
 }
 #years .year .expanded-images img {
   height: 65vh;
-  margin: 0 1vw;
+  padding: 0 1vw;
   object-fit: cover;
   display: inline-block;
 }
@@ -545,11 +566,18 @@ footer .topbtn:hover svg {
   position: fixed;
   right: 5vw;
   top: 20vh;
+  z-index: 100;
   cursor: pointer;
 }
 .cart svg {
   width: 48px;
   height: 48px;
+}
+@media (max-width: 640px) {
+  .cart svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .cart-count {
@@ -564,34 +592,42 @@ footer .topbtn:hover svg {
   text-align: center;
   font-size: 12px;
   line-height: 20px;
-  display: none; /* 初始隱藏 */
+  display: none;
+  /* 初始隱藏 */
 }
 
 /* shop */
-#shopBanner {
-  justify-content: center;
-  margin-bottom: 100px;
+.bannerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-top: 200px;
 }
-#shopBanner .bannerContainer {
-  display: inline-block;
-}
-#shopBanner .bannerContainer .bannerImg {
+.bannerContainer .bannerImg {
   height: 500px;
   width: 1200px;
-  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
 }
-#shopBanner .bannerContainer .bannerImg img {
+@media (max-width: 1200px) {
+  .bannerContainer .bannerImg {
+    width: 900px;
+    min-width: 900px;
+    max-width: 900px;
+  }
+}
+.bannerContainer .bannerImg img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 30px;
 }
-#shopBanner .bannerContainer .cycle-pager {
+.bannerContainer .cycle-pager {
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  padding-top: 10px;
 }
-#shopBanner .bannerContainer .cycle-pager a {
+.bannerContainer .cycle-pager a {
   color: black;
   text-decoration: none;
   margin: 5px;
@@ -606,20 +642,29 @@ footer .topbtn:hover svg {
   line-height: 20px;
   background-color: #FFFFFF;
 }
-#shopBanner .bannerContainer .cycle-pager a.activeSlide {
+.bannerContainer .cycle-pager a.activeSlide {
   background-color: #E931CC;
 }
 
 #items {
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-bottom: 200px;
+  margin-top: 100px;
 }
 #items .row {
   height: 400px;
   width: 1200px;
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 1200px) {
+  #items .row {
+    width: 900px;
+    min-width: 900px;
+    max-width: 900px;
+  }
 }
 #items .row .item {
   width: 20%;
@@ -683,9 +728,12 @@ footer .topbtn:hover svg {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* 50% 不透明度的黑色背景 */
-  z-index: 999; /* 使 .overlay 位於其他元素之上 */
-  display: none; /* 初始時隱藏 .overlay */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* 50% 不透明度的黑色背景 */
+  z-index: 999;
+  /* 使 .overlay 位於其他元素之上 */
+  display: none;
+  /* 初始時隱藏 .overlay */
 }
 .overlay .overlay-content {
   position: fixed;
