@@ -175,13 +175,28 @@ a {
   font-size: 1.5rem;
   z-index: 999;
 }
-@media (max-width: 640px) {
+@media (max-width: 992px) {
   #topbar {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
-#topbar img {
+@media (max-width: 640px) {
+  #topbar {
+    height: auto;
+  }
+}
+#topbar .logo img {
   height: 150px;
+}
+@media (max-width: 992px) {
+  #topbar .logo img {
+    height: 120px;
+  }
+}
+@media (max-width: 640px) {
+  #topbar .logo img {
+    height: 100px;
+  }
 }
 #topbar .nav-box {
   width: 100%;
@@ -189,25 +204,87 @@ a {
   align-items: center;
   justify-content: end;
 }
-#topbar .menu {
+@media (max-width: 640px) {
+  #topbar .nav-box {
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+#topbar .nav-box .hamburger {
+  display: none;
+}
+@media (max-width: 640px) {
+  #topbar .nav-box .hamburger {
+    display: block;
+    /* 三條線按鈕 */
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  #topbar .nav-box .hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #E931CC;
+    margin: 5px auto;
+    transition: 0.4s;
+  }
+}
+@media (max-width: 640px) {
+  #topbar .nav-box {
+    /* 三 變換為 X */
+  }
+  #topbar .nav-box .hamburger.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #topbar .nav-box .hamburger.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #topbar .nav-box .hamburger.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+#topbar .nav-box .menu {
   display: flex;
   padding: 30px;
 }
-#topbar .menu a {
+@media (max-width: 640px) {
+  #topbar .nav-box .menu {
+    display: none;
+    align-items: center;
+    animation: hide 0.7s ease-in-out both;
+  }
+}
+#topbar .nav-box .menu a {
   display: flex;
   padding: 30px;
   font-family: "Chivo";
   font-weight: 900;
   color: #E931CC;
 }
-#topbar .menu a:hover {
+#topbar .nav-box .menu a:hover {
   color: #FFFFFF;
+}
+@media (max-width: 640px) {
+  #topbar .nav-box .show {
+    display: flex;
+    flex-direction: column;
+    animation: show 0.7s ease-in-out both;
+  }
 }
 
 /* digital art */
 #digitalArt {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 992px) {
+  #digitalArt {
+    flex-direction: column;
+  }
 }
 #digitalArt .cd {
   display: flex;
@@ -216,13 +293,23 @@ a {
   position: relative;
 }
 #digitalArt .cd .pinrotate {
-  width: 350px;
+  width: 40%;
   position: absolute;
-  top: 300px;
-  left: 400px;
+  top: 10%;
+  left: 60%;
   transform-origin: top left;
   z-index: 2;
   animation: pinrotate 3s forwards;
+}
+@media (max-width: 992px) {
+  #digitalArt .cd .pinrotate {
+    top: 150px;
+  }
+}
+@media (max-width: 640px) {
+  #digitalArt .cd .pinrotate {
+    top: 100px;
+  }
 }
 @keyframes pinrotate {
   from {
@@ -233,12 +320,22 @@ a {
   }
 }
 #digitalArt .cd .rotate {
-  width: 800px;
+  width: 100%;
   position: absolute;
-  top: 400px;
-  left: -200px;
+  top: 15%;
+  left: -15%;
   z-index: -2;
   animation: rotate 60s linear infinite;
+}
+@media (max-width: 992px) {
+  #digitalArt .cd .rotate {
+    top: 250px;
+  }
+}
+@media (max-width: 640px) {
+  #digitalArt .cd .rotate {
+    top: 150px;
+  }
 }
 @keyframes rotate {
   from {
@@ -254,12 +351,25 @@ a {
   flex-direction: column-reverse;
   align-items: center;
   padding: 150px;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-top: 10%;
+  margin-bottom: 10%;
   overflow: hidden;
   position: relative;
   height: 1050px;
   mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+}
+@media (max-width: 992px) {
+  #digitalArt .photo {
+    margin-top: 1200px;
+  }
+}
+@media (max-width: 640px) {
+  #digitalArt .photo {
+    padding: 30px;
+    margin-top: 600px;
+    height: 450px;
+  }
 }
 #digitalArt .photo .carousel {
   display: flex;
@@ -267,7 +377,12 @@ a {
   animation: scroll 40s linear infinite;
   transition: animation 2s ease;
 }
-#digitalArt .photo .mask {
+@media (max-width: 640px) {
+  #digitalArt .photo .carousel {
+    animation: scroll 20s linear infinite;
+  }
+}
+#digitalArt .photo .carousel .mask {
   background-color: rgba(206, 21, 178, 0.521);
   width: 350px;
   height: 350px;
@@ -276,16 +391,32 @@ a {
   border: 5px solid rgba(255, 255, 255, 0.839);
   border-radius: 30px;
 }
-#digitalArt .photo .mask:hover {
+@media (max-width: 640px) {
+  #digitalArt .photo .carousel .mask {
+    width: 170px;
+    height: 170px;
+    margin: -20px;
+    border: 2px solid rgba(255, 255, 255, 0.839);
+    border-radius: 15px;
+  }
+}
+#digitalArt .photo .carousel .mask:hover {
   animation: sway 0.5s infinite alternate-reverse;
 }
-#digitalArt .photo .mask img {
+#digitalArt .photo .carousel .mask img {
   mix-blend-mode: multiply;
   object-fit: cover;
   width: 350px;
   height: 350px;
   box-shadow: 40px 50px 30px rgba(231, 58, 145, 0.315);
   border-radius: 30px;
+}
+@media (max-width: 640px) {
+  #digitalArt .photo .carousel .mask img {
+    width: 170px;
+    height: 170px;
+    border-radius: 15px;
+  }
 }
 @keyframes scroll {
   0% {
@@ -327,15 +458,34 @@ footer .marquee {
   /* 確保溢出的內容不會顯示 */
   position: relative;
 }
+@media (max-width: 640px) {
+  footer .marquee {
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
 footer .marquee .marquee-content {
   display: flex;
   align-items: center;
-  width: 300%;
+  width: 800%;
   position: absolute;
   will-change: transform;
   animation: marquee 40s linear infinite;
   /* 持續 10 秒的動畫，無限循環 */
   white-space: nowrap;
+}
+@media (max-width: 992px) {
+  footer .marquee .marquee-content {
+    width: 1500%;
+  }
+}
+@media (max-width: 640px) {
+  footer .marquee .marquee-content {
+    width: 2500%;
+  }
+  footer .marquee .marquee-content img {
+    height: 15px;
+  }
 }
 footer .marquee .marquee-content span {
   display: inline-block;
@@ -358,6 +508,12 @@ footer .contactTable {
   padding: 10px 0 10px 0;
   border-bottom: 10px solid white;
 }
+@media (max-width: 640px) {
+  footer .contactTable {
+    padding: 5px 0 5px 0;
+    border-bottom: 5px solid white;
+  }
+}
 footer .contactTable .contactText {
   display: flex;
   justify-content: space-between;
@@ -367,11 +523,16 @@ footer .contactTable .contactText {
   color: #FFFFFF;
   font-size: 6rem;
   font-weight: 900;
-  padding: 0 0 0 0;
+  align-items: center;
 }
-@media (max-width: 995px) {
+@media (max-width: 992px) {
   footer .contactTable .contactText {
     font-size: 3rem;
+  }
+}
+@media (max-width: 640px) {
+  footer .contactTable .contactText {
+    font-size: 2rem;
   }
 }
 footer .contactTable .contactText .icon {
@@ -384,20 +545,30 @@ footer .contactTable .contactText .icon a {
   margin: 10px;
   transition: transform 0.3s ease;
 }
+@media (max-width: 640px) {
+  footer .contactTable .contactText .icon a {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+  }
+}
 footer .contactTable .contactText .icon a:hover {
   transform: scale(1.2);
 }
 footer .contactTable .contactText .icon .icon-ig {
   background-image: url(../img/ig.svg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 footer .contactTable .contactText .icon .icon-fb {
   background-image: url(../img/fb.svg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 footer .contactTable .contactText .icon .icon-twitter {
   background-image: url(../img/twitter.svg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 footer .topbtn {
   display: flex;
@@ -410,14 +581,24 @@ footer .topbtn {
   font-size: 6rem;
   font-weight: 900;
 }
-@media (max-width: 995px) {
+@media (max-width: 992px) {
   footer .topbtn {
     font-size: 3rem;
+  }
+}
+@media (max-width: 640px) {
+  footer .topbtn {
+    font-size: 2rem;
   }
 }
 footer .topbtn svg {
   align-self: center;
   transition: transform 0.3s ease;
+}
+@media (max-width: 640px) {
+  footer .topbtn svg {
+    height: 20px;
+  }
 }
 footer .topbtn:hover svg {
   transform: scale(1.2);
@@ -473,16 +654,26 @@ footer .topbtn:hover svg {
   height: 100vh;
   object-fit: cover;
 }
+@media (max-width: 640px) {
+  .box {
+    height: 50vh;
+  }
+}
 .box img {
   width: 100%;
   height: 100vh;
   object-fit: cover;
 }
+@media (max-width: 640px) {
+  .box img {
+    height: 50vh;
+  }
+}
 
 #years {
   display: flex;
   flex-direction: column;
-  margin-bottom: 450px;
+  margin-bottom: 200px;
 }
 #years .year {
   border-top: 10px solid transparent;
@@ -497,6 +688,11 @@ footer .topbtn:hover svg {
   opacity: 0;
   transition: opacity 3s ease;
 }
+@media (max-width: 640px) {
+  #years .year {
+    padding: 0 0 10px 0;
+  }
+}
 #years .year.visible {
   opacity: 1;
 }
@@ -507,8 +703,18 @@ footer .topbtn:hover svg {
   cursor: pointer;
   transition: transform 0.5s ease;
 }
+@media (max-width: 992px) {
+  #years .year .yearimg {
+    height: 80px;
+  }
+}
+@media (max-width: 640px) {
+  #years .year .yearimg {
+    height: 60px;
+  }
+}
 #years .year .yearimg.move-left {
-  transform: translateX(-600px);
+  transform: translateX(-30%);
 }
 #years .year .expanded-images {
   position: relative;
@@ -523,6 +729,16 @@ footer .topbtn:hover svg {
   overflow-x: auto;
   position: relative;
 }
+@media (max-width: 992px) {
+  #years .year .expanded-images {
+    height: 400px;
+  }
+}
+@media (max-width: 640px) {
+  #years .year .expanded-images {
+    height: 200px;
+  }
+}
 #years .year .expanded-images::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -532,6 +748,16 @@ footer .topbtn:hover svg {
   padding: 0 10px;
   object-fit: cover;
   display: inline-block;
+}
+@media (max-width: 992px) {
+  #years .year .expanded-images img {
+    height: 370px;
+  }
+}
+@media (max-width: 640px) {
+  #years .year .expanded-images img {
+    height: 190px;
+  }
 }
 #years .year .expanded-images:hover {
   cursor: pointer;
@@ -553,15 +779,25 @@ footer .topbtn:hover svg {
   width: 50px;
   object-fit: cover;
 }
+@media (max-width: 640px) {
+  #prev,
+  #next {
+    top: 25%;
+    height: 32px;
+    width: 32px;
+  }
+}
 
 #prev {
   background-image: url(../img/ArrowL.svg);
   left: 10px;
+  background-size: cover;
 }
 
 #next {
   background-image: url(../img/ArrowR.svg);
   right: 10px;
+  background-size: cover;
 }
 
 /* cart */
@@ -569,8 +805,8 @@ footer .topbtn:hover svg {
   border: none;
   background-color: transparent;
   position: fixed;
-  right: 100px;
-  top: 200px;
+  right: 10%;
+  top: 20%;
   z-index: 100;
   cursor: pointer;
 }

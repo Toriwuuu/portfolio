@@ -53,12 +53,30 @@ a {
     font-size: 1.5rem;
     z-index: 999;
 
-    @media (max-width: 640px) {
-        font-size: 1rem;
+    @media (max-width: 992px) {
+        font-size: 1.2rem;
+
     }
 
-    img {
-        height: 150px;
+    @media (max-width: 640px) {
+        height: auto;
+
+    }
+
+    .logo {
+        img {
+
+            height: 150px;
+
+            @media (max-width: 992px) {
+                height: 120px;
+            }
+
+            @media (max-width:640px) {
+                height: 100px;
+
+            }
+        }
     }
 
     .nav-box {
@@ -66,21 +84,80 @@ a {
         display: flex;
         align-items: center;
         justify-content: end;
-    }
 
-    .menu {
-        display: flex;
-        padding: 30px;
+        @media (max-width:640px) {
+            width: 30%;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 30px;
+        }
 
-        a {
+        .hamburger {
+            display: none;
+
+            @media (max-width:640px) {
+                display: block;
+                /* 三條線按鈕 */
+                margin-bottom: 10px;
+                background-color: transparent;
+                border: none;
+                padding: 0;
+
+                .bar {
+                    display: block;
+                    width: 25px;
+                    height: 3px;
+                    background-color: $pink;
+                    margin: 5px auto;
+                    transition: 0.4s;
+                }
+            }
+        }
+
+        @media (max-width:640px) {
+
+            /* 三 變換為 X */
+            .hamburger.is-active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.is-active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        .menu {
             display: flex;
             padding: 30px;
-            font-family: 'Chivo';
-            font-weight: 900;
-            color: $pink;
 
-            &:hover {
-                color: #FFFFFF;
+            @media (max-width:640px) {
+                display: none;
+                align-items: center;
+                animation: hide 0.7s ease-in-out both
+            }
+
+            a {
+                display: flex;
+                padding: 30px;
+                font-family: 'Chivo';
+                font-weight: 900;
+                color: $pink;
+
+                &:hover {
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        .show {
+            @media (max-width:640px) {
+                display: flex;
+                flex-direction: column;
+                animation: show 0.7s ease-in-out both;
             }
         }
     }
@@ -92,19 +169,32 @@ a {
     display: flex;
     justify-content: space-between;
 
+    @media (max-width:992px) {
+        flex-direction: column;
+    }
+
     .cd {
+
         display: flex;
         flex-direction: row;
         width: 100%;
         position: relative;
 
         .pinrotate {
-            width: 350px;
+            width: 40%;
             position: absolute;
-            top: 300px;
-            left: 400px;
+            top: 10%;
+            left: 60%;
             transform-origin: top left;
             z-index: 2;
+
+            @media (max-width:992px) {
+                top: 150px;
+            }
+
+            @media (max-width:640px) {
+                top: 100px;
+            }
 
             @keyframes pinrotate {
                 from {
@@ -120,11 +210,19 @@ a {
         }
 
         .rotate {
-            width: 800px;
+            width: 100%;
             position: absolute;
-            top: 400px;
-            left: -200px;
+            top: 15%;
+            left: -15%;
             z-index: -2;
+
+            @media (max-width:992px) {
+                top: 250px;
+            }
+
+            @media (max-width:640px) {
+                top: 150px;
+            }
 
             @keyframes rotate {
                 from {
@@ -147,43 +245,73 @@ a {
         flex-direction: column-reverse;
         align-items: center;
         padding: 150px;
-        margin-top: 200px;
-        margin-bottom: 200px;
+        margin-top: 10%;
+        margin-bottom: 10%;
         overflow: hidden;
         position: relative;
         height: calc(350px * 3); // Display area for 3 images    
         mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+
+        @media (max-width:992px) {
+            margin-top: 1200px;
+        }
+
+        @media (max-width:640px) {
+            padding: 30px;
+            margin-top: 600px;
+            height: calc(150px * 3);
+        }
 
         .carousel {
             display: flex;
             flex-direction: column-reverse;
             animation: scroll 40s linear infinite;
             transition: animation 2s ease; // Smooth transition for animation change
-        }
 
-        .mask {
-            background-color: rgba(206, 21, 178, 0.521);
-            width: 350px;
-            height: 350px;
-            margin: -50px;
-            transform: skew(-30deg, 9deg);
-            border: 5px solid rgba(255, 255, 255, 0.839);
-            border-radius: 30px;
-
-            &:hover {
-                animation: sway 0.5s infinite alternate-reverse;
+            @media (max-width:640px) {
+                animation: scroll 20s linear infinite;
             }
 
-            img {
-                mix-blend-mode: multiply;
-                object-fit: cover;
+            .mask {
+                background-color: rgba(206, 21, 178, 0.521);
                 width: 350px;
                 height: 350px;
-                box-shadow: 40px 50px 30px rgba(231, 58, 145, 0.315);
+                margin: -50px;
+                transform: skew(-30deg, 9deg);
+                border: 5px solid rgba(255, 255, 255, 0.839);
                 border-radius: 30px;
 
+                @media (max-width:640px) {
+                    width: 170px;
+                    height: 170px;
+                    margin: -20px;
+                    border: 2px solid rgba(255, 255, 255, 0.839);
+                    border-radius: 15px;
+                }
+
+                &:hover {
+                    animation: sway 0.5s infinite alternate-reverse;
+                }
+
+                img {
+                    mix-blend-mode: multiply;
+                    object-fit: cover;
+                    width: 350px;
+                    height: 350px;
+                    box-shadow: 40px 50px 30px rgba(231, 58, 145, 0.315);
+                    border-radius: 30px;
+
+                    @media (max-width:640px) {
+                        width: 170px;
+                        height: 170px;
+                        border-radius: 15px;
+                    }
+                }
             }
         }
+
+
     }
 
     @keyframes scroll {
@@ -233,15 +361,32 @@ footer {
         /* 確保溢出的內容不會顯示 */
         position: relative;
 
+        @media (max-width:640px) {
+            height: 40px;
+            font-size: 1.2rem;
+        }
+
         .marquee-content {
             display: flex;
             align-items: center;
-            width: 300%;
+            width: 800%;
             position: absolute;
             will-change: transform;
             animation: marquee 40s linear infinite;
             /* 持續 10 秒的動畫，無限循環 */
             white-space: nowrap;
+
+            @media (max-width:992px) {
+                width: 1500%;
+            }
+
+            @media (max-width:640px) {
+                width: 2500%;
+
+                img {
+                    height: 15px;
+                }
+            }
 
             span {
                 display: inline-block;
@@ -271,6 +416,11 @@ footer {
         padding: 10px 0 10px 0;
         border-bottom: 10px solid white;
 
+        @media (max-width:640px) {
+            padding: 5px 0 5px 0;
+            border-bottom: 5px solid white;
+        }
+
         .contactText {
             display: flex;
             justify-content: space-between;
@@ -280,10 +430,14 @@ footer {
             color: #FFFFFF;
             font-size: 6rem;
             font-weight: 900;
-            padding: 0 0 0 0;
+            align-items: center;
 
-            @media (max-width: 995px) {
+            @media (max-width: 992px) {
                 font-size: 3rem;
+            }
+
+            @media (max-width: 640px) {
+                font-size: 2rem;
             }
 
             .icon {
@@ -297,6 +451,12 @@ footer {
                     margin: 10px;
                     transition: transform 0.3s ease; // 添加過渡效果
 
+                    @media (max-width: 640px) {
+                        width: 25px;
+                        height: 25px;
+                        margin: 5px
+                    }
+
                     &:hover {
                         transform: scale(1.2); // hover時放大 1.1 倍
                     }
@@ -305,18 +465,20 @@ footer {
                 .icon-ig {
                     background-image: url(../img/ig.svg);
                     background-repeat: no-repeat;
+                    background-size: cover;
 
                 }
 
                 .icon-fb {
                     background-image: url(../img/fb.svg);
                     background-repeat: no-repeat;
-
+                    background-size: cover;
                 }
 
                 .icon-twitter {
                     background-image: url(../img/twitter.svg);
                     background-repeat: no-repeat;
+                    background-size: cover;
                 }
             }
         }
@@ -335,13 +497,21 @@ footer {
         font-size: 6rem;
         font-weight: 900;
 
-        @media (max-width: 995px) {
+        @media (max-width: 992px) {
             font-size: 3rem;
+        }
+
+        @media (max-width: 640px) {
+            font-size: 2rem;
         }
 
         svg {
             align-self: center;
             transition: transform 0.3s ease; // 添加過渡效果
+
+            @media (max-width: 640px) {
+                height: 20px;
+            }
         }
 
         &:hover {
@@ -399,152 +569,194 @@ footer {
 /* plastic */
 
 
-.box {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-
-    img {
+    .box {
         width: 100%;
         height: 100vh;
         object-fit: cover;
+        @media (max-width:640px) {
+            height: 50vh;
+        }
+        img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+
+            @media (max-width:640px) {
+                height: 50vh;
+            }
+        }
     }
-}
 
-#years {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 450px;
-
-    .year {
-        border-top: 10px solid transparent;
-        border-image: linear-gradient(to right, #bd22ad5e, #5a1948d3, #8542c88a, #b1482893, #2846db7e, #e5e7556b);
-        border-image-slice: 1;
+    #years {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: auto;
-        padding: 0 0 30px 0;
-        opacity: 0; // 初始设置为透明
-        transition: opacity 3s ease; // 添加过渡效果
+        margin-bottom: 200px;
 
-        &.visible {
-            opacity: 1; // 当添加 visible 类时，透明度变为 1，即显示
-        }
-
-
-
-        .yearimg {
-            display: block;
-            width: auto;
-            height: 130px;
-            cursor: pointer;
-            transition: transform 0.5s ease; // 添加过渡效果
-        }
-
-        .yearimg.move-left {
-            transform: translateX(-600px); // 平滑移动效果
-        }
-
-        .expanded-images {
-            position: relative; // 确保子元素相对于其定位
+        .year {
+            border-top: 10px solid transparent;
+            border-image: linear-gradient(to right, #bd22ad5e, #5a1948d3, #8542c88a, #b1482893, #2846db7e, #e5e7556b);
+            border-image-slice: 1;
             display: flex;
-            flex-wrap: nowrap;
-            justify-content: start;
-            align-items: center;
-            padding: 10px;
+            flex-direction: column;
+            justify-content: center;
             width: 100%;
-            height: 600px;
-            /* background-color: rgba(0, 0, 0, 0.5); */
-            overflow-x: auto; // 允许水平滚动
-            position: relative; // 确保子元素相对定位
+            height: auto;
+            padding: 0 0 30px 0;
+            opacity: 0; // 初始设置为透明
+            transition: opacity 3s ease; // 添加过渡效果
 
+            @media (max-width:640px) {
+                padding: 0 0 10px 0;
 
-            &::-webkit-scrollbar {
-                width: 0;
-                height: 0; // 隐藏滚动条
             }
 
-            img {
-                height: 550px;
-                padding: 0 10px;
-                object-fit: cover;
-                display: inline-block; // 保持图片在一行
+            &.visible {
+                opacity: 1; // 当添加 visible 类时，透明度变为 1，即显示
             }
 
-            &:hover {
-                // 默认光标为手形
+
+
+            .yearimg {
+                display: block;
+                width: auto;
+                height: 130px;
                 cursor: pointer;
+                transition: transform 0.5s ease; // 添加过渡效果
+
+                @media (max-width:992px) {
+                    height: 80px;
+                }
+
+                @media (max-width:640px) {
+                    height: 60px;
+                }
+            }
+
+            .yearimg.move-left {
+                transform: translateX(-30%); // 平滑移动效果
+            }
+
+            .expanded-images {
+                position: relative; // 确保子元素相对于其定位
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: start;
+                align-items: center;
+                padding: 10px;
+                width: 100%;
+                height: 600px;
+                /* background-color: rgba(0, 0, 0, 0.5); */
+                overflow-x: auto; // 允许水平滚动
+                position: relative; // 确保子元素相对定位
+
+                @media (max-width:992px) {
+                    height: 400px;
+                }
+
+                @media (max-width:640px) {
+                    height: 200px;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                    height: 0; // 隐藏滚动条
+                }
+
+                img {
+                    height: 550px;
+                    padding: 0 10px;
+                    object-fit: cover;
+                    display: inline-block; // 保持图片在一行
+
+                    @media (max-width:992px) {
+                        height: 370px;
+                    }
+
+                    @media (max-width:640px) {
+                        height: 190px;
+                    }
+                }
+
+                &:hover {
+                    // 默认光标为手形
+                    cursor: pointer;
+                }
             }
         }
     }
-}
 
 
-/* CYCLE */
-#prev,
-#next {
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    color: transparent;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1000;
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-}
+    /* CYCLE */
+    #prev,
+    #next {
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        color: transparent;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1000;
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
 
-#prev {
-    background-image: url(../img/ArrowL.svg);
-    left: 10px;
-}
-
-#next {
-    background-image: url(../img/ArrowR.svg);
-    right: 10px;
-}
-
-/* cart */
-.cart {
-    border: none;
-    background-color: transparent;
-    position: fixed;
-    right: 100px;
-    top: 200px;
-    z-index: 100;
-    cursor: pointer;
-
-    svg {
-        width: 48px;
-        height: 48px;
-
-        @media (max-width: 640px) {
-            width: 24px;
-            height: 24px;
+        @media (max-width:640px) {
+            top: 25%;
+            height: 32px;
+            width: 32px;
         }
     }
-}
 
-.cart-count {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 20px;
-    display: none;
-    /* 初始隱藏 */
-}
+    #prev {
+        background-image: url(../img/ArrowL.svg);
+        left: 10px;
+        background-size: cover;
+    }
+
+    #next {
+        background-image: url(../img/ArrowR.svg);
+        right: 10px;
+        background-size: cover;
+    }
+
+    /* cart */
+    .cart {
+        border: none;
+        background-color: transparent;
+        position: fixed;
+        right: 10%;
+        top: 20%;
+        z-index: 100;
+        cursor: pointer;
+
+        svg {
+            width: 48px;
+            height: 48px;
+
+            @media (max-width: 640px) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    .cart-count {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 20px;
+        display: none;
+        /* 初始隱藏 */
+    }
 
 
 
@@ -559,13 +771,15 @@ footer {
     width: 100%;
     align-items: center;
     padding-top: 200px;
+
     .bannerImg {
         height: 500px;
         width: 1200px;
 
         display: flex;
         flex-direction: column;
-        @media (max-width:1200px){
+
+        @media (max-width:1200px) {
             width: 900px;
             min-width: 900px;
             max-width: 900px;
@@ -623,7 +837,8 @@ footer {
         width: 1200px;
         display: flex;
         justify-content: space-around;
-        @media (max-width:1200px){
+
+        @media (max-width:1200px) {
             width: 900px;
             min-width: 900px;
             max-width: 900px;
@@ -767,13 +982,15 @@ footer {
         height: 600px;
         margin: 300px 0;
         display: flex;
-        @media (max-width:992px){
+
+        @media (max-width:992px) {
             flex-direction: column;
             align-items: center;
             margin: 150px 0;
             width: 100%;
             height: auto;
         }
+
         #productImg {
             display: flex;
             flex-direction: column;
@@ -781,9 +998,11 @@ footer {
             align-items: center;
             width: 50%;
             height: 100%;
-            @media (max-width:992px){
+
+            @media (max-width:992px) {
                 width: 100%;
             }
+
             .bigImg {
                 width: 75%;
                 height: 75%;
@@ -887,9 +1106,11 @@ footer {
             width: 50%;
             flex-direction: column;
             justify-content: space-between;
-            @media (max-width:992px){
+
+            @media (max-width:992px) {
                 align-items: center;
             }
+
             .infoTitle {
                 font-family: 'Chivo';
                 font-size: 1.5rem;

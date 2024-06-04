@@ -16,13 +16,13 @@
             <a href="index.html"><img src="./img/title.svg" alt="Tori's Artwork"></a>
         </h1>
         <div class="nav-box">
-            <!--             
+        
             <button class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            -->
+
             <nav>
                 <ul class="menu">
                     <li><a href="index.html">DIGITAL ART</a></li>
@@ -33,7 +33,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="wrap">
         <div class="box">
             <div class="cycle-slideshow" 
             data-cycle-fx="scrollHorz"
@@ -235,6 +235,15 @@
 
 <script>
 $(document).ready(function () {
+
+                // 漢堡
+                $('.hamburger').click(function () {
+                // 交替 三 跟 X
+                $(this).toggleClass('is-active');
+                $('.menu').toggleClass('show');
+                $('.menu').toggleClass('hide');
+            });
+
     // 頁首滾動效果
     let lastScrollTop = 0; // 上次滚动的位置
     let headerHeight = $('#topbar').outerHeight(); // 获取页眉的高度
