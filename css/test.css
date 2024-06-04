@@ -169,7 +169,7 @@ a {
 #topbar {
   position: fixed;
   width: 100%;
-  height: 10vw;
+  height: 150px;
   justify-content: space-between;
   display: flex;
   font-size: 1.5rem;
@@ -181,7 +181,7 @@ a {
   }
 }
 #topbar img {
-  width: 20vw;
+  height: 150px;
 }
 #topbar .nav-box {
   width: 100%;
@@ -191,12 +191,11 @@ a {
 }
 #topbar .menu {
   display: flex;
-  padding: 2vw;
+  padding: 30px;
 }
 #topbar .menu a {
   display: flex;
-  padding: 2vw;
-  /*     border:1px solid #161616; */
+  padding: 30px;
   font-family: "Chivo";
   font-weight: 900;
   color: #E931CC;
@@ -217,10 +216,10 @@ a {
   position: relative;
 }
 #digitalArt .cd .pinrotate {
-  width: 20vw;
+  width: 350px;
   position: absolute;
   top: 300px;
-  left: 20vw;
+  left: 400px;
   transform-origin: top left;
   z-index: 2;
   animation: pinrotate 3s forwards;
@@ -234,10 +233,10 @@ a {
   }
 }
 #digitalArt .cd .rotate {
-  width: 40vw;
+  width: 800px;
   position: absolute;
   top: 400px;
-  left: -8vw;
+  left: -200px;
   z-index: -2;
   animation: rotate 60s linear infinite;
 }
@@ -254,12 +253,12 @@ a {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  padding: 15vh;
-  margin-top: 20vh;
-  margin-bottom: 15vh;
+  padding: 150px;
+  margin-top: 200px;
+  margin-bottom: 200px;
   overflow: hidden;
   position: relative;
-  height: 60vw;
+  height: 1050px;
   mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 }
 #digitalArt .photo .carousel {
@@ -270,9 +269,9 @@ a {
 }
 #digitalArt .photo .mask {
   background-color: rgba(206, 21, 178, 0.521);
-  width: 20vw;
-  height: 20vw;
-  margin: -3vw;
+  width: 350px;
+  height: 350px;
+  margin: -50px;
   transform: skew(-30deg, 9deg);
   border: 5px solid rgba(255, 255, 255, 0.839);
   border-radius: 30px;
@@ -283,9 +282,9 @@ a {
 #digitalArt .photo .mask img {
   mix-blend-mode: multiply;
   object-fit: cover;
-  width: 20vw;
-  height: 20vw;
-  box-shadow: 2vw 3vh 30px rgba(231, 58, 145, 0.315);
+  width: 350px;
+  height: 350px;
+  box-shadow: 40px 50px 30px rgba(231, 58, 145, 0.315);
   border-radius: 30px;
 }
 @keyframes scroll {
@@ -293,7 +292,7 @@ a {
     transform: translateY(100%);
   }
   100% {
-    transform: translateY(-80vw);
+    transform: translateY(1400px);
   }
 }
 @keyframes sway {
@@ -425,43 +424,49 @@ footer .topbtn:hover svg {
   cursor: pointer;
 }
 
-#form-contact {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  width: 25%;
-  font-family: "Chivo";
-  color: #FFFFFF;
-}
-#form-contact label {
-  font-weight: 200;
-  margin: 1vh 0 1vh 0;
-  border: none;
-}
-#form-contact .btn-form {
-  align-self: flex-end;
-  margin: 16px 0px;
-  width: 7vw;
-  height: 3.5vh;
-  border: none;
-  border-radius: 5px;
-}
-#form-contact .btn-form span {
-  font-family: "Chivo";
-  font-style: italic;
-  font-weight: 900;
-  color: #E931CC;
-}
-#form-contact input {
-  border: none;
-  border-radius: 5px;
-  height: 3vh;
-}
-#form-contact textarea {
-  border: none;
-  border-radius: 5px;
-}
+/* #form-contact {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 25%;
+    font-family: 'Chivo';
+    color: $white;
 
+    label {
+        font-weight: 200;
+        margin: 1vh 0 1vh 0;
+        border: none;
+    }
+
+    .btn-form {
+        align-self: flex-end;
+        margin: 16px 0px;
+        width: 7vw;
+        height: 3.5vh;
+        border: none;
+        border-radius: 5px;
+
+        span {
+            font-family: 'Chivo';
+            font-style: italic;
+            font-weight: 900;
+            color: $pink;
+        }
+
+    }
+
+    input {
+        border: none;
+        border-radius: 5px;
+        height: 3vh;
+    }
+
+    textarea {
+        border: none;
+        border-radius: 5px;
+    }
+}
+ */
 /* plastic */
 .box {
   width: 100%;
@@ -477,7 +482,7 @@ footer .topbtn:hover svg {
 #years {
   display: flex;
   flex-direction: column;
-  margin-bottom: 40vh;
+  margin-bottom: 450px;
 }
 #years .year {
   border-top: 10px solid transparent;
@@ -498,12 +503,12 @@ footer .topbtn:hover svg {
 #years .year .yearimg {
   display: block;
   width: auto;
-  height: 15vh;
+  height: 130px;
   cursor: pointer;
   transition: transform 0.5s ease;
 }
 #years .year .yearimg.move-left {
-  transform: translateX(-35vw);
+  transform: translateX(-600px);
 }
 #years .year .expanded-images {
   position: relative;
@@ -513,7 +518,7 @@ footer .topbtn:hover svg {
   align-items: center;
   padding: 10px;
   width: 100%;
-  height: 70vh;
+  height: 600px;
   /* background-color: rgba(0, 0, 0, 0.5); */
   overflow-x: auto;
   position: relative;
@@ -523,8 +528,8 @@ footer .topbtn:hover svg {
   height: 0;
 }
 #years .year .expanded-images img {
-  height: 65vh;
-  padding: 0 1vw;
+  height: 550px;
+  padding: 0 10px;
   object-fit: cover;
   display: inline-block;
 }
@@ -564,8 +569,8 @@ footer .topbtn:hover svg {
   border: none;
   background-color: transparent;
   position: fixed;
-  right: 5vw;
-  top: 20vh;
+  right: 100px;
+  top: 200px;
   z-index: 100;
   cursor: pointer;
 }
@@ -783,14 +788,14 @@ footer .topbtn:hover svg {
 .container .infoContainer {
   width: 1200px;
   height: 600px;
-  margin: 25vh 0;
+  margin: 300px 0;
   display: flex;
 }
 @media (max-width: 992px) {
   .container .infoContainer {
     flex-direction: column;
     align-items: center;
-    margin: 15vh 0;
+    margin: 150px 0;
     width: 100%;
     height: auto;
   }

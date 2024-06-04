@@ -47,7 +47,7 @@ a {
 #topbar {
     position: fixed;
     width: 100%;
-    height: 10vw;
+    height: 150px;
     justify-content: space-between;
     display: flex;
     font-size: 1.5rem;
@@ -58,7 +58,7 @@ a {
     }
 
     img {
-        width: 20vw;
+        height: 150px;
     }
 
     .nav-box {
@@ -70,12 +70,11 @@ a {
 
     .menu {
         display: flex;
-        padding: 2vw;
+        padding: 30px;
 
         a {
             display: flex;
-            padding: 2vw;
-            /*     border:1px solid #161616; */
+            padding: 30px;
             font-family: 'Chivo';
             font-weight: 900;
             color: $pink;
@@ -100,10 +99,10 @@ a {
         position: relative;
 
         .pinrotate {
-            width: 20vw;
+            width: 350px;
             position: absolute;
             top: 300px;
-            left: 20vw;
+            left: 400px;
             transform-origin: top left;
             z-index: 2;
 
@@ -121,10 +120,10 @@ a {
         }
 
         .rotate {
-            width: 40vw;
+            width: 800px;
             position: absolute;
             top: 400px;
-            left: -8vw;
+            left: -200px;
             z-index: -2;
 
             @keyframes rotate {
@@ -147,12 +146,12 @@ a {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        padding: 15vh;
-        margin-top: 20vh;
-        margin-bottom: 15vh;
+        padding: 150px;
+        margin-top: 200px;
+        margin-bottom: 200px;
         overflow: hidden;
         position: relative;
-        height: calc(20vw * 3); // Display area for 3 images    
+        height: calc(350px * 3); // Display area for 3 images    
         mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 
         .carousel {
@@ -164,9 +163,9 @@ a {
 
         .mask {
             background-color: rgba(206, 21, 178, 0.521);
-            width: 20vw;
-            height: 20vw;
-            margin: -3vw;
+            width: 350px;
+            height: 350px;
+            margin: -50px;
             transform: skew(-30deg, 9deg);
             border: 5px solid rgba(255, 255, 255, 0.839);
             border-radius: 30px;
@@ -178,9 +177,9 @@ a {
             img {
                 mix-blend-mode: multiply;
                 object-fit: cover;
-                width: 20vw;
-                height: 20vw;
-                box-shadow: 2vw 3vh 30px rgba(231, 58, 145, 0.315);
+                width: 350px;
+                height: 350px;
+                box-shadow: 40px 50px 30px rgba(231, 58, 145, 0.315);
                 border-radius: 30px;
 
             }
@@ -193,7 +192,7 @@ a {
         }
 
         100% {
-            transform: translateY(calc(-20vw * 4));
+            transform: translateY(calc(350px * 4));
         }
     }
 
@@ -354,7 +353,7 @@ footer {
     }
 }
 
-#form-contact {
+/* #form-contact {
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -396,7 +395,7 @@ footer {
         border-radius: 5px;
     }
 }
-
+ */
 /* plastic */
 
 
@@ -415,7 +414,7 @@ footer {
 #years {
     display: flex;
     flex-direction: column;
-    margin-bottom: 40vh;
+    margin-bottom: 450px;
 
     .year {
         border-top: 10px solid transparent;
@@ -439,13 +438,13 @@ footer {
         .yearimg {
             display: block;
             width: auto;
-            height: 15vh;
+            height: 130px;
             cursor: pointer;
             transition: transform 0.5s ease; // 添加过渡效果
         }
 
         .yearimg.move-left {
-            transform: translateX(-35vw); // 平滑移动效果
+            transform: translateX(-600px); // 平滑移动效果
         }
 
         .expanded-images {
@@ -456,7 +455,7 @@ footer {
             align-items: center;
             padding: 10px;
             width: 100%;
-            height: 70vh;
+            height: 600px;
             /* background-color: rgba(0, 0, 0, 0.5); */
             overflow-x: auto; // 允许水平滚动
             position: relative; // 确保子元素相对定位
@@ -468,8 +467,8 @@ footer {
             }
 
             img {
-                height: 65vh;
-                padding: 0 1vw;
+                height: 550px;
+                padding: 0 10px;
                 object-fit: cover;
                 display: inline-block; // 保持图片在一行
             }
@@ -515,8 +514,8 @@ footer {
     border: none;
     background-color: transparent;
     position: fixed;
-    right: 5vw;
-    top: 20vh;
+    right: 100px;
+    top: 200px;
     z-index: 100;
     cursor: pointer;
 
@@ -766,12 +765,12 @@ footer {
     .infoContainer {
         width: 1200px;
         height: 600px;
-        margin: 25vh 0;
+        margin: 300px 0;
         display: flex;
         @media (max-width:992px){
             flex-direction: column;
             align-items: center;
-            margin: 15vh 0;
+            margin: 150px 0;
             width: 100%;
             height: auto;
         }
