@@ -206,10 +206,11 @@ a {
 }
 @media (max-width: 640px) {
   #topbar .nav-box {
-    width: 30%;
+    width: 20%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     margin-top: 30px;
+    padding-right: 10px;
   }
 }
 #topbar .nav-box .hamburger {
@@ -219,7 +220,6 @@ a {
   #topbar .nav-box .hamburger {
     display: block;
     /* 三條線按鈕 */
-    margin-bottom: 10px;
     background-color: transparent;
     border: none;
     padding: 0;
@@ -251,11 +251,17 @@ a {
   display: flex;
   padding: 30px;
 }
+@media (max-width: 992px) {
+  #topbar .nav-box .menu {
+    padding: 0px;
+  }
+}
 @media (max-width: 640px) {
   #topbar .nav-box .menu {
     display: none;
-    align-items: center;
+    align-items: start;
     animation: hide 0.7s ease-in-out both;
+    padding: 0;
   }
 }
 #topbar .nav-box .menu a {
@@ -264,6 +270,11 @@ a {
   font-family: "Chivo";
   font-weight: 900;
   color: #E931CC;
+}
+@media (max-width: 640px) {
+  #topbar .nav-box .menu a {
+    padding: 20px;
+  }
 }
 #topbar .nav-box .menu a:hover {
   color: #FFFFFF;
@@ -673,6 +684,7 @@ footer .topbtn:hover svg {
 #years {
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin-bottom: 200px;
 }
 #years .year {
@@ -804,15 +816,24 @@ footer .topbtn:hover svg {
 .cart {
   border: none;
   background-color: transparent;
-  position: fixed;
-  right: 10%;
-  top: 20%;
   z-index: 100;
   cursor: pointer;
+  padding: 0 30px;
+}
+@media (max-width: 640px) {
+  .cart {
+    padding-top: 30px;
+  }
 }
 .cart svg {
   width: 48px;
   height: 48px;
+}
+@media (max-width: 992px) {
+  .cart svg {
+    width: 32px;
+    height: 32px;
+  }
 }
 @media (max-width: 640px) {
   .cart svg {
@@ -838,37 +859,53 @@ footer .topbtn:hover svg {
 }
 
 /* shop */
-.bannerContainer {
+.wrap {
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
+  width: 100%;
+}
+.wrap .bannerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   padding-top: 200px;
 }
-.bannerContainer .bannerImg {
-  height: 500px;
-  width: 1200px;
-  display: flex;
-  flex-direction: column;
-}
-@media (max-width: 1200px) {
-  .bannerContainer .bannerImg {
-    width: 900px;
-    min-width: 900px;
-    max-width: 900px;
+@media (max-width: 992px) {
+  .wrap .bannerContainer {
+    padding-top: 150px;
   }
 }
-.bannerContainer .bannerImg img {
-  height: 100%;
+.wrap .bannerContainer .bannerImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 70%;
+}
+@media (max-width: 992px) {
+  .wrap .bannerContainer .bannerImg {
+    width: 90%;
+  }
+}
+@media (max-width: 640px) {
+  .wrap .bannerContainer .bannerImg {
+    width: 100%;
+  }
+}
+.wrap .bannerContainer .bannerImg img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 30px;
 }
-.bannerContainer .cycle-pager {
+.wrap .bannerContainer .cycle-pager {
   display: flex;
   padding-top: 10px;
 }
-.bannerContainer .cycle-pager a {
+.wrap .bannerContainer .cycle-pager a {
   color: black;
   text-decoration: none;
   margin: 5px;
@@ -883,38 +920,51 @@ footer .topbtn:hover svg {
   line-height: 20px;
   background-color: #FFFFFF;
 }
-.bannerContainer .cycle-pager a.activeSlide {
+.wrap .bannerContainer .cycle-pager a.activeSlide {
   background-color: #E931CC;
 }
-
-#items {
+.wrap #items {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 200px;
-  margin-top: 100px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10%;
 }
-#items .row {
-  height: 400px;
-  width: 1200px;
+.wrap #items .row {
+  height: 50%;
+  width: 70%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 @media (max-width: 1200px) {
-  #items .row {
-    width: 900px;
-    min-width: 900px;
-    max-width: 900px;
+  .wrap #items .row {
+    width: 90%;
   }
 }
-#items .row .item {
+.wrap #items .row .item {
+  margin-top: 10%;
   width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#items .row .item .imgContainer {
+@media (max-width: 1200px) {
+  .wrap #items .row .item {
+    width: 50%;
+  }
+}
+@media (max-width: 640px) {
+  .wrap #items .row .item {
+    width: 100%;
+  }
+}
+.wrap #items .row .item .imgContainer {
   position: relative;
   display: inline-block;
 }
-#items .row .item .imgContainer .plus {
+.wrap #items .row .item .imgContainer .plus {
   position: absolute;
   background-color: transparent;
   bottom: 5%;
@@ -923,37 +973,43 @@ footer .topbtn:hover svg {
   cursor: pointer;
   z-index: 99;
 }
-#items .row .item .imgContainer .plus svg {
+.wrap #items .row .item .imgContainer .plus svg {
   width: 40px;
   height: 40px;
 }
-#items .row .item .imgContainer .imgItem {
+.wrap #items .row .item .imgContainer .imgItem {
   border-radius: 20px;
   width: 200px;
   height: 200px;
   transition: transform 0.3s ease;
 }
-#items .row .item .imgContainer .imgItem:hover {
+@media (max-width: 1200px) {
+  .wrap #items .row .item .imgContainer .imgItem {
+    width: 280px;
+    height: 280px;
+  }
+}
+.wrap #items .row .item .imgContainer .imgItem:hover {
   transform: scale(1.1);
 }
-#items .row .item .imgContainer .imgItem img {
+.wrap #items .row .item .imgContainer .imgItem img {
   border-radius: 20px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#items .row .item .productName {
+.wrap #items .row .item .productName {
   display: block;
   font-family: Chivo;
   color: #FFFFFF;
   font-weight: 800;
-  padding-top: 40px;
+  padding-top: 30px;
   font-size: 1.5rem;
 }
-#items .row .item .productName:hover {
+.wrap #items .row .item .productName:hover {
   text-decoration: underline;
 }
-#items .row .item .price {
+.wrap #items .row .item .price {
   display: block;
   font-family: Chivo;
   color: #50CBF2;
@@ -973,8 +1029,6 @@ footer .topbtn:hover svg {
   /* 50% 不透明度的黑色背景 */
   z-index: 999;
   /* 使 .overlay 位於其他元素之上 */
-  display: none;
-  /* 初始時隱藏 .overlay */
 }
 .overlay .overlay-content {
   position: fixed;
@@ -1020,9 +1074,10 @@ footer .topbtn:hover svg {
 .container {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .container .infoContainer {
-  width: 1200px;
+  width: 80%;
   height: 600px;
   margin: 300px 0;
   display: flex;
@@ -1042,7 +1097,6 @@ footer .topbtn:hover svg {
   justify-content: space-between;
   align-items: center;
   width: 50%;
-  height: 100%;
 }
 @media (max-width: 992px) {
   .container .infoContainer #productImg {
@@ -1060,22 +1114,26 @@ footer .topbtn:hover svg {
   border-radius: 10px;
   cursor: pointer;
 }
-.container .infoContainer #productImg .smallImg {
+.container .infoContainer #productImg .smallImgs {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 75%;
   height: 15%;
 }
-.container .infoContainer #productImg .smallImg img {
-  width: 20%;
+.container .infoContainer #productImg .smallImgs .small {
+  width: 100px;
+  height: 100px;
+}
+.container .infoContainer #productImg .smallImgs .small img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s ease;
 }
-.container .infoContainer #productImg .smallImg img:hover {
+.container .infoContainer #productImg .smallImgs .small img:hover {
   transform: scale(1.1);
 }
 .container .infoContainer #lightbox {
