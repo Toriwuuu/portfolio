@@ -49,11 +49,11 @@
                 <div class="bigImg">
                     <img src="./img/plastic/2023/05.jpg" alt="">
                 </div>
-                <div class="smallImgs">
-                    <div class="small"><img src="./img/plastic/2023/05.jpg" alt=""></div>
-                    <div class="small"><img src="./img/plastic/2023/07.jpg" alt=""></div>
-                    <div class="small"><img src="./img/plastic/2023/03.jpg" alt=""></div>
-                    <div class="small"><img src="./img/plastic/2023/08.jpg" alt=""></div>
+                <div class="smallImg">
+                    <img src="./img/plastic/2023/05.jpg" alt="">
+                    <img src="./img/plastic/2023/07.jpg" alt="">
+                    <img src="./img/plastic/2023/03.jpg" alt="">
+                    <img src="./img/plastic/2023/02.jpg" alt="">
                 </div>
             </section>
 
@@ -343,12 +343,13 @@
                     updatePriceAndQuantity(num); // 更新價格和數量
                 }
             });
-    
+            
             // 點擊 quaPlus 增加 quaNum 值
             $('.quaPlus').click(function () {
                 var num = parseInt($(this).siblings('.quaNum').text()); // 獲取當前 quaNum 的值
                 num++; // 增加 quaNum 值
                 updatePriceAndQuantity(num); // 更新價格和數量
+
             });
     
             // 初始化時更新價格
@@ -359,6 +360,16 @@
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
             });
         });
+
+        $('.bn').click(function(){
+            $('.bn').text('Thank You!')
+        });
+
+        $('.incartTotal button').click(function(){
+            $('.incartTotal button').text('Thank You!')
+        });
+
+
     </script>
     
 

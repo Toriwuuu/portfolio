@@ -440,7 +440,7 @@
                 if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
                     // 往下滾動且未滾動至頁首，隱藏 header
                     $('#topbar').css({
-                        'top': -headerHeight + 'vh',
+                        'top': -headerHeight + 'px',
                         'transition': 'top 1s' // 添加過渡效果
                     });
                 } else if (currentScroll === 0) {
@@ -509,7 +509,7 @@
                     'color': '#E931CC',
                     'background-color': 'white'
                 });
-
+                
                 // 更新購物車數量並顯示在 .cart 的右上角
                 cartCount++;
                 $(".cart-count").text(cartCount).show();
@@ -534,7 +534,7 @@
 
         });
 
-        // 顯示購物車和覆蓋層
+/*         // 顯示購物車和覆蓋層
         $('.atc').click(function () {
             $('.overlay2').fadeIn(); // 顯示覆蓋層
             $('#incart').css('right', '0'); // 顯示購物車
@@ -554,6 +554,10 @@
             $(this).fadeOut(); // 隱藏覆蓋層
             $('#incart').css('right', '-500px'); // 隱藏購物車
         });
+
+        $('.incartTotal button').click(function(){
+            $('.incartTotal button').text('Thank You!')
+        }); */
 
 
 

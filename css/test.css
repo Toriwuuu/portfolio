@@ -378,7 +378,7 @@ a {
 @media (max-width: 640px) {
   #digitalArt .photo {
     padding: 30px;
-    margin-top: 600px;
+    margin-top: 800px;
     height: 450px;
   }
 }
@@ -685,7 +685,7 @@ footer .topbtn:hover svg {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 200px;
+  margin-bottom: 400px;
 }
 #years .year {
   border-top: 10px solid transparent;
@@ -694,7 +694,7 @@ footer .topbtn:hover svg {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  /*         width: 100%; */
   height: auto;
   padding: 0 0 30px 0;
   opacity: 0;
@@ -819,6 +819,7 @@ footer .topbtn:hover svg {
   z-index: 100;
   cursor: pointer;
   padding: 0 30px;
+  position: relative;
 }
 @media (max-width: 640px) {
   .cart {
@@ -844,8 +845,8 @@ footer .topbtn:hover svg {
 
 .cart-count {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 10px;
+  right: 20px;
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -1078,15 +1079,14 @@ footer .topbtn:hover svg {
 }
 .container .infoContainer {
   width: 80%;
-  height: 600px;
-  margin: 300px 0;
+  padding: 200px 0;
   display: flex;
 }
 @media (max-width: 992px) {
   .container .infoContainer {
     flex-direction: column;
     align-items: center;
-    margin: 150px 0;
+    padding: 150px 0;
     width: 100%;
     height: auto;
   }
@@ -1101,11 +1101,12 @@ footer .topbtn:hover svg {
 @media (max-width: 992px) {
   .container .infoContainer #productImg {
     width: 100%;
+    margin-bottom: 50px;
   }
 }
 .container .infoContainer #productImg .bigImg {
-  width: 75%;
-  height: 75%;
+  width: 80%;
+  height: 70%;
 }
 .container .infoContainer #productImg .bigImg img {
   width: 100%;
@@ -1114,26 +1115,52 @@ footer .topbtn:hover svg {
   border-radius: 10px;
   cursor: pointer;
 }
-.container .infoContainer #productImg .smallImgs {
+.container .infoContainer #productImg .smallImg {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 75%;
-  height: 15%;
+  width: 80%;
+  height: auto;
 }
-.container .infoContainer #productImg .smallImgs .small {
-  width: 100px;
-  height: 100px;
-}
-.container .infoContainer #productImg .smallImgs .small img {
-  width: 100%;
-  height: 100%;
+.container .infoContainer #productImg .smallImg img {
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s ease;
 }
-.container .infoContainer #productImg .smallImgs .small img:hover {
+@media (max-width: 1500px) {
+  .container .infoContainer #productImg .smallImg img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 1300px) {
+  .container .infoContainer #productImg .smallImg img {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 1150px) {
+  .container .infoContainer #productImg .smallImg img {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 992px) {
+  .container .infoContainer #productImg .smallImg img {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (max-width: 640px) {
+  .container .infoContainer #productImg .smallImg img {
+    width: 75px;
+    height: 75px;
+  }
+}
+.container .infoContainer #productImg .smallImg img:hover {
   transform: scale(1.1);
 }
 .container .infoContainer #lightbox {
@@ -1198,11 +1225,12 @@ footer .topbtn:hover svg {
 @media (max-width: 992px) {
   .container .infoContainer #productInfo {
     align-items: center;
+    width: 80%;
   }
 }
 .container .infoContainer #productInfo .infoTitle {
   font-family: "Chivo";
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #FFFFFF;
   padding-bottom: 20px;
@@ -1219,59 +1247,70 @@ footer .topbtn:hover svg {
   font-size: 2rem;
   font-weight: 900;
   color: #50CBF2;
+  display: block;
+  padding: 100px 0;
 }
-.container .infoContainer #productInfo .infoQua {
+@media (max-width: 992px) {
+  .container .infoContainer #productInfo .quaB {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.container .infoContainer #productInfo .quaB .infoQua {
   font-family: "Chivo";
   font-size: 1.5rem;
   font-weight: 900;
   color: #FFFFFF;
 }
-.container .infoContainer #productInfo .quaBtn {
+.container .infoContainer #productInfo .quaB .quaBtn {
   padding-top: 20px;
   display: flex;
   align-items: center;
 }
-.container .infoContainer #productInfo .quaBtn button {
+.container .infoContainer #productInfo .quaB .quaBtn button {
   cursor: pointer;
 }
-.container .infoContainer #productInfo .quaBtn .quaMinus {
+.container .infoContainer #productInfo .quaB .quaBtn .quaMinus {
   background-color: transparent;
   border: none;
 }
-.container .infoContainer #productInfo .quaBtn svg {
+.container .infoContainer #productInfo .quaB .quaBtn svg {
   width: 40px;
   height: 40px;
 }
-.container .infoContainer #productInfo .quaBtn .quaNum {
+.container .infoContainer #productInfo .quaB .quaBtn .quaNum {
   margin: 0 20px;
   font-size: 1.5rem;
   font-weight: 900;
   color: #FFFFFF;
   text-align: center;
 }
-.container .infoContainer #productInfo .quaBtn .quaPlus {
+.container .infoContainer #productInfo .quaB .quaBtn .quaPlus {
   background-color: transparent;
   border: none;
 }
-.container .infoContainer #productInfo .buyBtn {
+.container .infoContainer #productInfo .quaB .buyBtn {
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+  width: 100%;
 }
-.container .infoContainer #productInfo .buyBtn button {
-  width: 80%;
+.container .infoContainer #productInfo .quaB .buyBtn button {
+  width: 100%;
   height: 60px;
   margin-top: 20px;
   border-radius: 10px;
   cursor: pointer;
 }
-.container .infoContainer #productInfo .buyBtn .atc {
+.container .infoContainer #productInfo .quaB .buyBtn .atc {
   font-family: "Chivo";
   font-style: italic;
   font-size: 1.5rem;
   font-weight: 100;
 }
-.container .infoContainer #productInfo .buyBtn .bn {
+.container .infoContainer #productInfo .quaB .buyBtn .bn {
   font-family: "Chivo";
   font-style: italic;
   font-size: 2rem;
@@ -1279,10 +1318,10 @@ footer .topbtn:hover svg {
   background-color: #E931CC;
   color: #FFFFFF;
 }
-.container .infoContainer #productInfo .buyBtn .paypal {
+.container .infoContainer #productInfo .quaB .buyBtn .paypal {
   background-color: #E8DF0B;
 }
-.container .infoContainer #productInfo .buyBtn .paypal img {
+.container .infoContainer #productInfo .quaB .buyBtn .paypal img {
   width: 100%;
   object-fit: cover;
 }
@@ -1299,6 +1338,12 @@ footer .topbtn:hover svg {
   flex-direction: column;
   transition: right 0.5s;
   z-index: 1001;
+}
+@media (max-width: 640px) {
+  #incart {
+    right: -300px;
+    width: 300px;
+  }
 }
 #incart .incartTitle {
   width: 100%;
@@ -1320,6 +1365,14 @@ footer .topbtn:hover svg {
   display: flex;
   padding: 40px 25px;
 }
+@media (max-width: 640px) {
+  #incart .incartContent {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+  }
+}
 #incart .incartContent .incartImg img {
   width: 200px;
   height: 200px;
@@ -1327,6 +1380,14 @@ footer .topbtn:hover svg {
 }
 #incart .incartContent .incartInfo {
   padding: 0 0 0 40px;
+}
+@media (max-width: 640px) {
+  #incart .incartContent .incartInfo {
+    padding: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 #incart .incartContent .incartInfo h2 {
   font-family: "Chivo";
@@ -1380,6 +1441,7 @@ footer .topbtn:hover svg {
   color: #FFFFFF;
   font-size: 20px;
   font-style: italic;
+  cursor: pointer;
 }
 
 .overlay2 {
